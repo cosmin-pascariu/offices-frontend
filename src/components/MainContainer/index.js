@@ -1,4 +1,5 @@
 import React from "react";
+import Navbar from "../NavbarPage";
 import Sidebar from "../Sidebar";
 import { Container, Navigator } from "./MainContainerElements";
 
@@ -7,6 +8,7 @@ const MainContainer = () => {
     <Container>
       <Navigator>
         <Sidebar />
+        <Navbar />
       </Navigator>
       {/* <RouterContainer /> */}
     </Container>

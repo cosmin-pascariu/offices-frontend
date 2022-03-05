@@ -65,8 +65,8 @@ export const Button = styled.div`
 `;
 
 export const ButtonText = styled.div`
-  height: 42px;
-  width: 100px;
+  /* height: 42px; */
+  /* width: 100px; */
   margin-left: 20px;
   display: flex;
   align-items: center;
