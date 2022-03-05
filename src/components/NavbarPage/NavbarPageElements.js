@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const NavbarContiner = styled.div`
   height: 80px;
-  width: 80%;
+  width: 100%;
   background-color: #fff;
   display: flex;
   align-items: center;

@@ -21,8 +21,8 @@ function App() {
     <Router>
       <GlobalStyle />
       <Routes>
-        <Route path="/login/auth" element={<Login />}></Route>
-        <Route path="/" element={<MainContainer />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="*" element={<MainContainer />}></Route>
       </Routes>
     </Router>
   );

@@ -29,13 +29,13 @@ const Sidebar = () => {
       </SidebarLogo>
 
       <SidebarMenu>
-        <SidebarButton to="/login">
+        <SidebarButton to="/users">
           <Button uColor={true} bColor={true}>
             <FaUsers size={"50%"} />
           </Button>
           <ButtonText bColor={true}>Users</ButtonText>
         </SidebarButton>
-        <SidebarButton to="/login">
+        <SidebarButton to="/buildings">
           <Button uColor={false} bColor={false}>
             <FaUsers size={"50%"} />
           </Button>
@@ -55,7 +55,7 @@ const Sidebar = () => {
         </SidebarButton>
       </SidebarMenu>
 
-      <SidebarButton to="/login/auth" style={{ width: "70%" }}>
+      <SidebarButton to="/login" style={{ width: "70%" }}>
         <Button uColor={false} bColor={false}>
           <CgLogOut size={"50%"} />
         </Button>
