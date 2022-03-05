@@ -47,7 +47,7 @@ const Login = () => {
                 style={{ paddingRight: "50px" }}
               ></FormInput>
             </FormInputs>
-            <LoginButton type={"submit"} form="form">
+            <LoginButton type={"submit"} form="form" to="/">
               LOGIN
             </LoginButton>
           </LoginForm>
