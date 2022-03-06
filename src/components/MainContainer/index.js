@@ -11,6 +11,7 @@ import {
 import Users from "../../pages/UsersPage";
 import Buildings from "../../pages/BuildingsPage";
 import Offices from "../../pages/OfficesPage";
+import Requests from "../../pages/RequestsPage";
 
 const MainContainer = () => {
   return (
@@ -24,6 +25,7 @@ const MainContainer = () => {
               <Route path="/users" element={<Users />}></Route>
               <Route path="/buildings" element={<Buildings />}></Route>
               <Route path="/offices" element={<Offices />}></Route>
+              <Route path="/requests" element={<Requests />}></Route>
             </Routes>
           </RouterContainer>
         </MainContent>

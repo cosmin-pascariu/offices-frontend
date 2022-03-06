@@ -50,7 +50,7 @@ const Sidebar = () => {
           </Button>
           <ButtonText bColor={false}>Offices</ButtonText>
         </SidebarButton>
-        <SidebarButton to="/login">
+        <SidebarButton to="/requests">
           <Button uColor={false} bColor={false}>
             <FaUsers size={"50%"} />
           </Button>
