@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../NavbarPage";
+import Navbar from "../Navbar";
 import Sidebar from "../Sidebar";
 import { Route, Routes } from "react-router-dom";
 import {
@@ -8,8 +8,9 @@ import {
   RouterContainer,
   MainContent,
 } from "./MainContainerElements";
-import Users from "../UsersPage";
-import Buildings from "../BuildingsPage";
+import Users from "../../pages/UsersPage";
+import Buildings from "../../pages/BuildingsPage";
+import Offices from "../../pages/OfficesPage";
 
 const MainContainer = () => {
   return (
@@ -22,6 +23,7 @@ const MainContainer = () => {
             <Routes>
               <Route path="/users" element={<Users />}></Route>
               <Route path="/buildings" element={<Buildings />}></Route>
+              <Route path="/offices" element={<Offices />}></Route>
             </Routes>
           </RouterContainer>
         </MainContent>

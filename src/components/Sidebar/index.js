@@ -1,4 +1,4 @@
-// import React, { useState } from "react";
+import React, { useState } from "react";
 import {
   SidebarContainer,
   SidebarLogo,
@@ -13,11 +13,11 @@ import { FaUsers } from "react-icons/fa";
 import { CgLogOut } from "react-icons/cg";
 
 const Sidebar = () => {
-  //   const [isItemActive, setIsItemActive] = useState(false);
+  const [isItemActive, setIsItemActive] = useState(false);
 
-  //   const toogleColor = () => {
-  //     setBtnColor(!btnColor);
-  //   };
+  const toogleColor = () => {
+    setIsItemActive(!isItemActive);
+  };
 
   return (
     <SidebarContainer>
@@ -29,11 +29,14 @@ const Sidebar = () => {
       </SidebarLogo>
 
       <SidebarMenu>
-        <SidebarButton to="/users">
-          <Button uColor={true} bColor={true}>
+        <SidebarButton to="/users" onClick={toogleColor}>
+          <Button
+            uColor={isItemActive ? true : false}
+            bColor={isItemActive ? true : false}
+          >
             <FaUsers size={"50%"} />
           </Button>
-          <ButtonText bColor={true}>Users</ButtonText>
+          <ButtonText bColor={isItemActive ? true : false}>Users</ButtonText>
         </SidebarButton>
         <SidebarButton to="/buildings">
           <Button uColor={false} bColor={false}>
@@ -41,7 +44,7 @@ const Sidebar = () => {
           </Button>
           <ButtonText bColor={false}>Buildings</ButtonText>
         </SidebarButton>
-        <SidebarButton to="/home">
+        <SidebarButton to="/offices">
           <Button uColor={false} bColor={false}>
             <FaUsers size={"50%"} />
           </Button>

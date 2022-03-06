@@ -1,7 +1,7 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./components/LoginPage";
+import Login from "./pages/LoginPage";
 import MainContainer from "./components/MainContainer";
 
 const GlobalStyle = createGlobalStyle`

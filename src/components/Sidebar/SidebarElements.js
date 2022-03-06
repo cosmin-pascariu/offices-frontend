@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const buttonColors = {
   cG: "#75ce55",
@@ -45,7 +45,7 @@ export const SidebarMenu = styled.div`
   align-self: center;
 `;
 
-export const SidebarButton = styled(Link)`
+export const SidebarButton = styled(NavLink)`
   width: 100%;
   display: flex;
   padding: 10px 0;
