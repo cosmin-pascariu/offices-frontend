@@ -14,6 +14,7 @@ import {
   UserDetails,
   ActionsTxt,
   ActionBtn,
+  Table,
 } from "./UsersPageElements";
 import { ImSearch } from "react-icons/im";
 import { CgMoreO } from "react-icons/cg";
@@ -29,7 +30,7 @@ const Users = () => {
             <ImSearch size={"31px"} />
           </SearchbarBtn>
         </Searchbar>
-        <AddButton>ADD NEW</AddButton>
+        <AddButton to="/users/add-user">ADD NEW</AddButton>
       </UsersSearch>
 
       <TableInfo>
@@ -39,78 +40,116 @@ const Users = () => {
         <RemoteTxt>Remote</RemoteTxt>
         <ActionsTxt>Actions</ActionsTxt>
       </TableInfo>
-      <UserDetails>
-        <NameTxt>Vasile Bordei</NameTxt>
-        <BuildingTxt>C2</BuildingTxt>
-        <OfficeTxt>01</OfficeTxt>
-        <RemoteTxt>fully</RemoteTxt>
-        <ActionBtn>
-          <BsPencil size={"100%"} />
-        </ActionBtn>
-        <ActionBtn>
-          <CgMoreO size={"100%"} />
-        </ActionBtn>
-      </UserDetails>
-      <UserDetails>
-        <NameTxt>Vasile Bordei</NameTxt>
-        <BuildingTxt>C2</BuildingTxt>
-        <OfficeTxt>01</OfficeTxt>
-        <RemoteTxt>fully</RemoteTxt>
-        <ActionBtn>
-          <BsPencil size={"100%"} />
-        </ActionBtn>
-        <ActionBtn>
-          <CgMoreO size={"100%"} />
-        </ActionBtn>
-      </UserDetails>
-      <UserDetails>
-        <NameTxt>Vasile Bordei</NameTxt>
-        <BuildingTxt>C2</BuildingTxt>
-        <OfficeTxt>01</OfficeTxt>
-        <RemoteTxt>fully</RemoteTxt>
-        <ActionBtn>
-          <BsPencil size={"100%"} />
-        </ActionBtn>
-        <ActionBtn>
-          <CgMoreO size={"100%"} />
-        </ActionBtn>
-      </UserDetails>
-      <UserDetails>
-        <NameTxt>Vasile Bordei</NameTxt>
-        <BuildingTxt>C2</BuildingTxt>
-        <OfficeTxt>01</OfficeTxt>
-        <RemoteTxt>fully</RemoteTxt>
-        <ActionBtn>
-          <BsPencil size={"100%"} />
-        </ActionBtn>
-        <ActionBtn>
-          <CgMoreO size={"100%"} />
-        </ActionBtn>
-      </UserDetails>
-      <UserDetails>
-        <NameTxt>Vasile Bordei</NameTxt>
-        <BuildingTxt>C2</BuildingTxt>
-        <OfficeTxt>01</OfficeTxt>
-        <RemoteTxt>fully</RemoteTxt>
-        <ActionBtn>
-          <BsPencil size={"100%"} />
-        </ActionBtn>
-        <ActionBtn>
-          <CgMoreO size={"100%"} />
-        </ActionBtn>
-      </UserDetails>
-      <UserDetails>
-        <NameTxt>Vasile Bordei</NameTxt>
-        <BuildingTxt>C2</BuildingTxt>
-        <OfficeTxt>01</OfficeTxt>
-        <RemoteTxt>fully</RemoteTxt>
-        <ActionBtn>
-          <BsPencil size={"100%"} />
-        </ActionBtn>
-        <ActionBtn>
-          <CgMoreO size={"100%"} />
-        </ActionBtn>
-      </UserDetails>
+      <Table>
+        <UserDetails>
+          <NameTxt>Vasile Bordei</NameTxt>
+          <BuildingTxt>C2</BuildingTxt>
+          <OfficeTxt>01</OfficeTxt>
+          <RemoteTxt>fully</RemoteTxt>
+          <ActionBtn>
+            <BsPencil size={"100%"} />
+          </ActionBtn>
+          <ActionBtn>
+            <CgMoreO size={"100%"} />
+          </ActionBtn>
+        </UserDetails>
+        <UserDetails>
+          <NameTxt>Vasile Bordei</NameTxt>
+          <BuildingTxt>C2</BuildingTxt>
+          <OfficeTxt>01</OfficeTxt>
+          <RemoteTxt>fully</RemoteTxt>
+          <ActionBtn>
+            <BsPencil size={"100%"} />
+          </ActionBtn>
+          <ActionBtn>
+            <CgMoreO size={"100%"} />
+          </ActionBtn>
+        </UserDetails>
+        <UserDetails>
+          <NameTxt>Vasile Bordei</NameTxt>
+          <BuildingTxt>C2</BuildingTxt>
+          <OfficeTxt>01</OfficeTxt>
+          <RemoteTxt>fully</RemoteTxt>
+          <ActionBtn>
+            <BsPencil size={"100%"} />
+          </ActionBtn>
+          <ActionBtn>
+            <CgMoreO size={"100%"} />
+          </ActionBtn>
+        </UserDetails>
+        <UserDetails>
+          <NameTxt>Vasile Bordei</NameTxt>
+          <BuildingTxt>C2</BuildingTxt>
+          <OfficeTxt>01</OfficeTxt>
+          <RemoteTxt>fully</RemoteTxt>
+          <ActionBtn>
+            <BsPencil size={"100%"} />
+          </ActionBtn>
+          <ActionBtn>
+            <CgMoreO size={"100%"} />
+          </ActionBtn>
+        </UserDetails>
+        <UserDetails>
+          <NameTxt>Vasile Bordei</NameTxt>
+          <BuildingTxt>C2</BuildingTxt>
+          <OfficeTxt>01</OfficeTxt>
+          <RemoteTxt>fully</RemoteTxt>
+          <ActionBtn>
+            <BsPencil size={"100%"} />
+          </ActionBtn>
+          <ActionBtn>
+            <CgMoreO size={"100%"} />
+          </ActionBtn>
+        </UserDetails>
+        <UserDetails>
+          <NameTxt>Vasile Bordei</NameTxt>
+          <BuildingTxt>C2</BuildingTxt>
+          <OfficeTxt>01</OfficeTxt>
+          <RemoteTxt>fully</RemoteTxt>
+          <ActionBtn>
+            <BsPencil size={"100%"} />
+          </ActionBtn>
+          <ActionBtn>
+            <CgMoreO size={"100%"} />
+          </ActionBtn>
+        </UserDetails>
+        <UserDetails>
+          <NameTxt>Vasile Bordei</NameTxt>
+          <BuildingTxt>C2</BuildingTxt>
+          <OfficeTxt>01</OfficeTxt>
+          <RemoteTxt>fully</RemoteTxt>
+          <ActionBtn>
+            <BsPencil size={"100%"} />
+          </ActionBtn>
+          <ActionBtn>
+            <CgMoreO size={"100%"} />
+          </ActionBtn>
+        </UserDetails>
+        <UserDetails>
+          <NameTxt>Vasile Bordei</NameTxt>
+          <BuildingTxt>C2</BuildingTxt>
+          <OfficeTxt>01</OfficeTxt>
+          <RemoteTxt>fully</RemoteTxt>
+          <ActionBtn>
+            <BsPencil size={"100%"} />
+          </ActionBtn>
+          <ActionBtn>
+            <CgMoreO size={"100%"} />
+          </ActionBtn>
+        </UserDetails>
+        <UserDetails>
+          <NameTxt>Vasile Bordei</NameTxt>
+          <BuildingTxt>C2</BuildingTxt>
+          <OfficeTxt>01</OfficeTxt>
+          <RemoteTxt>fully</RemoteTxt>
+          <ActionBtn>
+            <BsPencil size={"100%"} />
+          </ActionBtn>
+          <ActionBtn>
+            <CgMoreO size={"100%"} />
+          </ActionBtn>
+        </UserDetails>
+      </Table>
     </UsersContainer>
   );
 };

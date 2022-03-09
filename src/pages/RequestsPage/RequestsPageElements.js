@@ -60,8 +60,8 @@ export const Circle = styled.div`
 
 export const PendingText = styled.p`
   color: #f6ad41;
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 600;
   margin-left: 22px;
 `;
 

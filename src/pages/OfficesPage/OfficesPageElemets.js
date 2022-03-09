@@ -46,6 +46,47 @@ export const FilterContent = styled.div`
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   margin-top: 15px;
+  display: flex;
+  align-items: center;
+  padding: 0 25px;
+
+  p {
+    color: #8e8e8e;
+    margin: 0 10px;
+  }
+`;
+
+export const DropDownMenu = styled.div`
+  height: 31px;
+  width: 310px;
+  border-radius: 5px;
+  background-color: #efefef;
+`;
+
+export const Option = styled.button`
+  height: 31px;
+  border: none;
+  background-color: #c4c4c4;
+  color: #fff;
+  border-radius: 5px;
+  padding: 0 10px;
+  margin: 0 5px;
+  cursor: pointer;
+
+  &:checked {
+    background-color: #3c3c3c;
+  }
+`;
+
+export const InputValue = styled.input`
+  width: 106px;
+  height: 31px;
+  border-radius: 5px;
+  background-color: #efefef;
+  text-align: center;
+  color: #3c3c3c;
+  outline: none;
+  border: none;
 `;
 
 export const TableInfo = styled.tr`

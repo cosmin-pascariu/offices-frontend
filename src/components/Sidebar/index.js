@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import {
   SidebarContainer,
   SidebarLogo,
@@ -11,17 +10,14 @@ import {
 import { ImOffice as Logo } from "react-icons/im";
 import { FaUsers } from "react-icons/fa";
 import { CgLogOut } from "react-icons/cg";
+import { useLocation } from "react-router-dom";
 
 const Sidebar = () => {
-  const [isItemActive, setIsItemActive] = useState(false);
-
-  const toogleColor = () => {
-    setIsItemActive(!isItemActive);
-  };
+  const location = useLocation();
 
   return (
     <SidebarContainer>
-      <SidebarLogo>
+      <SidebarLogo to="/">
         <Logo size={"40px"} />
         <SidebarTitle>
           <h2>Offices</h2>
@@ -29,32 +25,51 @@ const Sidebar = () => {
       </SidebarLogo>
 
       <SidebarMenu>
-        <SidebarButton to="/users" onClick={toogleColor}>
+        <SidebarButton to="/users">
           <Button
-            uColor={isItemActive ? true : false}
-            bColor={isItemActive ? true : false}
+            uColor={location.pathname === "/users" ? true : false}
+            bColor={location.pathname === "/users" ? true : false}
           >
             <FaUsers size={"50%"} />
           </Button>
-          <ButtonText bColor={isItemActive ? true : false}>Users</ButtonText>
+          <ButtonText bColor={location.pathname === "/users" ? true : false}>
+            Users
+          </ButtonText>
         </SidebarButton>
         <SidebarButton to="/buildings">
-          <Button uColor={false} bColor={false}>
+          <Button
+            uColor={location.pathname === "/buildings" ? true : false}
+            bColor={location.pathname === "/buildings" ? true : false}
+          >
             <FaUsers size={"50%"} />
           </Button>
-          <ButtonText bColor={false}>Buildings</ButtonText>
+          <ButtonText
+            bColor={location.pathname === "/buildings" ? true : false}
+          >
+            Buildings
+          </ButtonText>
         </SidebarButton>
         <SidebarButton to="/offices">
-          <Button uColor={false} bColor={false}>
+          <Button
+            uColor={location.pathname === "/offices" ? true : false}
+            bColor={location.pathname === "/offices" ? true : false}
+          >
             <FaUsers size={"50%"} />
           </Button>
-          <ButtonText bColor={false}>Offices</ButtonText>
+          <ButtonText bColor={location.pathname === "/offices" ? true : false}>
+            Offices
+          </ButtonText>
         </SidebarButton>
         <SidebarButton to="/requests">
-          <Button uColor={false} bColor={false}>
+          <Button
+            uColor={location.pathname === "/requests" ? true : false}
+            bColor={location.pathname === "/requests" ? true : false}
+          >
             <FaUsers size={"50%"} />
           </Button>
-          <ButtonText bColor={false}>Requests</ButtonText>
+          <ButtonText bColor={location.pathname === "/requests" ? true : false}>
+            Requests
+          </ButtonText>
         </SidebarButton>
       </SidebarMenu>
 

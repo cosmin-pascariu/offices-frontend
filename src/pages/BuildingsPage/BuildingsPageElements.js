@@ -13,9 +13,12 @@ export const BuildingsSearch = styled.div`
 
 export const BuildingsContent = styled.div`
   margin-top: 25px;
-  width: 100%;
+  max-width: 87%;
+  width: auto;
+  max-height: 550px;
   display: flex;
   flex-wrap: wrap;
+  overflow: scroll;
 `;
 
 export const BuildingCard = styled.div`

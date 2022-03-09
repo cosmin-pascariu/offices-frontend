@@ -1,8 +1,14 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const UsersContainer = styled.div`
   width: 90%;
   height: 90%;
+`;
+
+export const Table = styled.div`
+  max-height: 500px;
+  overflow: auto;
 `;
 
 export const UsersSearch = styled.div`
@@ -50,6 +56,10 @@ export const AddButton = styled.button`
   font-weight: 500;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &:hover {
     background-color: #424242;

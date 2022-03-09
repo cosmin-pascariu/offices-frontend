@@ -36,102 +36,11 @@ const Buildings = () => {
 
       <BuildingsContent>
         <BuildingCard>
-          <BuildingImage src={MainBImg} alt="Main Building"></BuildingImage>
-
+          <BuildingImage src={MainBImg} alt="Main Building" />
           <CardInfo>
             <BuildingName>Main Building</BuildingName>
             <FloorNumber>
               <p>5</p>
-              <FaBuffer size={"14px"} />
-            </FloorNumber>
-          </CardInfo>
-
-          <CardInfo>
-            <BuildingAddress>
-              Chicago, George Whashington Street, 13
-            </BuildingAddress>
-            <BsPencil size={"14px"} style={{ color: "#75ce55" }} />
-          </CardInfo>
-        </BuildingCard>
-
-        <BuildingCard>
-          <BuildingImage src={MainBImg} alt="Main Building"></BuildingImage>
-          <CardInfo>
-            <BuildingName>Secondary Building</BuildingName>
-            <FloorNumber>
-              <p>2</p>
-              <FaBuffer size={"14px"} />
-            </FloorNumber>
-          </CardInfo>
-
-          <CardInfo>
-            <BuildingAddress>
-              Chicago, George Whashington Street, 13
-            </BuildingAddress>
-            <BsPencil size={"14px"} style={{ color: "#75ce55" }} />
-          </CardInfo>
-        </BuildingCard>
-
-        <BuildingCard>
-          <BuildingImage src={MainBImg} alt="Main Building"></BuildingImage>
-          <CardInfo>
-            <BuildingName>Secondary Building</BuildingName>
-            <FloorNumber>
-              <p>2</p>
-              <FaBuffer size={"14px"} />
-            </FloorNumber>
-          </CardInfo>
-
-          <CardInfo>
-            <BuildingAddress>
-              Chicago, George Whashington Street, 13
-            </BuildingAddress>
-            <BsPencil size={"14px"} style={{ color: "#75ce55" }} />
-          </CardInfo>
-        </BuildingCard>
-
-        <BuildingCard>
-          <BuildingImage src={MainBImg} alt="Main Building"></BuildingImage>
-          <CardInfo>
-            <BuildingName>Secondary Building</BuildingName>
-            <FloorNumber>
-              <p>2</p>
-              <FaBuffer size={"14px"} />
-            </FloorNumber>
-          </CardInfo>
-
-          <CardInfo>
-            <BuildingAddress>
-              Chicago, George Whashington Street, 13
-            </BuildingAddress>
-            <BsPencil size={"14px"} style={{ color: "#75ce55" }} />
-          </CardInfo>
-        </BuildingCard>
-
-        <BuildingCard>
-          <BuildingImage src={MainBImg} alt="Main Building"></BuildingImage>
-          <CardInfo>
-            <BuildingName>Secondary Building</BuildingName>
-            <FloorNumber>
-              <p>2</p>
-              <FaBuffer size={"14px"} />
-            </FloorNumber>
-          </CardInfo>
-
-          <CardInfo>
-            <BuildingAddress>
-              Chicago, George Whashington Street, 13
-            </BuildingAddress>
-            <BsPencil size={"14px"} style={{ color: "#75ce55" }} />
-          </CardInfo>
-        </BuildingCard>
-
-        <BuildingCard>
-          <BuildingImage src={MainBImg} alt="Main Building"></BuildingImage>
-          <CardInfo>
-            <BuildingName>Secondary Building</BuildingName>
-            <FloorNumber>
-              <p>2</p>
               <FaBuffer size={"14px"} />
             </FloorNumber>
           </CardInfo>
