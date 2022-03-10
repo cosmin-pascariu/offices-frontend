@@ -1,82 +1,66 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
-  AddUserContainer,
-  Input,
-  InputContent,
-  Title,
-  InputContainer,
-  Label,
   Button,
-  InputSmallContent,
-  SmallInput,
-} from './AddUserPageElements';
+  Input,
+  InputContainer,
+  InputContent,
+  Label,
+  Title,
+} from '../AddUserPage/AddUserPageElements';
+import { AddOfficeContainer } from './AddOfficePageElements';
 
-const AddUser = () => {
+const AddOffice = () => {
   let navigate = useNavigate();
   const routeChange = () => {
-    let path = '/users';
+    let path = '/offices';
     navigate(path);
   };
+
   return (
-    <AddUserContainer>
-      <Title>Add New User</Title>
-      <InputContainer>
-        <InputContent>
-          <Label>First Name</Label>
-          <Input type={'text'} />
-        </InputContent>
-        <InputContent>
-          <Label>Last Name</Label>
-          <Input type={'text'} />
-        </InputContent>
-      </InputContainer>
+    <AddOfficeContainer>
+      <Title>Add New Office</Title>
 
       <InputContainer>
         <InputContent>
-          <Label>E-mail Address</Label>
-          <Input type={'email'} />
-        </InputContent>
-        <InputContent>
-          <Label>Work Model</Label>
+          <Label>Office Name</Label>
           <Input type={'text'} />
         </InputContent>
-      </InputContainer>
-
-      <InputContainer>
         <InputContent>
-          <Label>Password</Label>
-          <Input type={'text'} />
-        </InputContent>
-        <InputSmallContent>
           <Label>Building</Label>
-          <SmallInput type={'text'} />
-        </InputSmallContent>
-        <InputSmallContent>
-          <Label>Office</Label>
-          <SmallInput type={'text'} />
-        </InputSmallContent>
-      </InputContainer>
-
-      <InputContainer>
-        <InputContent>
-          <Label>Role</Label>
-          <Input type={'text'} />
-        </InputContent>
-        <InputContent>
-          <Label>Gender (Optional)</Label>
           <Input type={'text'} />
         </InputContent>
       </InputContainer>
 
       <InputContainer>
         <InputContent>
-          <Label>Birth Date</Label>
-          <Input type={'date'} />
+          <Label>Floor Number</Label>
+          <Input type={'text'} />
+        </InputContent>
+      </InputContainer>
+
+      <InputContainer>
+        <InputContent>
+          <Label>Total Desks Count</Label>
+          <Input type={'text'} />
         </InputContent>
         <InputContent>
-          <Label>Nationallity (Optional)</Label>
+          <Label>Usable Desks Count</Label>
           <Input type={'text'} />
+        </InputContent>
+      </InputContainer>
+
+      <InputContainer>
+        <InputContent>
+          <Label>Office Administrator Full Name (Optional)</Label>
+          <Input type={'text'} />
+        </InputContent>
+      </InputContainer>
+
+      <InputContainer>
+        <InputContent>
+          <Label></Label>
+          <Input type={'text'} style={{ backgroundColor: 'none' }} />
         </InputContent>
       </InputContainer>
 
@@ -88,8 +72,8 @@ const AddUser = () => {
           <Button onClick={routeChange}>CANCEL</Button>
         </InputContent>
       </InputContainer>
-    </AddUserContainer>
+    </AddOfficeContainer>
   );
 };
 
-export default AddUser;
+export default AddOffice;

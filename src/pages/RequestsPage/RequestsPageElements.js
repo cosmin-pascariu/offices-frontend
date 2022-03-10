@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const RequestsContainer = styled.div`
   width: 90%;
@@ -10,6 +10,14 @@ export const RequestsTitle = styled.h1`
   font-size: 26px;
   font-weight: 500;
   margin-bottom: 10px;
+`;
+
+export const RequestsTable = styled.div`
+  height: 570px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
 `;
 
 export const RequestContent = styled.div`

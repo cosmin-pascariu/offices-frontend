@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import ImagePicker from '../../components/ImagePicker.js';
 import {
   Title,
@@ -18,6 +19,11 @@ import {
 } from './AddBuildingElements';
 
 const AddBuilding = () => {
+  let navigate = useNavigate();
+  const routeChange = () => {
+    let path = '/buildings';
+    navigate(path);
+  };
   return (
     <AddBuildingContainer>
       <Title>Add New Building</Title>
@@ -51,7 +57,7 @@ const AddBuilding = () => {
           <Button to='/users'>SAVE</Button>
         </InputContent>
         <InputContent>
-          <Button to='/users'>CANCEL</Button>
+          <Button onClick={routeChange}>CANCEL</Button>
         </InputContent>
       </InputContainer>
     </AddBuildingContainer>

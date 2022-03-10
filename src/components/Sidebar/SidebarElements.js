@@ -17,7 +17,7 @@ export const SidebarContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 0;
+  padding: 10px 0 30px 0;
 
   @media screen and (max-width: 768px) {
     display: none;
