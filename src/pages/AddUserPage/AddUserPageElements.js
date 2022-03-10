@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const AddUserContainer = styled.form`
   width: 90%;
@@ -10,6 +10,10 @@ export const AddUserContainer = styled.form`
   flex-direction: column;
   padding: 50px 150px 50px 150px;
   color: #292929;
+
+  @media screen and (max-width: 768px) {
+    padding: 50px 15px 5px 15px;
+  }
 `;
 
 export const Title = styled.p`
@@ -43,6 +47,10 @@ export const InputSmallContent = styled.div`
   justify-content: space-between;
   margin-bottom: 15px;
   padding-right: 30px;
+
+  @media screen and (max-width: 768px) {
+    padding-right: 10px;
+  }
 `;
 
 export const Label = styled.label`
@@ -51,7 +59,7 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-  width: 355px;
+  width: 100%;
   height: 50px;
   padding: 0 25px;
   outline: none;
@@ -63,7 +71,7 @@ export const Input = styled.input`
 `;
 
 export const SmallInput = styled.input`
-  width: 160px;
+  width: 158px;
   height: 50px;
   padding: 0 25px;
   outline: none;
@@ -72,6 +80,10 @@ export const SmallInput = styled.input`
   border-radius: 10px;
   font-size: 14px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+
+  @media screen and (max-width: 768px) {
+    width: 85%;
+  }
 `;
 
 export const Button = styled.button`

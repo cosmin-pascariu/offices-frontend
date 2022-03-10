@@ -1,7 +1,7 @@
-import React from "react";
-import { useState } from "react";
-import ImgLogin from "../../assets/images/loginimage.svg";
-import { FiEye, FiEyeOff } from "react-icons/fi";
+import React from 'react';
+import { useState } from 'react';
+import ImgLogin from '../../assets/images/loginimage.svg';
+import { FiEye, FiEyeOff } from 'react-icons/fi';
 import {
   Container,
   LoginButton,
@@ -14,7 +14,7 @@ import {
   FormInputs,
   FormInput,
   Img,
-} from "./LoginPageElements";
+} from './LoginPageElements';
 
 const Login = () => {
   const [passwordVisibility, setPasswordVisibility] = useState(true);
@@ -27,13 +27,13 @@ const Login = () => {
     <Container>
       <LoginContainer>
         <LoginImage>
-          <Img src={ImgLogin} alt="Login image"></Img>
+          <Img src={ImgLogin} alt='Login image'></Img>
         </LoginImage>
         <LoginContent>
-          <LoginForm id="form">
+          <LoginForm id='form'>
             <FormTitle>Login to Offices</FormTitle>
             <FormInputs>
-              <FormInput type={"text"} placeholder="Email"></FormInput>
+              <FormInput type={'text'} placeholder='Email'></FormInput>
               <IconPass>
                 {passwordVisibility ? (
                   <FiEye onClick={toogleVisibility} />
@@ -42,14 +42,12 @@ const Login = () => {
                 )}
               </IconPass>
               <FormInput
-                type={passwordVisibility ? "password" : "text"}
-                placeholder="Password"
-                style={{ paddingRight: "50px" }}
+                type={passwordVisibility ? 'password' : 'text'}
+                placeholder='Password'
+                style={{ paddingRight: '50px' }}
               ></FormInput>
             </FormInputs>
-            <LoginButton type={"submit"} form="form" to="/">
-              LOGIN
-            </LoginButton>
+            <LoginButton to='/users'>LOGIN</LoginButton>
           </LoginForm>
         </LoginContent>
       </LoginContainer>

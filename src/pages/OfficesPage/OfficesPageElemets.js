@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const OfficesContainer = styled.div`
   width: 90%;
@@ -91,6 +91,7 @@ export const InputValue = styled.input`
 
 export const TableInfo = styled.tr`
   width: 100%;
+  max-width: 1050px;
   height: 62px;
   margin-top: 25px;
   border-radius: 10px;
@@ -123,6 +124,7 @@ export const ActionsTxt = styled.td`
 
 export const OfficeDetails = styled.tr`
   width: 100%;
+  max-width: 1050px;
   height: 62px;
   margin-top: 7px;
   border-radius: 10px;
