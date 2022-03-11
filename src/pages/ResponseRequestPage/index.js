@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   ApproveButton,
   Label,
@@ -13,14 +13,17 @@ import {
   NameRequest,
   RoleRequest,
   InfoRequest,
-} from './ResponseRequestElements';
+  TopContent,
+  LeftContainer,
+  RequestMessage,
+} from "./ResponseRequestElements";
 import {
   Button,
   InputContainer,
   InputContent,
-} from '../AddUserPage/AddUserPageElements';
-import { useNavigate } from 'react-router-dom';
-import Img from '../../assets/images/employee.jpeg';
+} from "../AddUserPage/AddUserPageElements";
+import { useNavigate } from "react-router-dom";
+import Img from "../../assets/images/employee.jpeg";
 
 const ResponseRequest = () => {
   const [isActive, setIsActive] = useState(true);
@@ -37,55 +40,65 @@ const ResponseRequest = () => {
 
   let navigate = useNavigate();
   const routeChange = () => {
-    let path = '/requests';
+    let path = "/requests";
     navigate(path);
   };
 
   return (
     <ResponseRequestContainer>
-      <RequestProfile>
-        <ImageRequest src={Img} alt='Request profile' />
-        <InfoRequest>
-          <NameRequest>Marian Margineanu</NameRequest>
-          <RoleRequest>Employee</RoleRequest>
-        </InfoRequest>
-      </RequestProfile>
+      <TopContent>
+        <LeftContainer>
+          <RequestProfile>
+            <ImageRequest src={Img} alt="Request profile" />
+            <InfoRequest>
+              <NameRequest>Marian Margineanu</NameRequest>
+              <RoleRequest>Employee</RoleRequest>
+            </InfoRequest>
+          </RequestProfile>
 
-      <Content>
-        <Label>Remote Work Approval</Label>
-        <RadioButtons>
-          <ApproveButton
-            onClick={handleAprove}
-            bColor={isActive}
-            uColor={isActive}
-          >
-            Approve
-          </ApproveButton>
-          <RejectButton
-            onClick={handleReject}
-            bColor={isactive}
-            uColor={isactive}
-          >
-            Reject
-          </RejectButton>
-        </RadioButtons>
-      </Content>
+          <Content>
+            <Label>Remote Work Approval</Label>
+            <RadioButtons>
+              <ApproveButton
+                onClick={handleAprove}
+                bColor={isActive}
+                uColor={isActive}
+              >
+                Approve
+              </ApproveButton>
+              <RejectButton
+                onClick={handleReject}
+                bColor={isactive}
+                uColor={isactive}
+              >
+                Reject
+              </RejectButton>
+            </RadioButtons>
+          </Content>
+        </LeftContainer>
+        <RequestMessage>
+          Lorem ipsafdssadfa fsad fdsafdsafdsaf dsaf sdaf sadf sadf sdaf dsafds
+          fads
+        </RequestMessage>
+      </TopContent>
 
       {isActive && (
-        <Content style={{ marginBottom: '200px' }}>
+        <Content style={{ marginBottom: "200px" }}>
           <Label>Remote Work Percentage</Label>
-          <Input type={'text'} />
+          <Input type={"text"} />
         </Content>
       )}
       {isactive && (
-        <Content style={{ marginBottom: '20px', minHeight: '260px' }}>
+        <Content
+          style={{ marginBottom: "20px", minHeight: "260px", width: "100%" }}
+        >
           <Label>The reason why the request is rejected</Label>
           <Textarea />
         </Content>
       )}
 
       <InputContainer>
-        <InputContent style={{ alignItems: 'flex-end' }}>
+        <InputContent style={{ alignItems: "flex-end" }}>
           <Button>SEND</Button>
         </InputContent>
         <InputContent>

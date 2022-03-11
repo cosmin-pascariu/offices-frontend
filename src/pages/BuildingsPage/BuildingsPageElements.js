@@ -18,7 +18,6 @@ export const BuildingsContent = styled.div`
   max-height: 550px;
   display: flex;
   flex-wrap: wrap;
-  overflow: scroll;
 `;
 
 export const BuildingCard = styled.div`

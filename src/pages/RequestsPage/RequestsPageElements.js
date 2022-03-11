@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const RequestsContainer = styled.div`
   width: 90%;
@@ -9,15 +9,17 @@ export const RequestsTitle = styled.h1`
   color: #292929;
   font-size: 26px;
   font-weight: 500;
-  margin-bottom: 10px;
+  height: auto;
 `;
 
 export const RequestsTable = styled.div`
-  height: 570px;
+  max-height: 90%;
+  height: 820px;
   width: 100%;
   display: flex;
   flex-direction: column;
   overflow: auto;
+  margin: 10px 0;
 `;
 
 export const RequestContent = styled.div`
@@ -55,7 +57,7 @@ export const PendingContainer = styled.div`
   display: flex;
   border-radius: 16px;
   align-items: center;
-  margin-left: 170px;
+  margin-left: 10%;
 `;
 
 export const Circle = styled.div`

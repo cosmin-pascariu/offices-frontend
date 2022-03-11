@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const OfficesContainer = styled.div`
   width: 90%;
@@ -66,16 +66,13 @@ export const DropDownMenu = styled.div`
 export const Option = styled.button`
   height: 31px;
   border: none;
-  background-color: #c4c4c4;
+  background-color: ${({ uColor }) => (uColor ? "#3c3c3c" : "#c4c4c4")};
   color: #fff;
-  border-radius: 5px;
   padding: 0 10px;
   margin: 0 5px;
   cursor: pointer;
-
-  &:checked {
-    background-color: #3c3c3c;
-  }
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
 `;
 
 export const InputValue = styled.input`
@@ -120,6 +117,7 @@ export const TotalDesksTxt = styled.td`
 `;
 export const ActionsTxt = styled.td`
   width: auto;
+  margin-right: 20px;
 `;
 
 export const OfficeDetails = styled.tr`

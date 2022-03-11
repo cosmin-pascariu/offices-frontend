@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 // import { NavLink } from 'react-router-dom';
 
 export const UsersContainer = styled.div`
@@ -7,7 +7,8 @@ export const UsersContainer = styled.div`
 `;
 
 export const Table = styled.div`
-  max-height: 500px;
+  max-height: 81%;
+  height: 700px;
   max-width: 1050px;
   overflow: auto;
 `;
@@ -98,6 +99,7 @@ export const RemoteTxt = styled.td`
 `;
 export const ActionsTxt = styled.td`
   width: auto;
+  margin-right: 40px;
 `;
 
 export const UserDetails = styled.tr`
