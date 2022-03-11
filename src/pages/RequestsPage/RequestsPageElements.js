@@ -87,6 +87,7 @@ export const ViewButton = styled.button`
   font-weight: 600;
   margin-left: auto;
   margin-right: 15px;
+  cursor: pointer;
 
   &:hover {
     background-color: #424242;

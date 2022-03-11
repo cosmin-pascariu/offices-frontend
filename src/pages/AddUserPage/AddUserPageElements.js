@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const AddUserContainer = styled.div`
   width: 90%;
   height: 90%;
+  max-width: 1240px;
+  max-height: 900px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
@@ -106,7 +108,7 @@ export const Percentage = styled.input`
 `;
 
 export const SmallInput = styled.input`
-  width: 158px;
+  width: 100%;
   height: 50px;
   padding: 0 25px;
   outline: none;

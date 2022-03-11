@@ -1,13 +1,13 @@
-import React from 'react';
-import { createGlobalStyle } from 'styled-components';
+import React from "react";
+import { createGlobalStyle } from "styled-components";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
-} from 'react-router-dom';
-import Login from './pages/LoginPage';
-import MainContainer from './components/MainContainer';
+} from "react-router-dom";
+import Login from "./pages/LoginPage";
+import MainContainer from "./components/MainContainer";
 
 const GlobalStyle = createGlobalStyle`
   *{
@@ -26,14 +26,12 @@ function App() {
     <Router>
       <GlobalStyle />
       <Routes>
-        <Route path='/login' element={<Login />}></Route>
-        <Route path='/' element={<Navigate to='/login' />}></Route>
-        <Route path='*' element={<MainContainer />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/" element={<Navigate to="/login" />}></Route>
+        <Route path="*" element={<MainContainer />}></Route>
       </Routes>
     </Router>
   );
 }
 
 export default App;
-
-// https://codepen.io/mustafa-turk/pen/ExYzvmr

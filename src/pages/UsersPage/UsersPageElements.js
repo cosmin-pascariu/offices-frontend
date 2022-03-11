@@ -1,9 +1,10 @@
 import styled from "styled-components";
-// import { NavLink } from 'react-router-dom';
 
 export const UsersContainer = styled.div`
   width: 90%;
   height: 90%;
+  max-width: 1000px;
+  max-height: 800px;
 `;
 
 export const Table = styled.div`
@@ -20,7 +21,7 @@ export const UsersSearch = styled.div`
 `;
 
 export const Searchbar = styled.div`
-  width: 50%;
+  width: 60%;
   display: flex;
   align-items: center;
 `;

@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const OfficesContainer = styled.div`
   width: 90%;
   height: 90%;
+  max-width: 1000px;
+  max-height: 800px;
 `;
 
 export const OfficesSearch = styled.div`
@@ -40,7 +42,7 @@ export const FilterButton = styled.button`
 `;
 
 export const FilterContent = styled.div`
-  width: 65%;
+  width: 75.5%;
   height: 62px;
   background-color: #fff;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);

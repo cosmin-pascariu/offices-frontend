@@ -1,5 +1,5 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Button,
   Input,
@@ -7,13 +7,13 @@ import {
   InputContent,
   Label,
   Title,
-} from '../AddUserPage/AddUserPageElements';
-import { AddOfficeContainer } from './AddOfficePageElements';
+} from "../AddUserPage/AddUserPageElements";
+import { AddOfficeContainer } from "./AddOfficePageElements";
 
 const AddOffice = () => {
   let navigate = useNavigate();
   const routeChange = () => {
-    let path = '/offices';
+    let path = "/offices";
     navigate(path);
   };
 
@@ -24,49 +24,42 @@ const AddOffice = () => {
       <InputContainer>
         <InputContent>
           <Label>Office Name</Label>
-          <Input type={'text'} />
+          <Input type={"text"} />
         </InputContent>
         <InputContent>
           <Label>Building</Label>
-          <Input type={'text'} />
+          <Input type={"text"} />
         </InputContent>
       </InputContainer>
 
       <InputContainer>
         <InputContent>
           <Label>Floor Number</Label>
-          <Input type={'text'} />
+          <Input type={"text"} />
         </InputContent>
       </InputContainer>
 
       <InputContainer>
         <InputContent>
           <Label>Total Desks Count</Label>
-          <Input type={'text'} />
+          <Input type={"text"} />
         </InputContent>
         <InputContent>
           <Label>Usable Desks Count</Label>
-          <Input type={'text'} />
+          <Input type={"text"} />
         </InputContent>
       </InputContainer>
 
       <InputContainer>
-        <InputContent>
+        <InputContent style={{ marginBottom: "100px" }}>
           <Label>Office Administrator Full Name (Optional)</Label>
-          <Input type={'text'} />
+          <Input type={"text"} />
         </InputContent>
       </InputContainer>
 
       <InputContainer>
-        <InputContent>
-          <Label></Label>
-          <Input type={'text'} style={{ backgroundColor: 'none' }} />
-        </InputContent>
-      </InputContainer>
-
-      <InputContainer>
-        <InputContent style={{ alignItems: 'flex-end' }}>
-          <Button to='/users'>SAVE</Button>
+        <InputContent style={{ alignItems: "flex-end" }}>
+          <Button to="/users">SAVE</Button>
         </InputContent>
         <InputContent>
           <Button onClick={routeChange}>CANCEL</Button>
