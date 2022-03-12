@@ -28,6 +28,14 @@ const Users = () => {
     let path = "/users/add-user";
     navigate(path);
   };
+  const routeChangeUpdate = () => {
+    let path = "/users/update-user";
+    navigate(path);
+  };
+  const routeChangeInfo = () => {
+    let path = "/users/user-info";
+    navigate(path);
+  };
   return (
     <UsersContainer>
       <Helmet>
@@ -67,10 +75,14 @@ const Users = () => {
           <OfficeTxt>01</OfficeTxt>
           <RemoteTxt>fully</RemoteTxt>
           <ActionBtn>
-            <BsPencil size={"100%"} />
+            <BsPencil
+              id="edit-button"
+              onClick={routeChangeUpdate}
+              size={"100%"}
+            />
           </ActionBtn>
           <ActionBtn>
-            <CgMoreO size={"100%"} />
+            <CgMoreO id="info-button" onClick={routeChangeInfo} size={"100%"} />
           </ActionBtn>
         </UserDetails>
         <UserDetails>

@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Helmet from "react-helmet";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import {
   AddUserContainer,
   Input,
@@ -20,6 +20,18 @@ import {
 } from "./AddUserPageElements";
 
 const AddUser = () => {
+  const location = useLocation();
+  const [switchVisibility, setSwitchVisibility] = useState(false);
+
+  function vis() {
+    if (location.pathname === "/users/add-user") setSwitchVisibility(false);
+    if (location.pathname === "/users/update-user") setSwitchVisibility(true);
+  }
+
+  useEffect(() => {
+    vis();
+  }, []);
+
   let navigate = useNavigate();
   const routeChange = () => {
     let path = "/users";
@@ -69,15 +81,17 @@ const AddUser = () => {
       </Helmet>
       <Title>
         Add New User
-        <SwitchContainer>
-          <SwitchBtn
-            id="switch-button"
-            onClick={handleSActive}
-            bgColor={sActive}
-          >
-            <Ball id="ball" />
-          </SwitchBtn>
-        </SwitchContainer>
+        {switchVisibility && (
+          <SwitchContainer>
+            <SwitchBtn
+              id="switch-button"
+              onClick={handleSActive}
+              bgColor={sActive}
+            >
+              <Ball id="ball" />
+            </SwitchBtn>
+          </SwitchContainer>
+        )}
       </Title>
       <InputContainer>
         <InputContent>

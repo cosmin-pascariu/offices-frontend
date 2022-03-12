@@ -29,6 +29,10 @@ const Buildings = () => {
     let path = "/buildings/add-building";
     navigate(path);
   };
+  const routeChangeInfo = () => {
+    let path = "/buildings/building-info";
+    navigate(path);
+  };
 
   return (
     <BuildingsContainer>
@@ -70,7 +74,11 @@ const Buildings = () => {
             <BuildingAddress>
               Chicago, George Whashington Street, 13
             </BuildingAddress>
-            <BsPencil size={"14px"} style={{ color: "#75ce55" }} />
+            <BsPencil
+              onClick={routeChangeInfo}
+              size={"16px"}
+              style={{ color: "#75ce55", cursor: "pointer" }}
+            />
           </CardInfo>
         </BuildingCard>
       </BuildingsContent>

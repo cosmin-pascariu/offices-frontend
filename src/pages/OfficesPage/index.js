@@ -152,7 +152,7 @@ const Offices = () => {
             GREATER
           </Option>
           <p>than</p>
-          <InputValue type={"number"} />
+          <InputValue id="filter-number" type={"number"} />
         </FilterContent>
       )}
 

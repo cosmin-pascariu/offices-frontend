@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const ImgContainer = styled.div`
   height: 260px;
@@ -6,9 +6,8 @@ export const ImgContainer = styled.div`
   border-radius: 10px;
   display: flex;
   align-items: center;
-  /* justify-content: center; */
 
-  input[type='file'] {
+  input[type="file"] {
     display: none;
     border-radius: 10px;
   }
