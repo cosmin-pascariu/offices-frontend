@@ -24,6 +24,7 @@ import {
 } from "../AddUserPage/AddUserPageElements";
 import { useNavigate } from "react-router-dom";
 import Img from "../../assets/images/employee.jpeg";
+import Helmet from "react-helmet";
 
 const ResponseRequest = () => {
   const [isActive, setIsActive] = useState(true);
@@ -46,6 +47,9 @@ const ResponseRequest = () => {
 
   return (
     <ResponseRequestContainer>
+      <Helmet>
+        <title>Offices | Response Request</title>
+      </Helmet>
       <TopContent>
         <LeftContainer>
           <RequestProfile>
@@ -60,6 +64,7 @@ const ResponseRequest = () => {
             <Label>Remote Work Approval</Label>
             <RadioButtons>
               <ApproveButton
+                id="approve-button"
                 onClick={handleAprove}
                 bColor={isActive}
                 uColor={isActive}
@@ -67,6 +72,7 @@ const ResponseRequest = () => {
                 Approve
               </ApproveButton>
               <RejectButton
+                id="reject-button"
                 onClick={handleReject}
                 bColor={isactive}
                 uColor={isactive}
@@ -77,8 +83,7 @@ const ResponseRequest = () => {
           </Content>
         </LeftContainer>
         <RequestMessage>
-          Lorem ipsafdssadfa fsad fdsafdsafdsaf dsaf sdaf sadf sadf sdaf dsafds
-          fads
+          The message sent by the employee will be displayed here.
         </RequestMessage>
       </TopContent>
 

@@ -22,8 +22,11 @@ export const Title = styled.p`
   color: #292929;
   font-size: 31px;
   font-weight: 400;
-  width: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 25px;
+  padding-right: 30px;
 `;
 
 export const InputContainer = styled.div`
@@ -142,4 +145,28 @@ export const Button = styled.button`
   &:hover {
     background-color: #424242;
   }
+`;
+
+export const SwitchContainer = styled.div`
+  display: flex;
+`;
+
+export const SwitchBtn = styled.button`
+  width: 80px;
+  height: 36px;
+  background-color: ${({ bgColor }) => (bgColor ? "#ff0000" : "#75ce55")};
+  border: none;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  transition: 0.2s ease-in-out;
+`;
+
+export const Ball = styled.div`
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  margin: 0 4px;
+  border-radius: 300px;
+  transition: 0.2s ease-in-out;
 `;

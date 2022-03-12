@@ -25,7 +25,7 @@ const Sidebar = () => {
       </SidebarLogo>
 
       <SidebarMenu>
-        <SidebarButton to="/users">
+        <SidebarButton id="users-button" to="/users">
           <Button
             uColor={location.pathname === "/users" ? true : false}
             bColor={location.pathname === "/users" ? true : false}
@@ -36,7 +36,7 @@ const Sidebar = () => {
             Users
           </ButtonText>
         </SidebarButton>
-        <SidebarButton to="/buildings">
+        <SidebarButton id="buildings-button" to="/buildings">
           <Button
             uColor={location.pathname === "/buildings" ? true : false}
             bColor={location.pathname === "/buildings" ? true : false}
@@ -49,7 +49,7 @@ const Sidebar = () => {
             Buildings
           </ButtonText>
         </SidebarButton>
-        <SidebarButton to="/offices">
+        <SidebarButton id="offices-button" to="/offices">
           <Button
             uColor={location.pathname === "/offices" ? true : false}
             bColor={location.pathname === "/offices" ? true : false}
@@ -60,7 +60,7 @@ const Sidebar = () => {
             Offices
           </ButtonText>
         </SidebarButton>
-        <SidebarButton to="/requests">
+        <SidebarButton id="requests-button" to="/requests">
           <Button
             uColor={location.pathname === "/requests" ? true : false}
             bColor={location.pathname === "/requests" ? true : false}
@@ -73,7 +73,7 @@ const Sidebar = () => {
         </SidebarButton>
       </SidebarMenu>
 
-      <SidebarButton to="/login" style={{ width: "70%" }}>
+      <SidebarButton id="logout-button" to="/login" style={{ width: "70%" }}>
         <Button uColor={false} bColor={false}>
           <CgLogOut size={"50%"} />
         </Button>

@@ -1,4 +1,5 @@
 import React from "react";
+import Helmet from "react-helmet";
 import { useNavigate } from "react-router-dom";
 import {
   Button,
@@ -19,50 +20,57 @@ const AddOffice = () => {
 
   return (
     <AddOfficeContainer>
+      <Helmet>
+        <title>Offices | Add New Office</title>
+      </Helmet>
       <Title>Add New Office</Title>
 
       <InputContainer>
         <InputContent>
-          <Label>Office Name</Label>
-          <Input type={"text"} />
+          <Label fo="office-name">Office Name</Label>
+          <Input id="office-name" type={"text"} />
         </InputContent>
         <InputContent>
-          <Label>Building</Label>
-          <Input type={"text"} />
-        </InputContent>
-      </InputContainer>
-
-      <InputContainer>
-        <InputContent>
-          <Label>Floor Number</Label>
-          <Input type={"text"} />
+          <Label for="building">Building</Label>
+          <Input id="building" type={"text"} />
         </InputContent>
       </InputContainer>
 
       <InputContainer>
         <InputContent>
-          <Label>Total Desks Count</Label>
-          <Input type={"text"} />
+          <Label for="floor-number">Floor Number</Label>
+          <Input id="floor-number" type={"text"} />
+        </InputContent>
+      </InputContainer>
+
+      <InputContainer>
+        <InputContent>
+          <Label for="total-desks">Total Desks Count</Label>
+          <Input is="total-desks" type={"text"} />
         </InputContent>
         <InputContent>
-          <Label>Usable Desks Count</Label>
-          <Input type={"text"} />
+          <Label for="usable-desks">Usable Desks Count</Label>
+          <Input id="usable-desks" type={"text"} />
         </InputContent>
       </InputContainer>
 
       <InputContainer>
         <InputContent style={{ marginBottom: "100px" }}>
-          <Label>Office Administrator Full Name (Optional)</Label>
-          <Input type={"text"} />
+          <Label for="office-admin-name">
+            Office Administrator Full Name (Optional)
+          </Label>
+          <Input id="office-admin-name" type={"text"} />
         </InputContent>
       </InputContainer>
 
       <InputContainer>
         <InputContent style={{ alignItems: "flex-end" }}>
-          <Button to="/users">SAVE</Button>
+          <Button id="save-button">SAVE</Button>
         </InputContent>
         <InputContent>
-          <Button onClick={routeChange}>CANCEL</Button>
+          <Button id="cancel-button" onClick={routeChange}>
+            CANCEL
+          </Button>
         </InputContent>
       </InputContainer>
     </AddOfficeContainer>

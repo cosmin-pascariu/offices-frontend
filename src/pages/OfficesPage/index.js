@@ -28,6 +28,7 @@ import { BsPencil } from "react-icons/bs";
 import { MdKeyboardArrowRight as Arrow } from "react-icons/md";
 import "./dropdown.css";
 import { useNavigate } from "react-router-dom";
+import Helmet from "react-helmet";
 
 const data = [
   { id: 0, label: "Offices where Free Desks count" },
@@ -106,31 +107,48 @@ const Offices = () => {
   };
   return (
     <OfficesContainer>
+      <Helmet>
+        <title>Offices | Offices</title>
+      </Helmet>
       <OfficesSearch>
         <Searchbar>
-          <InputText type={"text"} placeholder="Search user by name..." />
+          <InputText
+            id="searchbar"
+            type={"text"}
+            placeholder="Search user by name..."
+          />
           <SearchbarBtn>
-            <ImSearch size={"31px"} style={{ cursor: "pointer" }} />
+            <ImSearch
+              id="searchbar-button"
+              size={"31px"}
+              style={{ cursor: "pointer" }}
+            />
           </SearchbarBtn>
         </Searchbar>
-        <FilterButton onClick={toogleVisibility}>
+        <FilterButton id="filter-button" onClick={toogleVisibility}>
           <p>FILTER</p>
           <VscSettings
             size={"24px"}
             style={{ transform: "rotate(90deg)", fontWeight: "bolder" }}
           />
         </FilterButton>
-        <AddButton onClick={routeChange}>ADD NEW</AddButton>
+        <AddButton id="add-button" onClick={routeChange}>
+          ADD NEW
+        </AddButton>
       </OfficesSearch>
       {isVisible && (
         <FilterContent>
           <Dropdown />
           {/* <DropDownMenu /> */}
           <p>is</p>
-          <Option onClick={handleLess} uColor={isLess}>
+          <Option id="less-button" onClick={handleLess} uColor={isLess}>
             LESS
           </Option>
-          <Option onClick={handleGreater} uColor={isGreater}>
+          <Option
+            id="greater-button"
+            onClick={handleGreater}
+            uColor={isGreater}
+          >
             GREATER
           </Option>
           <p>than</p>

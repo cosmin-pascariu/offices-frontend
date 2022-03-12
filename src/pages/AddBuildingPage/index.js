@@ -1,6 +1,7 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import ImagePicker from '../../components/ImagePicker.js';
+import React from "react";
+import Helmet from "react-helmet";
+import { useNavigate } from "react-router-dom";
+import ImagePicker from "../../components/ImagePicker.js";
 import {
   Title,
   InputContainer,
@@ -8,7 +9,7 @@ import {
   Label,
   Input,
   Button,
-} from '../AddUserPage/AddUserPageElements';
+} from "../AddUserPage/AddUserPageElements";
 import {
   AddBuildingContainer,
   AddressInputContent,
@@ -16,33 +17,36 @@ import {
   AddressLabel,
   AddressExample,
   BuildingImage,
-} from './AddBuildingElements';
+} from "./AddBuildingElements";
 
 const AddBuilding = () => {
   let navigate = useNavigate();
   const routeChange = () => {
-    let path = '/buildings';
+    let path = "/buildings";
     navigate(path);
   };
   return (
     <AddBuildingContainer>
+      <Helmet>
+        <title>Offices | Add New Building</title>
+      </Helmet>
       <Title>Add New Building</Title>
 
       <InputContainer>
         <InputContent>
-          <Label>Building Name</Label>
-          <Input type={'text'} />
+          <Label for="building-name">Building Name</Label>
+          <Input id="building-name" type={"text"} />
         </InputContent>
         <InputContent>
-          <Label>Floor Count</Label>
-          <Input type={'text'} />
+          <Label for="for-count">Floor Count</Label>
+          <Input id="for-count" type={"text"} />
         </InputContent>
       </InputContainer>
 
       <InputContainer>
         <AddressInputContent>
-          <AddressLabel>Building Address</AddressLabel>
-          <AddressInput type={'text'} />
+          <AddressLabel for="building-address">Building Address</AddressLabel>
+          <AddressInput id="building-address" type={"text"} />
           <AddressExample>
             <em>Example: New York, Sweet Bakery Street, 25</em>
           </AddressExample>
@@ -52,12 +56,14 @@ const AddBuilding = () => {
       <BuildingImage>
         <ImagePicker />
       </BuildingImage>
-      <InputContainer style={{ transform: 'scale(0.75)' }}>
-        <InputContent style={{ alignItems: 'flex-end' }}>
-          <Button to='/users'>SAVE</Button>
+      <InputContainer style={{ transform: "scale(0.75)" }}>
+        <InputContent style={{ alignItems: "flex-end" }}>
+          <Button id="save-button">SAVE</Button>
         </InputContent>
         <InputContent>
-          <Button onClick={routeChange}>CANCEL</Button>
+          <Button id="cancel-button" onClick={routeChange}>
+            CANCEL
+          </Button>
         </InputContent>
       </InputContainer>
     </AddBuildingContainer>

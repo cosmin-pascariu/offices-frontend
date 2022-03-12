@@ -1,5 +1,6 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import Helmet from "react-helmet";
+import { useNavigate } from "react-router-dom";
 import {
   RequestsContainer,
   RequestsTitle,
@@ -12,12 +13,12 @@ import {
   PendingText,
   ViewButton,
   RequestsTable,
-} from './RequestsPageElements';
+} from "./RequestsPageElements";
 
 const Requests = () => {
   let navigate = useNavigate();
   const routeChange = () => {
-    let path = '/requests/response-request';
+    let path = "/requests/response-request";
     navigate(path);
   };
 
@@ -34,13 +35,18 @@ const Requests = () => {
         <Circle />
         <PendingText>Pending</PendingText>
       </PendingContainer>
-      <ViewButton onClick={routeChange}>VIEW</ViewButton>
+      <ViewButton id="view-buton" onClick={routeChange}>
+        VIEW
+      </ViewButton>
     </RequestContent>
   );
   const nComps = duplicate(oneComp, n);
 
   return (
     <RequestsContainer>
+      <Helmet>
+        <title>Offices | Requests</title>
+      </Helmet>
       <RequestsTitle>Remote work</RequestsTitle>
 
       <RequestsTable>{nComps}</RequestsTable>

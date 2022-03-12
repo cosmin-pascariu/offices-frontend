@@ -20,6 +20,7 @@ import { ImSearch } from "react-icons/im";
 import { CgMoreO } from "react-icons/cg";
 import { BsPencil } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
+import Helmet from "react-helmet";
 
 const Users = () => {
   let navigate = useNavigate();
@@ -29,14 +30,27 @@ const Users = () => {
   };
   return (
     <UsersContainer>
+      <Helmet>
+        <title>Offices | Users</title>
+      </Helmet>
       <UsersSearch>
         <Searchbar>
-          <InputText type={"text"} placeholder="Search user by name..." />
+          <InputText
+            id="searchbar"
+            type={"text"}
+            placeholder="Search user by name..."
+          />
           <SearchbarBtn>
-            <ImSearch size={"31px"} />
+            <ImSearch
+              id="searchbar-button"
+              size={"31px"}
+              style={{ cursor: "pointer" }}
+            />
           </SearchbarBtn>
         </Searchbar>
-        <AddButton onClick={routeChange}>ADD NEW</AddButton>
+        <AddButton id="add-button" onClick={routeChange}>
+          ADD NEW
+        </AddButton>
       </UsersSearch>
 
       <TableInfo>

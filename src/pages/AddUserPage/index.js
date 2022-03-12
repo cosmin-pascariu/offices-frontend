@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Helmet from "react-helmet";
 import { useNavigate } from "react-router-dom";
 import {
   AddUserContainer,
@@ -13,6 +14,9 @@ import {
   WorkModel,
   WorkOption,
   Percentage,
+  SwitchContainer,
+  SwitchBtn,
+  Ball,
 } from "./AddUserPageElements";
 
 const AddUser = () => {
@@ -50,35 +54,69 @@ const AddUser = () => {
     document.getElementById("percentage").style.backgroundColor = "#fff";
   };
 
+  const [sActive, setSActive] = useState(true);
+  const handleSActive = () => {
+    setSActive(!sActive);
+    document.getElementById("ball").style.transform = sActive
+      ? "translate(40px,0)"
+      : "";
+  };
+
   return (
     <AddUserContainer>
-      <Title>Add New User</Title>
+      <Helmet>
+        <title>Offices | Add New User</title>
+      </Helmet>
+      <Title>
+        Add New User
+        <SwitchContainer>
+          <SwitchBtn
+            id="switch-button"
+            onClick={handleSActive}
+            bgColor={sActive}
+          >
+            <Ball id="ball" />
+          </SwitchBtn>
+        </SwitchContainer>
+      </Title>
       <InputContainer>
         <InputContent>
-          <Label>First Name</Label>
-          <Input type={"text"} />
+          <Label for="first-name">First Name</Label>
+          <Input id="first-name" type={"text"} />
         </InputContent>
         <InputContent>
-          <Label>Last Name</Label>
-          <Input type={"text"} />
+          <Label for="last-name">Last Name</Label>
+          <Input id="last-name" type={"text"} />
         </InputContent>
       </InputContainer>
 
       <InputContainer>
         <InputContent>
-          <Label>E-mail Address</Label>
-          <Input type={"email"} />
+          <Label for="email">E-mail Address</Label>
+          <Input id="email" type={"email"} />
         </InputContent>
         <InputContent>
           <Label>Work Model</Label>
           <WorkModel>
-            <WorkOption onClick={handlePhysical} uColor={isPhysical}>
+            <WorkOption
+              id="physical-button"
+              onClick={handlePhysical}
+              uColor={isPhysical}
+            >
               Physical
             </WorkOption>
-            <WorkOption onClick={handleHybrid} uColor={isHybrid}>
+            <WorkOption
+              id="hybrid-button"
+              onClick={handleHybrid}
+              uColor={isHybrid}
+            >
               Hybrid
             </WorkOption>
-            <WorkOption onClick={handleRemote} uColor={isRemote}>
+            <WorkOption
+              id="remote-button"
+              onClick={handleRemote}
+              uColor={isRemote}
+            >
               Remote
             </WorkOption>
             <Percentage type={"text"} id="percentage" />
@@ -88,47 +126,51 @@ const AddUser = () => {
 
       <InputContainer>
         <InputContent>
-          <Label>Password</Label>
-          <Input type={"text"} />
+          <Label for="password">Password</Label>
+          <Input id="password" type={"text"} />
         </InputContent>
         <InputSmallContent>
-          <Label>Building</Label>
-          <SmallInput type={"text"} />
+          <Label for="building">Building</Label>
+          <SmallInput id="building" type={"text"} />
         </InputSmallContent>
         <InputSmallContent>
-          <Label>Office</Label>
-          <SmallInput type={"text"} />
+          <Label for="office">Office</Label>
+          <SmallInput id="office" type={"text"} />
         </InputSmallContent>
       </InputContainer>
 
       <InputContainer>
         <InputContent>
-          <Label>Role</Label>
-          <Input type={"text"} />
+          <Label for="role">Role</Label>
+          <Input id="role" type={"text"} />
         </InputContent>
         <InputContent>
-          <Label>Gender (Optional)</Label>
-          <Input type={"text"} />
+          <Label for="gender">Gender (Optional)</Label>
+          <Input id="gender" type={"text"} />
         </InputContent>
       </InputContainer>
 
       <InputContainer>
         <InputContent>
-          <Label>Birth Date</Label>
-          <Input type={"date"} />
+          <Label for="birth-date">Birth Date</Label>
+          <Input id="birth-date" type={"date"} />
         </InputContent>
         <InputContent>
-          <Label>Nationallity (Optional)</Label>
-          <Input type={"text"} />
+          <Label for="nationality">Nationality (Optional)</Label>
+          <Input id="nationality" type={"text"} />
         </InputContent>
       </InputContainer>
 
       <InputContainer>
         <InputContent style={{ alignItems: "flex-end" }}>
-          <Button to="/users">SAVE</Button>
+          <Button id="save-button" to="/users">
+            SAVE
+          </Button>
         </InputContent>
         <InputContent>
-          <Button onClick={routeChange}>CANCEL</Button>
+          <Button id="cancel-button" onClick={routeChange}>
+            CANCEL
+          </Button>
         </InputContent>
       </InputContainer>
     </AddUserContainer>
