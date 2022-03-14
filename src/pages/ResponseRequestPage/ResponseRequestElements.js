@@ -31,14 +31,12 @@ export const LeftContainer = styled.div`
 `;
 
 export const RequestMessage = styled.section`
-  width: 50%;
-  height: 85%;
-  background-color: #f8f8f8;
-  padding: 10px;
+  width: 100%;
+  height: 50%;
+  padding: 10px 0;
   border-radius: 10px;
   margin: 5px 0;
   font-size: 16px;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
 `;
 
 export const RequestProfile = styled.div`

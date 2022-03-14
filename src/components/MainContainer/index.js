@@ -18,6 +18,9 @@ import AddOffice from "../../pages/AddOfficePage";
 import ResponseRequest from "../../pages/ResponseRequestPage";
 import UserInfo from "../../pages/UserInfoPage";
 import BuildingInfo from "../../pages/BuildingInfoPage";
+import SendRequest from "../../pages/SendRequestPage";
+import MyRequests from "../../pages/MyRequestsPage";
+import UpdateBuilding from "../../pages/UpdateBuildingPage";
 
 const MainContainer = () => {
   return (
@@ -47,6 +50,18 @@ const MainContainer = () => {
               <Route
                 path="/buildings/building-info"
                 element={<BuildingInfo />}
+              ></Route>
+              <Route
+                path="/requests/add-request"
+                element={<SendRequest />}
+              ></Route>
+              <Route
+                path="/requests/my-requests"
+                element={<MyRequests />}
+              ></Route>
+              <Route
+                path="/buildings/update-building"
+                element={<UpdateBuilding />}
               ></Route>
             </Routes>
           </RouterContainer>

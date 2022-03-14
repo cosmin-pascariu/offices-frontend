@@ -2,16 +2,16 @@ import styled from "styled-components";
 
 export const UsersContainer = styled.div`
   width: 90%;
-  height: 90%;
+  height: 100%;
   max-width: 1000px;
-  max-height: 800px;
+  max-height: calc(100vh - 76px - 50px);
 `;
 
 export const Table = styled.div`
-  max-height: 81%;
-  height: 700px;
+  height: ${(props) =>
+    !props.isFilterActive ? "calc(100% - 150px)" : "calc(100% - 150px - 75px)"};
   max-width: 1050px;
-  overflow: auto;
+  overflow-y: auto;
 `;
 
 export const UsersSearch = styled.div`
@@ -28,7 +28,7 @@ export const Searchbar = styled.div`
 
 export const InputText = styled.input`
   width: 100%;
-  height: 62px;
+  height: 50px;
   background-color: #fff;
   border-radius: 10px 0 0 10px;
   padding-left: 25px;
@@ -39,8 +39,8 @@ export const InputText = styled.input`
 `;
 
 export const SearchbarBtn = styled.div`
-  height: 62px;
-  width: 62px;
+  height: 50px;
+  width: 50px;
   background-color: #fff;
   border-radius: 0 10px 10px 0;
   display: flex;
@@ -50,8 +50,8 @@ export const SearchbarBtn = styled.div`
 
 export const AddButton = styled.button`
   background-color: #292929;
-  width: 162px;
-  height: 62px;
+  width: 140px;
+  height: 50px;
   border-radius: 10px;
   border: none;
   color: #fff;
@@ -72,7 +72,7 @@ export const AddButton = styled.button`
 export const TableInfo = styled.tr`
   max-width: 1050px;
   width: 100%;
-  height: 62px;
+  height: 50px;
   margin-top: 25px;
   border-radius: 10px;
   background-color: #d8d8d8;
@@ -106,7 +106,7 @@ export const ActionsTxt = styled.td`
 export const UserDetails = styled.tr`
   max-width: 1050px;
   width: 100%;
-  height: 62px;
+  height: 50px;
   margin-top: 7px;
   border-radius: 10px;
   background-color: #fff;

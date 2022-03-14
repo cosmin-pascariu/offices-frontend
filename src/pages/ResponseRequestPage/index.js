@@ -25,18 +25,17 @@ import {
 import { useNavigate } from "react-router-dom";
 import Img from "../../assets/images/employee.jpeg";
 import Helmet from "react-helmet";
+import Percentagebar from "../../components/PercentageBar";
 
 const ResponseRequest = () => {
-  const [isActive, setIsActive] = useState(true);
-  const [isactive, setisactive] = useState(false);
+  const [isApproveBtnActive, setIsApproveBtnActive] = useState(true);
 
-  const handleAprove = () => {
-    setIsActive(true);
-    setisactive(false);
+  const handleAproveBtn = () => {
+    setIsApproveBtnActive(true);
   };
-  const handleReject = () => {
-    setIsActive(false);
-    setisactive(true);
+
+  const handleRejectBtn = () => {
+    setIsApproveBtnActive(false);
   };
 
   let navigate = useNavigate();
@@ -44,6 +43,7 @@ const ResponseRequest = () => {
     let path = "/requests";
     navigate(path);
   };
+  const percentage = 66;
 
   return (
     <ResponseRequestContainer>
@@ -65,42 +65,55 @@ const ResponseRequest = () => {
             <RadioButtons>
               <ApproveButton
                 id="approve-button"
-                onClick={handleAprove}
-                bColor={isActive}
-                uColor={isActive}
+                onClick={handleAproveBtn}
+                bColor={isApproveBtnActive}
+                uColor={isApproveBtnActive}
               >
                 Approve
               </ApproveButton>
               <RejectButton
                 id="reject-button"
-                onClick={handleReject}
-                bColor={isactive}
-                uColor={isactive}
+                onClick={handleRejectBtn}
+                bColor={!isApproveBtnActive}
+                uColor={!isApproveBtnActive}
               >
                 Reject
               </RejectButton>
             </RadioButtons>
           </Content>
         </LeftContainer>
-        <RequestMessage>
-          The message sent by the employee will be displayed here.
-        </RequestMessage>
+        <LeftContainer>
+          <RequestMessage>
+            The message sent by the employee will be displayed here.
+          </RequestMessage>
+          <Content>
+            <Percentagebar></Percentagebar>
+          </Content>
+        </LeftContainer>
       </TopContent>
+      <Content
+        style={{ marginBottom: "20px", minHeight: "260px", width: "100%" }}
+      >
+        {isApproveBtnActive ? (
+          <>
+            <Label>Message approval</Label>
+            <Textarea
+              id="approve-message"
+              value="Hi [name],
+              Your request for [..%] remote work has been approved. I hope you continue to show the same involvement that you have had so far.
+              Regards,
+              [admin name]"
+            />
+          </>
+        ) : (
+          <>
+            <Label>The reason why the request is rejected</Label>
+            <Textarea></Textarea>
+          </>
+        )}
 
-      {isActive && (
-        <Content style={{ marginBottom: "200px" }}>
-          <Label>Remote Work Percentage</Label>
-          <Input type={"text"} />
-        </Content>
-      )}
-      {isactive && (
-        <Content
-          style={{ marginBottom: "20px", minHeight: "260px", width: "100%" }}
-        >
-          <Label>The reason why the request is rejected</Label>
-          <Textarea />
-        </Content>
-      )}
+        {/* <Textarea>{isApproveBtnActive ? "marce,l" : "tata"}</Textarea> */}
+      </Content>
 
       <InputContainer>
         <InputContent style={{ alignItems: "flex-end" }}>

@@ -4,6 +4,7 @@ import {
   InputText,
   SearchbarBtn,
   AddButton,
+  Table,
 } from "../UsersPage/UsersPageElements";
 import {
   OfficesContainer,
@@ -105,6 +106,23 @@ const Offices = () => {
     setIsLess(false);
     setIsGreater(true);
   };
+  const duplicate = (x, n) => Array.from(new Array(n), () => x);
+  const n = 50;
+  const oneComp = (
+    <OfficeDetails>
+      <NameTxt>M-39</NameTxt>
+      <BuildingTxt>Seccondary</BuildingTxt>
+      <FloorTxt>5</FloorTxt>
+      <TotalDesksTxt>20</TotalDesksTxt>
+      <ActionBtn>
+        <BsPencil size={"100%"} />
+      </ActionBtn>
+      <ActionBtn>
+        <CgMoreO size={"100%"} />
+      </ActionBtn>
+    </OfficeDetails>
+  );
+  const nComps = duplicate(oneComp, n);
   return (
     <OfficesContainer>
       <Helmet>
@@ -120,8 +138,8 @@ const Offices = () => {
           <SearchbarBtn>
             <ImSearch
               id="searchbar-button"
-              size={"31px"}
-              style={{ cursor: "pointer" }}
+              size={"50%"}
+              style={{ cursor: "pointer", color: "#292929" }}
             />
           </SearchbarBtn>
         </Searchbar>
@@ -139,7 +157,6 @@ const Offices = () => {
       {isVisible && (
         <FilterContent>
           <Dropdown />
-          {/* <DropDownMenu /> */}
           <p>is</p>
           <Option id="less-button" onClick={handleLess} uColor={isLess}>
             LESS
@@ -152,7 +169,7 @@ const Offices = () => {
             GREATER
           </Option>
           <p>than</p>
-          <InputValue id="filter-number" type={"number"} />
+          <InputValue id="filter-number" min={0} max={100} type={"number"} />
         </FilterContent>
       )}
 
@@ -164,78 +181,7 @@ const Offices = () => {
         <ActionsTxt>Actions</ActionsTxt>
       </TableInfo>
 
-      <OfficeDetails>
-        <NameTxt>M-39</NameTxt>
-        <BuildingTxt>Seccondary</BuildingTxt>
-        <FloorTxt>5</FloorTxt>
-        <TotalDesksTxt>20</TotalDesksTxt>
-        <ActionBtn>
-          <BsPencil size={"100%"} />
-        </ActionBtn>
-        <ActionBtn>
-          <CgMoreO size={"100%"} />
-        </ActionBtn>
-      </OfficeDetails>
-      <OfficeDetails>
-        <NameTxt>M-39</NameTxt>
-        <BuildingTxt>Seccondary</BuildingTxt>
-        <FloorTxt>5</FloorTxt>
-        <TotalDesksTxt>20</TotalDesksTxt>
-        <ActionBtn>
-          <BsPencil size={"100%"} />
-        </ActionBtn>
-        <ActionBtn>
-          <CgMoreO size={"100%"} />
-        </ActionBtn>
-      </OfficeDetails>
-      <OfficeDetails>
-        <NameTxt>M-39</NameTxt>
-        <BuildingTxt>Seccondary</BuildingTxt>
-        <FloorTxt>5</FloorTxt>
-        <TotalDesksTxt>20</TotalDesksTxt>
-        <ActionBtn>
-          <BsPencil size={"100%"} />
-        </ActionBtn>
-        <ActionBtn>
-          <CgMoreO size={"100%"} />
-        </ActionBtn>
-      </OfficeDetails>
-      <OfficeDetails>
-        <NameTxt>M-39</NameTxt>
-        <BuildingTxt>Seccondary</BuildingTxt>
-        <FloorTxt>5</FloorTxt>
-        <TotalDesksTxt>20</TotalDesksTxt>
-        <ActionBtn>
-          <BsPencil size={"100%"} />
-        </ActionBtn>
-        <ActionBtn>
-          <CgMoreO size={"100%"} />
-        </ActionBtn>
-      </OfficeDetails>
-      <OfficeDetails>
-        <NameTxt>M-39</NameTxt>
-        <BuildingTxt>Seccondary</BuildingTxt>
-        <FloorTxt>5</FloorTxt>
-        <TotalDesksTxt>20</TotalDesksTxt>
-        <ActionBtn>
-          <BsPencil size={"100%"} />
-        </ActionBtn>
-        <ActionBtn>
-          <CgMoreO size={"100%"} />
-        </ActionBtn>
-      </OfficeDetails>
-      <OfficeDetails>
-        <NameTxt>M-39</NameTxt>
-        <BuildingTxt>Seccondary</BuildingTxt>
-        <FloorTxt>5</FloorTxt>
-        <TotalDesksTxt>20</TotalDesksTxt>
-        <ActionBtn>
-          <BsPencil size={"100%"} />
-        </ActionBtn>
-        <ActionBtn>
-          <CgMoreO size={"100%"} />
-        </ActionBtn>
-      </OfficeDetails>
+      <Table isFilterActive={isVisible}>{nComps}</Table>
     </OfficesContainer>
   );
 };

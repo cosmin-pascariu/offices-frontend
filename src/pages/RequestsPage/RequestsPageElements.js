@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const RequestsContainer = styled.div`
   width: 90%;
   height: 90%;
+  max-width: 1000px;
+  max-height: calc(100vh - 76px - 50px);
 `;
 
 export const RequestsTitle = styled.h1`
@@ -13,8 +15,7 @@ export const RequestsTitle = styled.h1`
 `;
 
 export const RequestsTable = styled.div`
-  max-height: 90%;
-  height: 820px;
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -24,7 +25,7 @@ export const RequestsTable = styled.div`
 
 export const RequestContent = styled.div`
   width: 100%;
-  height: 71px;
+  height: 60px;
   display: flex;
   background-color: #fff;
   align-items: center;
@@ -76,8 +77,8 @@ export const PendingText = styled.p`
 `;
 
 export const ViewButton = styled.button`
-  width: 100px;
-  height: 50px;
+  width: 80px;
+  height: 40px;
   border-radius: 10px;
   background-color: #292929;
   outline: none;

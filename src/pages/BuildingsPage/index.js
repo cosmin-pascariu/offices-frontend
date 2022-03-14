@@ -20,13 +20,18 @@ import {
 import MainBImg from "../../assets/images/mainBuilding.png";
 import { FaBuffer } from "react-icons/fa";
 import { BsPencil } from "react-icons/bs";
+import { CgMoreO } from "react-icons/cg";
 import { useNavigate } from "react-router-dom";
 import Helmet from "react-helmet";
 
 const Buildings = () => {
   let navigate = useNavigate();
-  const routeChange = () => {
+  const routeChangeAdd = () => {
     let path = "/buildings/add-building";
+    navigate(path);
+  };
+  const routeChangeEdit = () => {
+    let path = "/buildings/update-building";
     navigate(path);
   };
   const routeChangeInfo = () => {
@@ -49,12 +54,12 @@ const Buildings = () => {
           <SearchbarBtn>
             <ImSearch
               id="searchbar-button"
-              size={"31px"}
-              style={{ cursor: "pointer" }}
+              size={"50%"}
+              style={{ cursor: "pointer", color: "#292929" }}
             />
           </SearchbarBtn>
         </Searchbar>
-        <AddButton id="add-button" onClick={routeChange}>
+        <AddButton id="add-button" onClick={routeChangeAdd}>
           ADD NEW
         </AddButton>
       </BuildingsSearch>
@@ -75,8 +80,15 @@ const Buildings = () => {
               Chicago, George Whashington Street, 13
             </BuildingAddress>
             <BsPencil
+              id="update-button"
+              onClick={routeChangeEdit}
+              size={"14px"}
+              style={{ color: "#75ce55", cursor: "pointer" }}
+            />
+            <CgMoreO
+              id="info-button"
               onClick={routeChangeInfo}
-              size={"16px"}
+              size={"15px"}
               style={{ color: "#75ce55", cursor: "pointer" }}
             />
           </CardInfo>

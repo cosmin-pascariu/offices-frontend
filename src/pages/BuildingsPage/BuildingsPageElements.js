@@ -37,6 +37,7 @@ export const BuildingImage = styled.img`
   height: 182px;
   border-radius: 10px 10px 0 0;
   background-color: #434532;
+  object-fit: cover;
 `;
 
 export const CardInfo = styled.div`

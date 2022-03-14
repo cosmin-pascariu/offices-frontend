@@ -24,18 +24,32 @@ import Helmet from "react-helmet";
 
 const Users = () => {
   let navigate = useNavigate();
-  const routeChange = () => {
-    let path = "/users/add-user";
-    navigate(path);
-  };
-  const routeChangeUpdate = () => {
-    let path = "/users/update-user";
-    navigate(path);
-  };
-  const routeChangeInfo = () => {
-    let path = "/users/user-info";
-    navigate(path);
-  };
+
+  const duplicate = (x, n) => Array.from(new Array(n), () => x);
+  const n = 50;
+  const oneComp = (
+    <UserDetails>
+      <NameTxt>Vasile Bordei</NameTxt>
+      <BuildingTxt>C2</BuildingTxt>
+      <OfficeTxt>01</OfficeTxt>
+      <RemoteTxt>fully</RemoteTxt>
+      <ActionBtn>
+        <BsPencil
+          id="edit-button"
+          onClick={() => navigate("/users/update-user")}
+          size={"100%"}
+        />
+      </ActionBtn>
+      <ActionBtn>
+        <CgMoreO
+          id="info-button"
+          onClick={() => navigate("/users/user-info")}
+          size={"100%"}
+        />
+      </ActionBtn>
+    </UserDetails>
+  );
+  const nComps = duplicate(oneComp, n);
   return (
     <UsersContainer>
       <Helmet>
@@ -51,12 +65,12 @@ const Users = () => {
           <SearchbarBtn>
             <ImSearch
               id="searchbar-button"
-              size={"31px"}
-              style={{ cursor: "pointer" }}
+              size={"50%"}
+              style={{ cursor: "pointer", color: "#292929" }}
             />
           </SearchbarBtn>
         </Searchbar>
-        <AddButton id="add-button" onClick={routeChange}>
+        <AddButton id="add-button" onClick={() => navigate("/users/add-user")}>
           ADD NEW
         </AddButton>
       </UsersSearch>
@@ -68,180 +82,7 @@ const Users = () => {
         <RemoteTxt>Remote</RemoteTxt>
         <ActionsTxt>Actions</ActionsTxt>
       </TableInfo>
-      <Table>
-        <UserDetails>
-          <NameTxt>Vasile Bordei</NameTxt>
-          <BuildingTxt>C2</BuildingTxt>
-          <OfficeTxt>01</OfficeTxt>
-          <RemoteTxt>fully</RemoteTxt>
-          <ActionBtn>
-            <BsPencil
-              id="edit-button"
-              onClick={routeChangeUpdate}
-              size={"100%"}
-            />
-          </ActionBtn>
-          <ActionBtn>
-            <CgMoreO id="info-button" onClick={routeChangeInfo} size={"100%"} />
-          </ActionBtn>
-        </UserDetails>
-        <UserDetails>
-          <NameTxt>Vasile Bordei</NameTxt>
-          <BuildingTxt>C2</BuildingTxt>
-          <OfficeTxt>01</OfficeTxt>
-          <RemoteTxt>fully</RemoteTxt>
-          <ActionBtn>
-            <BsPencil size={"100%"} />
-          </ActionBtn>
-          <ActionBtn>
-            <CgMoreO size={"100%"} />
-          </ActionBtn>
-        </UserDetails>
-        <UserDetails>
-          <NameTxt>Vasile Bordei</NameTxt>
-          <BuildingTxt>C2</BuildingTxt>
-          <OfficeTxt>01</OfficeTxt>
-          <RemoteTxt>fully</RemoteTxt>
-          <ActionBtn>
-            <BsPencil size={"100%"} />
-          </ActionBtn>
-          <ActionBtn>
-            <CgMoreO size={"100%"} />
-          </ActionBtn>
-        </UserDetails>
-        <UserDetails>
-          <NameTxt>Vasile Bordei</NameTxt>
-          <BuildingTxt>C2</BuildingTxt>
-          <OfficeTxt>01</OfficeTxt>
-          <RemoteTxt>fully</RemoteTxt>
-          <ActionBtn>
-            <BsPencil size={"100%"} />
-          </ActionBtn>
-          <ActionBtn>
-            <CgMoreO size={"100%"} />
-          </ActionBtn>
-        </UserDetails>
-        <UserDetails>
-          <NameTxt>Vasile Bordei</NameTxt>
-          <BuildingTxt>C2</BuildingTxt>
-          <OfficeTxt>01</OfficeTxt>
-          <RemoteTxt>fully</RemoteTxt>
-          <ActionBtn>
-            <BsPencil size={"100%"} />
-          </ActionBtn>
-          <ActionBtn>
-            <CgMoreO size={"100%"} />
-          </ActionBtn>
-        </UserDetails>
-        <UserDetails>
-          <NameTxt>Vasile Bordei</NameTxt>
-          <BuildingTxt>C2</BuildingTxt>
-          <OfficeTxt>01</OfficeTxt>
-          <RemoteTxt>fully</RemoteTxt>
-          <ActionBtn>
-            <BsPencil size={"100%"} />
-          </ActionBtn>
-          <ActionBtn>
-            <CgMoreO size={"100%"} />
-          </ActionBtn>
-        </UserDetails>
-        <UserDetails>
-          <NameTxt>Vasile Bordei</NameTxt>
-          <BuildingTxt>C2</BuildingTxt>
-          <OfficeTxt>01</OfficeTxt>
-          <RemoteTxt>fully</RemoteTxt>
-          <ActionBtn>
-            <BsPencil size={"100%"} />
-          </ActionBtn>
-          <ActionBtn>
-            <CgMoreO size={"100%"} />
-          </ActionBtn>
-        </UserDetails>
-        <UserDetails>
-          <NameTxt>Vasile Bordei</NameTxt>
-          <BuildingTxt>C2</BuildingTxt>
-          <OfficeTxt>01</OfficeTxt>
-          <RemoteTxt>fully</RemoteTxt>
-          <ActionBtn>
-            <BsPencil size={"100%"} />
-          </ActionBtn>
-          <ActionBtn>
-            <CgMoreO size={"100%"} />
-          </ActionBtn>
-        </UserDetails>
-        <UserDetails>
-          <NameTxt>Vasile Bordei</NameTxt>
-          <BuildingTxt>C2</BuildingTxt>
-          <OfficeTxt>01</OfficeTxt>
-          <RemoteTxt>fully</RemoteTxt>
-          <ActionBtn>
-            <BsPencil size={"100%"} />
-          </ActionBtn>
-          <ActionBtn>
-            <CgMoreO size={"100%"} />
-          </ActionBtn>
-        </UserDetails>
-        <UserDetails>
-          <NameTxt>Vasile Bordei</NameTxt>
-          <BuildingTxt>C2</BuildingTxt>
-          <OfficeTxt>01</OfficeTxt>
-          <RemoteTxt>fully</RemoteTxt>
-          <ActionBtn>
-            <BsPencil size={"100%"} />
-          </ActionBtn>
-          <ActionBtn>
-            <CgMoreO size={"100%"} />
-          </ActionBtn>
-        </UserDetails>
-        <UserDetails>
-          <NameTxt>Vasile Bordei</NameTxt>
-          <BuildingTxt>C2</BuildingTxt>
-          <OfficeTxt>01</OfficeTxt>
-          <RemoteTxt>fully</RemoteTxt>
-          <ActionBtn>
-            <BsPencil size={"100%"} />
-          </ActionBtn>
-          <ActionBtn>
-            <CgMoreO size={"100%"} />
-          </ActionBtn>
-        </UserDetails>
-        <UserDetails>
-          <NameTxt>Vasile Bordei</NameTxt>
-          <BuildingTxt>C2</BuildingTxt>
-          <OfficeTxt>01</OfficeTxt>
-          <RemoteTxt>fully</RemoteTxt>
-          <ActionBtn>
-            <BsPencil size={"100%"} />
-          </ActionBtn>
-          <ActionBtn>
-            <CgMoreO size={"100%"} />
-          </ActionBtn>
-        </UserDetails>
-        <UserDetails>
-          <NameTxt>Vasile Bordei</NameTxt>
-          <BuildingTxt>C2</BuildingTxt>
-          <OfficeTxt>01</OfficeTxt>
-          <RemoteTxt>fully</RemoteTxt>
-          <ActionBtn>
-            <BsPencil size={"100%"} />
-          </ActionBtn>
-          <ActionBtn>
-            <CgMoreO size={"100%"} />
-          </ActionBtn>
-        </UserDetails>
-        <UserDetails>
-          <NameTxt>Vasile Bordei</NameTxt>
-          <BuildingTxt>C2</BuildingTxt>
-          <OfficeTxt>01</OfficeTxt>
-          <RemoteTxt>fully</RemoteTxt>
-          <ActionBtn>
-            <BsPencil size={"100%"} />
-          </ActionBtn>
-          <ActionBtn>
-            <CgMoreO size={"100%"} />
-          </ActionBtn>
-        </UserDetails>
-      </Table>
+      <Table>{nComps}</Table>
     </UsersContainer>
   );
 };

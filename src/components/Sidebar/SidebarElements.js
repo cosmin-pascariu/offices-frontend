@@ -1,11 +1,11 @@
-import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 const buttonColors = {
-  cG: '#75ce55',
-  cB: '#3c3c3c',
-  cW: '#fff',
-  c8E: '#8e8e8e',
+  cG: "#75ce55",
+  cB: "#3c3c3c",
+  cW: "#fff",
+  c8E: "#8e8e8e",
 };
 
 export const SidebarContainer = styled.div`
@@ -18,6 +18,8 @@ export const SidebarContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 10px 0 30px 0;
+  position: sticky;
+  top: 0;
 
   @media screen and (max-width: 768px) {
     display: none;
@@ -39,7 +41,7 @@ export const SidebarTitle = styled.div`
   h2 {
     font-size: 36px;
     padding-left: 25px;
-    font-family: 'Raleway', sans-serif;
+    font-family: "Raleway", sans-serif;
     font-weight: 500;
   }
 `;

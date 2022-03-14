@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 export const OfficesContainer = styled.div`
   width: 90%;
-  height: 90%;
+  height: 100%;
   max-width: 1000px;
-  max-height: 800px;
+  max-height: calc(100vh - 76px - 50px);
 `;
 
 export const OfficesSearch = styled.div`
@@ -19,11 +19,12 @@ export const OfficesSearch = styled.div`
 export const FilterButton = styled.button`
   background-color: #c4c4c4;
   width: 131px;
-  height: 62px;
+  height: 50px;
   margin-left: 25px;
+  margin-right: 25px;
   border-radius: 10px;
   border: none;
-  color: #fff;
+  color: #292929;
   font-size: 16px;
   font-weight: 500;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
@@ -43,7 +44,7 @@ export const FilterButton = styled.button`
 
 export const FilterContent = styled.div`
   width: 75.5%;
-  height: 62px;
+  height: 50px;
   background-color: #fff;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
@@ -56,13 +57,6 @@ export const FilterContent = styled.div`
     color: #8e8e8e;
     margin: 0 10px;
   }
-`;
-
-export const DropDownMenu = styled.div`
-  height: 31px;
-  width: 310px;
-  border-radius: 5px;
-  background-color: #efefef;
 `;
 
 export const Option = styled.button`
@@ -91,10 +85,10 @@ export const InputValue = styled.input`
 export const TableInfo = styled.tr`
   width: 100%;
   max-width: 1050px;
-  height: 62px;
+  height: 50px;
   margin-top: 25px;
   border-radius: 10px;
-  background-color: #d8d8d8;
+  background-color: #c4c4c4;
   display: flex;
   align-items: center;
   font-size: 20px;
@@ -125,7 +119,7 @@ export const ActionsTxt = styled.td`
 export const OfficeDetails = styled.tr`
   width: 100%;
   max-width: 1050px;
-  height: 62px;
+  height: 50px;
   margin-top: 7px;
   border-radius: 10px;
   background-color: #fff;

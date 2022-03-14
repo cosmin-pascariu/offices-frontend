@@ -2,19 +2,17 @@ import styled from "styled-components";
 
 export const AddUserContainer = styled.div`
   width: 90%;
-  height: 90%;
-  max-width: 1240px;
-  max-height: 900px;
+  max-width: 1000px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  padding: 50px 150px 50px 150px;
+  padding: 50px 25px 50px 50px;
   color: #292929;
 
   @media screen and (max-width: 768px) {
-    padding: 50px 15px 5px 15px;
+    padding: 50px 0 10px 50px;
   }
 `;
 
@@ -32,16 +30,26 @@ export const Title = styled.p`
 export const InputContainer = styled.div`
   width: 100%;
   display: flex;
+  max-height: 100%;
+
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+  }
 `;
 
 export const InputContent = styled.div`
   width: 50%;
+  min-width: 258px;
   height: 75px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin-bottom: 15px;
   padding-right: 30px;
+
+  @media screen and (max-width: 1000px) {
+    width: 100%;
+  }
 `;
 
 export const InputSmallContent = styled.div`
@@ -97,6 +105,13 @@ export const WorkOption = styled.button`
   cursor: pointer;
   border-radius: 10px;
   transition: 0.3s ease-in-out;
+
+  @media screen and (max-width: 768px) {
+    font-size: 8px;
+    font-weight: 500;
+    padding: 0 2px;
+    margin: 0 2px;
+  }
 `;
 
 export const Percentage = styled.input`
@@ -128,8 +143,8 @@ export const SmallInput = styled.input`
 
 export const Button = styled.button`
   background-color: #292929;
-  width: 162px;
-  height: 62px;
+  width: 150px;
+  height: 50px;
   border-radius: 10px;
   border: none;
   color: #fff;
@@ -141,6 +156,7 @@ export const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
 
   &:hover {
     background-color: #424242;
