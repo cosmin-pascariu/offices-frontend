@@ -118,7 +118,7 @@ const UpdateUser = () => {
   return (
     <AddUserContainer>
       <Helmet>
-        <title>Offices | Add New User</title>
+        <title>Offices | Update User</title>
       </Helmet>
       <Title>
         Update User

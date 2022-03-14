@@ -18,6 +18,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-overflow: ellipsis;
 }
 
 .dropdown-body {
@@ -25,6 +26,7 @@
   padding: 5px;
   border-top: 1px solid #e5e8ec;
   display: none;
+  z-index: 10;
 }
 
 .dropdown-body.open {
@@ -61,4 +63,12 @@
 
 .icon.open {
   transform: rotate(90deg);
+}
+
+.buildings-dropdown {
+  z-index: 10;
+}
+
+.offices-dropdown {
+  z-index: 0;
 }

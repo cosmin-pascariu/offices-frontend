@@ -6,7 +6,7 @@ import {
   NameRequest,
   RequestProfile,
   RoleRequest,
-} from "../ResponseRequestPage/ResponseRequestElements";
+} from "../RequestResponsePage/RequestResponseElements";
 import {
   ButtonContainer,
   InfoContainer,

@@ -30,6 +30,7 @@ import { MdKeyboardArrowRight as Arrow } from "react-icons/md";
 import "./dropdown.css";
 import { useNavigate } from "react-router-dom";
 import Helmet from "react-helmet";
+import { Title } from "../AddUserPage/AddUserPageElements";
 
 const data = [
   { id: 0, label: "Offices where Free Desks count" },
@@ -95,6 +96,11 @@ const Offices = () => {
     navigate(path);
   };
 
+  const routeOffice = () => {
+    let path = "/offices/update-office";
+    navigate(path);
+  };
+
   const [isLess, setIsLess] = useState(true);
   const [isGreater, setIsGreater] = useState(false);
 
@@ -115,7 +121,7 @@ const Offices = () => {
       <FloorTxt>5</FloorTxt>
       <TotalDesksTxt>20</TotalDesksTxt>
       <ActionBtn>
-        <BsPencil size={"100%"} />
+        <BsPencil onClick={routeOffice} size={"100%"} />
       </ActionBtn>
       <ActionBtn>
         <CgMoreO size={"100%"} />
@@ -128,6 +134,7 @@ const Offices = () => {
       <Helmet>
         <title>Offices | Offices</title>
       </Helmet>
+
       <OfficesSearch>
         <Searchbar>
           <InputText

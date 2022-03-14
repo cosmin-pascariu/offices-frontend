@@ -15,7 +15,7 @@ import {
   TopContent,
   LeftContainer,
   RequestMessage,
-} from "./ResponseRequestElements";
+} from "./RequestResponseElements";
 import {
   Button,
   InputContainer,
@@ -26,7 +26,7 @@ import Img from "../../assets/images/employee.jpeg";
 import Helmet from "react-helmet";
 import Percentagebar from "../../components/PercentageBar";
 
-const ResponseRequest = () => {
+const RequestResponse = () => {
   const [isApproveBtnActive, setIsApproveBtnActive] = useState(true);
 
   const handleAproveBtn = () => {
@@ -46,7 +46,7 @@ const ResponseRequest = () => {
   return (
     <ResponseRequestContainer>
       <Helmet>
-        <title>Offices | Response Request</title>
+        <title>Offices | Request Response</title>
       </Helmet>
       <TopContent>
         <LeftContainer>
@@ -95,22 +95,18 @@ const ResponseRequest = () => {
         {isApproveBtnActive ? (
           <>
             <Label>Message approval</Label>
-            <Textarea
-              id="approve-message"
-              value="Hi [name],
-              Your request for [..%] remote work has been approved. I hope you continue to show the same involvement that you have had so far.
-              Regards,
-              [admin name]"
-            />
+            <Textarea style={{ resize: "none" }} id="approve-message">
+              Hi [name], &#13;&#10; Your request for remote work has been
+              approved. I hope you continue to show the same involvement that
+              you have had so far. Regards, [admin name]
+            </Textarea>
           </>
         ) : (
           <>
             <Label>The reason why the request is rejected</Label>
-            <Textarea></Textarea>
+            <Textarea style={{ resize: "none" }} id="reject-message"></Textarea>
           </>
         )}
-
-        {/* <Textarea>{isApproveBtnActive ? "marce,l" : "tata"}</Textarea> */}
       </Content>
 
       <InputContainer>
@@ -125,4 +121,4 @@ const ResponseRequest = () => {
   );
 };
 
-export default ResponseRequest;
+export default RequestResponse;

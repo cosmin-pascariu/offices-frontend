@@ -15,13 +15,14 @@ import Requests from "../../pages/RequestsPage";
 import AddUser from "../../pages/AddUserPage";
 import AddBuilding from "../../pages/AddBuildingPage";
 import AddOffice from "../../pages/AddOfficePage";
-import ResponseRequest from "../../pages/ResponseRequestPage";
 import UserInfo from "../../pages/UserInfoPage";
 import BuildingInfo from "../../pages/BuildingInfoPage";
 import SendRequest from "../../pages/SendRequestPage";
 import MyRequests from "../../pages/MyRequestsPage";
 import UpdateBuilding from "../../pages/UpdateBuildingPage";
 import UpdateUser from "../../pages/UpdateUserPage";
+import RequestResponse from "../../pages/RequestResponsePage";
+import UpdateOffice from "../../pages/UpdateOfficePage";
 
 const MainContainer = () => {
   return (
@@ -37,7 +38,7 @@ const MainContainer = () => {
               <Route path="/offices" element={<Offices />}></Route>
               <Route path="/requests" element={<Requests />}></Route>
               <Route path="/users/add-user" element={<AddUser />}></Route>
-              <Route path="/users/update-user" element={<AddUser />}></Route>
+              <Route path="/users/update-user" element={<UpdateUser />}></Route>
               <Route
                 path="/buildings/add-building"
                 element={<AddBuilding />}
@@ -45,7 +46,7 @@ const MainContainer = () => {
               <Route path="/offices/add-office" element={<AddOffice />}></Route>
               <Route
                 path="/requests/response-request"
-                element={<ResponseRequest />}
+                element={<RequestResponse />}
               ></Route>
               <Route path="/users/user-info" element={<UserInfo />}></Route>
               <Route
@@ -65,6 +66,10 @@ const MainContainer = () => {
                 element={<UpdateBuilding />}
               ></Route>
               <Route path="/users/update-user" element={<UpdateUser />}></Route>
+              <Route
+                path="/offices/update-office"
+                element={<UpdateOffice />}
+              ></Route>
             </Routes>
           </RouterContainer>
         </MainContent>

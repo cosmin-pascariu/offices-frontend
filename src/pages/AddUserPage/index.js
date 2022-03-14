@@ -45,7 +45,7 @@ const DropdownBuildings = () => {
       <div className="dropdown-header" onClick={toggleDropdown}>
         {selectedItem
           ? items.find((item) => item.id == selectedItem).label
-          : "."}
+          : "Select one of the following option..."}
         <i className={`icon ${isOpen && "open"}`}>
           <Arrow size={"20px"} />
         </i>
@@ -196,14 +196,14 @@ const AddUser = () => {
           <Label for="password">Password</Label>
           <Input id="password" type={"text"} />
         </InputContent>
-        <InputContent>
+        <InputContent id="buildings-dropdown">
           <Label for="building">Building</Label>
           <DropdownBuildings />
         </InputContent>
       </InputContainer>
 
       <InputContainer>
-        <InputContent>
+        <InputContent id="offices-dropdown">
           <Label for="office">Office</Label>
           <DropdownBuildings />
         </InputContent>

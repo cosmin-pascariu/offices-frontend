@@ -6,7 +6,7 @@ import {
   InputContent,
   Title,
 } from "../AddUserPage/AddUserPageElements";
-import { Input, Label } from "../ResponseRequestPage/ResponseRequestElements";
+import { Input, Label } from "../RequestResponsePage/RequestResponseElements";
 import {
   SendRequestContainer,
   Message,
@@ -28,7 +28,7 @@ const SendRequest = () => {
         </InputContent>
       </InputContainer>
 
-      <MessageContainer style={{ marginBottom: "50px" }}>
+      <MessageContainer style={{ marginBottom: "50px", resize: "none" }}>
         <Label for="request-reason">The reason for the request</Label>
         <Message id="request-reason"></Message>
       </MessageContainer>

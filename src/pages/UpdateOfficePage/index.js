@@ -10,9 +10,9 @@ import {
   Label,
   Title,
 } from "../AddUserPage/AddUserPageElements";
-import { AddOfficeContainer } from "./AddOfficePageElements";
+import { UpdateOfficeContainer } from "./UpdateOfficePageElements";
 
-const AddOffice = () => {
+const UpdateOffice = () => {
   let navigate = useNavigate();
   const routeChange = () => {
     let path = "/offices";
@@ -20,12 +20,11 @@ const AddOffice = () => {
   };
 
   return (
-    <AddOfficeContainer>
+    <UpdateOfficeContainer>
       <Helmet>
-        <title>Offices | Add New Office</title>
+        <title>Offices | Update Office</title>
       </Helmet>
-      <Title>Add New Office</Title>
-
+      <Title>Update Office</Title>
       <InputContainer>
         <InputContent>
           <Label for="office-name">Office Name</Label>
@@ -75,8 +74,8 @@ const AddOffice = () => {
           </Button>
         </InputContent>
       </InputContainer>
-    </AddOfficeContainer>
+    </UpdateOfficeContainer>
   );
 };
 
-export default AddOffice;
+export default UpdateOffice;
