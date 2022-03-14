@@ -21,6 +21,7 @@ import BuildingInfo from "../../pages/BuildingInfoPage";
 import SendRequest from "../../pages/SendRequestPage";
 import MyRequests from "../../pages/MyRequestsPage";
 import UpdateBuilding from "../../pages/UpdateBuildingPage";
+import UpdateUser from "../../pages/UpdateUserPage";
 
 const MainContainer = () => {
   return (
@@ -63,6 +64,7 @@ const MainContainer = () => {
                 path="/buildings/update-building"
                 element={<UpdateBuilding />}
               ></Route>
+              <Route path="/users/update-user" element={<UpdateUser />}></Route>
             </Routes>
           </RouterContainer>
         </MainContent>
