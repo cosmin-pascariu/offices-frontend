@@ -58,6 +58,17 @@ export const SidebarButton = styled(NavLink)`
   text-decoration: none;
 `;
 
+export const LogoutButton = styled.button`
+  width: 100%;
+  display: flex;
+  padding: 10px 0;
+  text-decoration: none;
+  align-items: center;
+  background: #292929;
+  border: none;
+  cursor: pointer;
+`;
+
 export const Button = styled.div`
   height: 42px;
   width: 42px;
@@ -71,8 +82,6 @@ export const Button = styled.div`
 `;
 
 export const ButtonText = styled.div`
-  /* height: 42px; */
-  /* width: 100px; */
   margin-left: 20px;
   display: flex;
   align-items: center;

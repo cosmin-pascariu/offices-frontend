@@ -7,7 +7,6 @@ import {
   RejectButton,
   RequestProfile,
   ResponseRequestContainer,
-  Input,
   Textarea,
   ImageRequest,
   NameRequest,
@@ -43,7 +42,6 @@ const ResponseRequest = () => {
     let path = "/requests";
     navigate(path);
   };
-  const percentage = 66;
 
   return (
     <ResponseRequestContainer>

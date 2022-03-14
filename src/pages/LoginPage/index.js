@@ -16,12 +16,18 @@ import {
   Img,
 } from "./LoginPageElements";
 import Helmet from "react-helmet";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [passwordVisibility, setPasswordVisibility] = useState(true);
 
   const toogleVisibility = () => {
     setPasswordVisibility(!passwordVisibility);
+  };
+  let navigate = useNavigate();
+  const handleLogin = () => {
+    let path = "/users";
+    navigate(path);
   };
 
   return (
@@ -56,7 +62,7 @@ const Login = () => {
                 style={{ paddingRight: "50px" }}
               ></FormInput>
             </FormInputs>
-            <LoginButton to="/users">LOGIN</LoginButton>
+            <LoginButton onClick={handleLogin}>LOGIN</LoginButton>
           </LoginForm>
         </LoginContent>
       </LoginContainer>

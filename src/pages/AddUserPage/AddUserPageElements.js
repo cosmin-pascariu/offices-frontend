@@ -61,8 +61,8 @@ export const InputSmallContent = styled.div`
   margin-bottom: 15px;
   padding-right: 30px;
 
-  @media screen and (max-width: 768px) {
-    padding-right: 10px;
+  @media screen and (max-width: 1000px) {
+    width: 100%;
   }
 `;
 
@@ -137,7 +137,7 @@ export const SmallInput = styled.input`
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
 
   @media screen and (max-width: 768px) {
-    width: 85%;
+    width: 100%;
   }
 `;
 

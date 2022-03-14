@@ -1,5 +1,4 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100vw;
@@ -7,10 +6,6 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background: url("../../images/loginBg.jpeg") no-repeat center center fixed; */
-  /* background: url("https://r1.ilikewallpaper.net/ipad-pro-wallpapers/download/100031/dark-blur-abstract-4k-ipad-pro-wallpaper-ilikewallpaper_com.jpg")
-    no-repeat center center fixed;
-  background-size: cover; */
   background: linear-gradient(90deg, #0b0720, #081b39, #360b1f);
 `;
 
@@ -26,7 +21,7 @@ export const LoginContainer = styled.div`
   margin: 20px;
 
   * {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
   }
 
   @media screen and (max-width: 600px) {
@@ -120,7 +115,7 @@ export const IconPass = styled.span`
   cursor: pointer;
 `;
 
-export const LoginButton = styled(Link)`
+export const LoginButton = styled.button`
   background-color: rgba(117, 206, 85, 0.8);
   width: 100px;
   height: 50px;

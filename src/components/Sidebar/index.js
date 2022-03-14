@@ -6,14 +6,20 @@ import {
   SidebarButton,
   Button,
   ButtonText,
+  LogoutButton,
 } from "./SidebarElements";
 import { ImOffice as Logo } from "react-icons/im";
 import { FaUsers } from "react-icons/fa";
 import { CgLogOut } from "react-icons/cg";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
   const location = useLocation();
+  let navigate = useNavigate();
+  const handleLogout = () => {
+    let path = "/login";
+    navigate(path);
+  };
 
   return (
     <SidebarContainer>
@@ -73,12 +79,16 @@ const Sidebar = () => {
         </SidebarButton>
       </SidebarMenu>
 
-      <SidebarButton id="logout-button" to="/login" style={{ width: "70%" }}>
+      <LogoutButton
+        id="logout-button"
+        onClick={handleLogout}
+        style={{ width: "70%" }}
+      >
         <Button uColor={false} bColor={false}>
           <CgLogOut size={"50%"} />
         </Button>
         <ButtonText bColor={false}>Logout</ButtonText>
-      </SidebarButton>
+      </LogoutButton>
     </SidebarContainer>
   );
 };

@@ -9,15 +9,68 @@ import {
   InputContainer,
   Label,
   Button,
-  InputSmallContent,
-  SmallInput,
   WorkModel,
   WorkOption,
   Percentage,
   SwitchContainer,
   SwitchBtn,
   Ball,
+  InputSmallContent,
+  SmallInput,
 } from "./AddUserPageElements";
+import { MdKeyboardArrowRight as Arrow } from "react-icons/md";
+import "./DropDown.css";
+
+const data = [
+  { id: 0, label: "Main Builing" },
+  { id: 1, label: "Seccondary Building" },
+  { id: 2, label: "Primary Building" },
+  { id: 3, label: "Building Building" },
+];
+const DropdownBuildings = () => {
+  const [isOpen, setOpen] = useState(false);
+  const [items, setItem] = useState(data);
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const toggleDropdown = () => setOpen(!isOpen);
+
+  const handleItemClick = (id) => {
+    // eslint-disable-next-line eqeqeq
+    selectedItem == id ? setSelectedItem(null) : setSelectedItem(id);
+    setOpen(false);
+  };
+
+  return (
+    <div className="dropdown">
+      <div className="dropdown-header" onClick={toggleDropdown}>
+        {selectedItem
+          ? items.find((item) => item.id == selectedItem).label
+          : "."}
+        <i className={`icon ${isOpen && "open"}`}>
+          <Arrow size={"20px"} />
+        </i>
+      </div>
+      <div className={`dropdown-body ${isOpen && "open"}`}>
+        {items.map((item) => (
+          <div
+            className="dropdown-item"
+            onClick={(e) => handleItemClick(e.target.id)}
+            id={item.id}
+          >
+            <span
+              className={`dropdown-item-dot ${
+                item.id == selectedItem && "selected"
+              }`}
+            >
+              •{" "}
+            </span>
+            {item.label}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const AddUser = () => {
   const location = useLocation();
@@ -143,25 +196,26 @@ const AddUser = () => {
           <Label for="password">Password</Label>
           <Input id="password" type={"text"} />
         </InputContent>
-        <InputSmallContent>
+        <InputContent>
           <Label for="building">Building</Label>
-          <SmallInput id="building" type={"text"} />
-        </InputSmallContent>
-        <InputSmallContent>
-          <Label for="office">Office</Label>
-          <SmallInput id="office" type={"text"} />
-        </InputSmallContent>
+          <DropdownBuildings />
+        </InputContent>
       </InputContainer>
 
       <InputContainer>
         <InputContent>
+          <Label for="office">Office</Label>
+          <DropdownBuildings />
+        </InputContent>
+
+        <InputSmallContent>
           <Label for="role">Role</Label>
-          <Input id="role" type={"text"} />
-        </InputContent>
-        <InputContent>
+          <SmallInput id="role" />
+        </InputSmallContent>
+        <InputSmallContent>
           <Label for="gender">Gender (Optional)</Label>
-          <Input id="gender" type={"text"} />
-        </InputContent>
+          <SmallInput id="gender" />
+        </InputSmallContent>
       </InputContainer>
 
       <InputContainer>
@@ -175,7 +229,7 @@ const AddUser = () => {
         </InputContent>
       </InputContainer>
 
-      <InputContainer>
+      <InputContainer style={{ flexDirection: "row" }}>
         <InputContent style={{ alignItems: "flex-end" }}>
           <Button id="save-button" to="/users">
             SAVE

@@ -51,8 +51,8 @@ const Dropdown = () => {
   };
 
   return (
-    <div className="dropdown">
-      <div className="dropdown-header" onClick={toggleDropdown}>
+    <div className="dropDown">
+      <div className="dropDown-header" onClick={toggleDropdown}>
         {selectedItem
           ? items.find((item) => item.id == selectedItem).label
           : "Select one of the following options..."}
@@ -60,15 +60,15 @@ const Dropdown = () => {
           <Arrow size={"20px"} />
         </i>
       </div>
-      <div className={`dropdown-body ${isOpen && "open"}`}>
+      <div className={`dropDown-body ${isOpen && "open"}`}>
         {items.map((item) => (
           <div
-            className="dropdown-item"
+            className="dropDown-item"
             onClick={(e) => handleItemClick(e.target.id)}
             id={item.id}
           >
             <span
-              className={`dropdown-item-dot ${
+              className={`dropDown-item-dot ${
                 item.id == selectedItem && "selected"
               }`}
             >
