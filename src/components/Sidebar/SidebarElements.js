@@ -10,8 +10,8 @@ const buttonColors = {
 
 export const SidebarContainer = styled.div`
   height: 100vh;
-  width: 280px;
-  min-width: 280px;
+  width: 250px;
+  min-width: 250px;
   background-color: #292929;
   display: flex;
   flex-direction: column;

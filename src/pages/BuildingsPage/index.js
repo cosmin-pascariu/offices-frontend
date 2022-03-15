@@ -93,6 +93,93 @@ const Buildings = () => {
             />
           </CardInfo>
         </BuildingCard>
+
+        <BuildingCard>
+          <BuildingImage src={MainBImg} alt="Main Building" />
+          <CardInfo>
+            <BuildingName>Main Building</BuildingName>
+            <FloorNumber>
+              <p>5</p>
+              <FaBuffer size={"14px"} />
+            </FloorNumber>
+          </CardInfo>
+
+          <CardInfo>
+            <BuildingAddress>
+              Chicago, George Whashington Street, 13
+            </BuildingAddress>
+            <BsPencil
+              id="update-button"
+              onClick={routeChangeEdit}
+              size={"14px"}
+              style={{ color: "#75ce55", cursor: "pointer" }}
+            />
+            <CgMoreO
+              id="info-button"
+              onClick={routeChangeInfo}
+              size={"15px"}
+              style={{ color: "#75ce55", cursor: "pointer" }}
+            />
+          </CardInfo>
+        </BuildingCard>
+
+        <BuildingCard>
+          <BuildingImage src={MainBImg} alt="Main Building" />
+          <CardInfo>
+            <BuildingName>Main Building</BuildingName>
+            <FloorNumber>
+              <p>5</p>
+              <FaBuffer size={"14px"} />
+            </FloorNumber>
+          </CardInfo>
+
+          <CardInfo>
+            <BuildingAddress>
+              Chicago, George Whashington Street, 13
+            </BuildingAddress>
+            <BsPencil
+              id="update-button"
+              onClick={routeChangeEdit}
+              size={"14px"}
+              style={{ color: "#75ce55", cursor: "pointer" }}
+            />
+            <CgMoreO
+              id="info-button"
+              onClick={routeChangeInfo}
+              size={"15px"}
+              style={{ color: "#75ce55", cursor: "pointer" }}
+            />
+          </CardInfo>
+        </BuildingCard>
+
+        <BuildingCard>
+          <BuildingImage src={MainBImg} alt="Main Building" />
+          <CardInfo>
+            <BuildingName>Main Building</BuildingName>
+            <FloorNumber>
+              <p>5</p>
+              <FaBuffer size={"14px"} />
+            </FloorNumber>
+          </CardInfo>
+
+          <CardInfo>
+            <BuildingAddress>
+              Chicago, George Whashington Street, 13
+            </BuildingAddress>
+            <BsPencil
+              id="update-button"
+              onClick={routeChangeEdit}
+              size={"14px"}
+              style={{ color: "#75ce55", cursor: "pointer" }}
+            />
+            <CgMoreO
+              id="info-button"
+              onClick={routeChangeInfo}
+              size={"15px"}
+              style={{ color: "#75ce55", cursor: "pointer" }}
+            />
+          </CardInfo>
+        </BuildingCard>
       </BuildingsContent>
     </BuildingsContainer>
   );

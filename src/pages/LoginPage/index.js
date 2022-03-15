@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ImgLogin from "../../assets/images/loginimage.svg";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import {
@@ -29,6 +29,26 @@ const Login = () => {
     let path = "/users";
     navigate(path);
   };
+
+  useEffect(() => {
+    async function getToken() {
+      const requestOptions = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: "admin@1234.com",
+          password: "admin1234",
+        }),
+      };
+      const response = await fetch(
+        "https://offices-backend.herokuapp.com/api/token",
+        requestOptions
+      );
+      const data = await response.json();
+      console.log(data);
+    }
+    getToken();
+  }, []);
 
   return (
     <Container>

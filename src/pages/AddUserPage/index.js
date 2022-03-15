@@ -17,6 +17,8 @@ import {
   Ball,
   InputSmallContent,
   SmallInput,
+  ButtonsContainer,
+  ButtonContent,
 } from "./AddUserPageElements";
 import { MdKeyboardArrowRight as Arrow } from "react-icons/md";
 import "./DropDown.css";
@@ -229,18 +231,18 @@ const AddUser = () => {
         </InputContent>
       </InputContainer>
 
-      <InputContainer style={{ flexDirection: "row" }}>
-        <InputContent style={{ alignItems: "flex-end" }}>
+      <ButtonsContainer>
+        <ButtonContent style={{ alignItems: "flex-end" }}>
           <Button id="save-button" to="/users">
             SAVE
           </Button>
-        </InputContent>
-        <InputContent>
+        </ButtonContent>
+        <ButtonContent>
           <Button id="cancel-button" onClick={routeChange}>
             CANCEL
           </Button>
-        </InputContent>
-      </InputContainer>
+        </ButtonContent>
+      </ButtonsContainer>
     </AddUserContainer>
   );
 };

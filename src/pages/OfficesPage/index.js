@@ -30,7 +30,6 @@ import { MdKeyboardArrowRight as Arrow } from "react-icons/md";
 import "./dropdown.css";
 import { useNavigate } from "react-router-dom";
 import Helmet from "react-helmet";
-import { Title } from "../AddUserPage/AddUserPageElements";
 
 const data = [
   { id: 0, label: "Offices where Free Desks count" },
@@ -120,12 +119,14 @@ const Offices = () => {
       <BuildingTxt>Seccondary</BuildingTxt>
       <FloorTxt>5</FloorTxt>
       <TotalDesksTxt>20</TotalDesksTxt>
-      <ActionBtn>
-        <BsPencil onClick={routeOffice} size={"100%"} />
-      </ActionBtn>
-      <ActionBtn>
-        <CgMoreO size={"100%"} />
-      </ActionBtn>
+      <div style={{ display: "flex", padding: "15px" }}>
+        <ActionBtn>
+          <BsPencil id="edit-button" onClick={routeOffice} size={"100%"} />
+        </ActionBtn>
+        <ActionBtn>
+          <CgMoreO id="info-button" size={"100%"} />
+        </ActionBtn>
+      </div>
     </OfficeDetails>
   );
   const nComps = duplicate(oneComp, n);
@@ -140,7 +141,7 @@ const Offices = () => {
           <InputText
             id="searchbar"
             type={"text"}
-            placeholder="Search user by name..."
+            placeholder="Search office by name..."
           />
           <SearchbarBtn>
             <ImSearch
@@ -180,15 +181,17 @@ const Offices = () => {
         </FilterContent>
       )}
 
-      <TableInfo>
-        <NameTxt>Name</NameTxt>
-        <BuildingTxt>Building</BuildingTxt>
-        <FloorTxt>Floor</FloorTxt>
-        <TotalDesksTxt>Total Desks</TotalDesksTxt>
-        <ActionsTxt>Actions</ActionsTxt>
-      </TableInfo>
+      <Table isFilterActive={isVisible}>
+        <TableInfo>
+          <NameTxt>Name</NameTxt>
+          <BuildingTxt>Building</BuildingTxt>
+          <FloorTxt>Floor</FloorTxt>
+          <TotalDesksTxt>Total Desks</TotalDesksTxt>
+          <ActionsTxt>Actions</ActionsTxt>
+        </TableInfo>
 
-      <Table isFilterActive={isVisible}>{nComps}</Table>
+        {nComps}
+      </Table>
     </OfficesContainer>
   );
 };

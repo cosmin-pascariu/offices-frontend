@@ -34,16 +34,37 @@ const GlobalStyle = createGlobalStyle`
   body{
     background: #fff;
     font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
   }
+
 
   button{
     font-family: 'Roboto', sans-serif;
     letter-spacing: 2px;
+    user-select: none;
   }
 
   input:-webkit-autofill { 
     -webkit-background-color: #f8f8f8;
 }
+
+
+svg text{
+    user-select: none;
+  }
+
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+    text-align: center;
+  }
 `;
 
 function App() {

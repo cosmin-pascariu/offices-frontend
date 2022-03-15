@@ -11,6 +11,8 @@ import {
 } from "../AddBuildingPage/AddBuildingElements";
 import {
   Button,
+  ButtonContent,
+  ButtonsContainer,
   InputContainer,
   InputContent,
   Label,
@@ -163,16 +165,16 @@ const UpdateBuilding = () => {
       <BuildingImage>
         <ImagePicker />
       </BuildingImage>
-      <InputContainer style={{ transform: "scale(0.75)" }}>
-        <InputContent style={{ alignItems: "flex-end" }}>
+      <ButtonsContainer style={{ transform: "scale(0.75)" }}>
+        <ButtonContent style={{ alignItems: "flex-end" }}>
           <Button id="save-button">SAVE</Button>
-        </InputContent>
-        <InputContent>
+        </ButtonContent>
+        <ButtonContent>
           <Button id="cancel-button" onClick={routeChange}>
             CANCEL
           </Button>
-        </InputContent>
-      </InputContainer>
+        </ButtonContent>
+      </ButtonsContainer>
     </AddBuildingContainer>
   );
 };

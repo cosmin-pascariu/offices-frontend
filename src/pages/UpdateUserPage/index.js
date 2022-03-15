@@ -5,6 +5,8 @@ import {
   AddUserContainer,
   Ball,
   Button,
+  ButtonContent,
+  ButtonsContainer,
   Input,
   InputContainer,
   InputContent,
@@ -107,10 +109,10 @@ const UpdateUser = () => {
     document.getElementById("percentage").style.backgroundColor = "#fff";
   };
 
-  const [sActive, setSActive] = useState(true);
-  const handleSActive = () => {
-    setSActive(!sActive);
-    document.getElementById("ball").style.transform = sActive
+  const [isSwitchActive, setIsSwitchActive] = useState(false);
+  const handleIsSwitchActive = () => {
+    setIsSwitchActive(!isSwitchActive);
+    document.getElementById("ball").style.transform = isSwitchActive
       ? "translate(40px,0)"
       : "";
   };
@@ -125,10 +127,20 @@ const UpdateUser = () => {
         <SwitchContainer>
           <SwitchBtn
             id="switch-button"
-            onClick={handleSActive}
-            bgColor={sActive}
+            onClick={handleIsSwitchActive}
+            bgColor={isSwitchActive}
           >
-            <Ball id="ball" />
+            {!isSwitchActive ? (
+              <>
+                <Ball id="ball" />
+                <p>ACT</p>
+              </>
+            ) : (
+              <>
+                <p>DEACT</p>
+                <Ball id="ball" />
+              </>
+            )}
           </SwitchBtn>
         </SwitchContainer>
       </Title>
@@ -215,18 +227,18 @@ const UpdateUser = () => {
         </InputContent>
       </InputContainer>
 
-      <InputContainer style={{ flexDirection: "row" }}>
-        <InputContent style={{ alignItems: "flex-end" }}>
+      <ButtonsContainer>
+        <ButtonContent style={{ alignItems: "flex-end" }}>
           <Button id="save-button" to="/users">
             SAVE
           </Button>
-        </InputContent>
-        <InputContent>
+        </ButtonContent>
+        <ButtonContent>
           <Button id="cancel-button" onClick={routeChange}>
             CANCEL
           </Button>
-        </InputContent>
-      </InputContainer>
+        </ButtonContent>
+      </ButtonsContainer>
     </AddUserContainer>
   );
 };

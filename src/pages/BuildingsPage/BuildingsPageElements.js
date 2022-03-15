@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const BuildingsContainer = styled.div`
   width: 90%;
-  height: 90%;
+  max-width: 1000px;
 `;
 
 export const BuildingsSearch = styled.div`
@@ -13,7 +13,7 @@ export const BuildingsSearch = styled.div`
 
 export const BuildingsContent = styled.div`
   margin-top: 25px;
-  max-width: 87%;
+  max-width: 100%;
   width: auto;
   max-height: 550px;
   display: flex;
@@ -30,6 +30,12 @@ export const BuildingCard = styled.div`
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 500px) {
+    height: auto;
+    width: 100%;
+    margin: 25px;
+  }
 `;
 
 export const BuildingImage = styled.img`

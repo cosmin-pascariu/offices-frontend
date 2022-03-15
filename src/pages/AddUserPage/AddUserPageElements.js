@@ -13,6 +13,8 @@ export const AddUserContainer = styled.div`
 
   @media screen and (max-width: 768px) {
     padding: 50px 0 10px 50px;
+    width: 100%;
+    height: 100%;
   }
 `;
 
@@ -37,6 +39,16 @@ export const InputContainer = styled.div`
   }
 `;
 
+export const ButtonsContainer = styled.div`
+  width: 100%;
+  display: flex;
+  max-height: 100%;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+`;
+
 export const InputContent = styled.div`
   width: 50%;
   min-width: 258px;
@@ -49,6 +61,21 @@ export const InputContent = styled.div`
 
   @media screen and (max-width: 1000px) {
     width: 100%;
+  }
+`;
+
+export const ButtonContent = styled.div`
+  width: 50%;
+  /* min-width: 258px; */
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding-right: 30px;
+
+  @media screen and (max-width: 1000px) {
+    width: 50%;
   }
 `;
 
@@ -107,7 +134,7 @@ export const WorkOption = styled.button`
   transition: 0.3s ease-in-out;
 
   @media screen and (max-width: 768px) {
-    font-size: 8px;
+    font-size: 12px;
     font-weight: 500;
     padding: 0 2px;
     margin: 0 2px;
@@ -165,22 +192,29 @@ export const Button = styled.button`
 
 export const SwitchContainer = styled.div`
   display: flex;
+  align-items: center;
 `;
 
 export const SwitchBtn = styled.button`
   width: 80px;
-  height: 36px;
+  height: 26px;
   background-color: ${({ bgColor }) => (bgColor ? "#ff0000" : "#75ce55")};
   border: none;
   border-radius: 999px;
   display: flex;
   align-items: center;
   transition: 0.2s ease-in-out;
+
+  p {
+    font-weight: 400;
+    margin-left: 5px;
+    color: #fff;
+  }
 `;
 
 export const Ball = styled.div`
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   background: #fff;
   margin: 0 4px;
   border-radius: 300px;

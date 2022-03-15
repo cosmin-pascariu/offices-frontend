@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const NavbarContiner = styled.div`
   height: 80px;
@@ -8,17 +8,38 @@ export const NavbarContiner = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0 50px;
+  position: sticky;
+  top: 0;
+
+  p {
+    display: none;
+  }
+  @media (max-width: 768px) {
+    p {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
 `;
 
 export const NavbarText = styled.h1`
   font-size: 30px;
   font-weight: 500;
   color: #292929;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const NavbarProfile = styled.div`
   width: 200px;
   display: flex;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const ImageProfile = styled.img`

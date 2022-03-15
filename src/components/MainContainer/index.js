@@ -4,7 +4,6 @@ import Sidebar from "../Sidebar";
 import { Route, Routes } from "react-router-dom";
 import {
   Container,
-  Navigator,
   RouterContainer,
   MainContent,
 } from "./MainContainerElements";
@@ -27,53 +26,51 @@ import UpdateOffice from "../../pages/UpdateOfficePage";
 const MainContainer = () => {
   return (
     <Container>
-      <Navigator>
-        <Sidebar />
-        <MainContent>
-          <Navbar />
-          <RouterContainer>
-            <Routes>
-              <Route path="/users" element={<Users />}></Route>
-              <Route path="/buildings" element={<Buildings />}></Route>
-              <Route path="/offices" element={<Offices />}></Route>
-              <Route path="/requests" element={<Requests />}></Route>
-              <Route path="/users/add-user" element={<AddUser />}></Route>
-              <Route path="/users/update-user" element={<UpdateUser />}></Route>
-              <Route
-                path="/buildings/add-building"
-                element={<AddBuilding />}
-              ></Route>
-              <Route path="/offices/add-office" element={<AddOffice />}></Route>
-              <Route
-                path="/requests/response-request"
-                element={<RequestResponse />}
-              ></Route>
-              <Route path="/users/user-info" element={<UserInfo />}></Route>
-              <Route
-                path="/buildings/building-info"
-                element={<BuildingInfo />}
-              ></Route>
-              <Route
-                path="/requests/add-request"
-                element={<SendRequest />}
-              ></Route>
-              <Route
-                path="/requests/my-requests"
-                element={<MyRequests />}
-              ></Route>
-              <Route
-                path="/buildings/update-building"
-                element={<UpdateBuilding />}
-              ></Route>
-              <Route path="/users/update-user" element={<UpdateUser />}></Route>
-              <Route
-                path="/offices/update-office"
-                element={<UpdateOffice />}
-              ></Route>
-            </Routes>
-          </RouterContainer>
-        </MainContent>
-      </Navigator>
+      <Sidebar />
+      <MainContent>
+        <Navbar />
+        <RouterContainer>
+          <Routes>
+            <Route path="/users" element={<Users />}></Route>
+            <Route path="/buildings" element={<Buildings />}></Route>
+            <Route path="/offices" element={<Offices />}></Route>
+            <Route path="/requests" element={<Requests />}></Route>
+            <Route path="/users/add-user" element={<AddUser />}></Route>
+            <Route path="/users/update-user" element={<UpdateUser />}></Route>
+            <Route
+              path="/buildings/add-building"
+              element={<AddBuilding />}
+            ></Route>
+            <Route path="/offices/add-office" element={<AddOffice />}></Route>
+            <Route
+              path="/requests/response-request"
+              element={<RequestResponse />}
+            ></Route>
+            <Route path="/users/user-info" element={<UserInfo />}></Route>
+            <Route
+              path="/buildings/building-info"
+              element={<BuildingInfo />}
+            ></Route>
+            <Route
+              path="/requests/add-request"
+              element={<SendRequest />}
+            ></Route>
+            <Route
+              path="/requests/my-requests"
+              element={<MyRequests />}
+            ></Route>
+            <Route
+              path="/buildings/update-building"
+              element={<UpdateBuilding />}
+            ></Route>
+            <Route path="/users/update-user" element={<UpdateUser />}></Route>
+            <Route
+              path="/offices/update-office"
+              element={<UpdateOffice />}
+            ></Route>
+          </Routes>
+        </RouterContainer>
+      </MainContent>
     </Container>
   );
 };

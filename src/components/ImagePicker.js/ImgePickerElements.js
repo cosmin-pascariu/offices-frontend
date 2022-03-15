@@ -2,10 +2,11 @@ import styled from "styled-components";
 
 export const ImgContainer = styled.div`
   height: 260px;
-  width: 380px;
+  width: 100%;
   border-radius: 10px;
   display: flex;
   align-items: center;
+  justify-content: center;
 
   input[type="file"] {
     display: none;

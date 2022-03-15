@@ -8,6 +8,11 @@ export const StatusContainer = styled.div`
   border-radius: 16px;
   align-items: center;
   margin-left: 15%;
+
+  @media (max-width: 1000px) {
+    margin-left: 5px;
+    transform: scale(0.8);
+  }
 `;
 
 export const RequestTitle = styled.p`

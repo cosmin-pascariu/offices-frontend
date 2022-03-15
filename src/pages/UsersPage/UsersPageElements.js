@@ -1,23 +1,31 @@
 import styled from "styled-components";
 
 export const UsersContainer = styled.div`
-  width: 90%;
-  height: 100%;
+  width: 100%;
+  padding: 0 25px;
   max-width: 1000px;
-  max-height: calc(100vh - 76px - 50px);
 `;
 
-export const Table = styled.div`
-  height: ${(props) =>
-    !props.isFilterActive ? "calc(100% - 150px)" : "calc(100% - 150px - 75px)"};
-  max-width: 1050px;
-  overflow-y: auto;
+export const Table = styled.table`
+  width: 100%;
+  margin-bottom: 30px;
 `;
 
 export const UsersSearch = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+
+    div {
+      width: 100%;
+    }
+  }
 `;
 
 export const Searchbar = styled.div`
@@ -36,9 +44,13 @@ export const InputText = styled.input`
   border: none;
   font-size: 16px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+
+  &:placeholder {
+    text-overflow: ellipsis;
+  }
 `;
 
-export const SearchbarBtn = styled.div`
+export const SearchbarBtn = styled.span`
   height: 50px;
   width: 50px;
   background-color: #fff;
@@ -69,11 +81,12 @@ export const AddButton = styled.button`
   }
 `;
 
-export const TableInfo = styled.tr`
-  max-width: 1050px;
+export const TableInfo = styled.th`
   width: 100%;
   height: 50px;
-  margin-top: 25px;
+  margin-top: 24px;
+  position: sticky;
+  top: 81px;
   border-radius: 10px;
   background-color: #d8d8d8;
   display: flex;
@@ -83,24 +96,40 @@ export const TableInfo = styled.tr`
   font-weight: 500;
   text-align: left;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+    padding: 10px;
+
+    td {
+      width: 100%;
+      padding: 4px 0;
+    }
+  }
+  @media (max-width: 700px) and (min-width: 500px) {
+    font-size: 16px;
+  }
 `;
 
 export const NameTxt = styled.td`
   padding-left: 25px;
-  width: 300px;
+  width: 37%;
 `;
 export const BuildingTxt = styled.td`
-  width: 220px;
+  width: 18%;
 `;
 export const OfficeTxt = styled.td`
-  width: 120px;
+  width: 15%;
 `;
 export const RemoteTxt = styled.td`
-  width: 300px;
+  width: 20%;
 `;
 export const ActionsTxt = styled.td`
-  width: auto;
-  margin-right: 40px;
+  width: 115px;
+  padding-right: 20px;
 `;
 
 export const UserDetails = styled.tr`
@@ -121,12 +150,24 @@ export const UserDetails = styled.tr`
   td {
     font-weight: 300;
   }
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+    padding: 10px;
+
+    td {
+      width: 100%;
+      padding: 4px 0;
+    }
+  }
 `;
 
 export const ActionBtn = styled.div`
-  width: 25px;
-  height: 25px;
+  width: 23px;
+  height: 23px;
   color: #75ce55;
-  margin-right: 20px;
+  margin-right: 15px;
   cursor: pointer;
 `;

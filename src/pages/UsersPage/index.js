@@ -33,20 +33,22 @@ const Users = () => {
       <BuildingTxt>C2</BuildingTxt>
       <OfficeTxt>01</OfficeTxt>
       <RemoteTxt>fully</RemoteTxt>
-      <ActionBtn>
-        <BsPencil
-          id="edit-button"
-          onClick={() => navigate("/users/update-user")}
-          size={"100%"}
-        />
-      </ActionBtn>
-      <ActionBtn>
-        <CgMoreO
-          id="info-button"
-          onClick={() => navigate("/users/user-info")}
-          size={"100%"}
-        />
-      </ActionBtn>
+      <div style={{ display: "flex", padding: "15px" }}>
+        <ActionBtn>
+          <BsPencil
+            id="edit-button"
+            onClick={() => navigate("/users/update-user")}
+            size={"100%"}
+          />
+        </ActionBtn>
+        <ActionBtn>
+          <CgMoreO
+            id="info-button"
+            onClick={() => navigate("/users/user-info")}
+            size={"100%"}
+          />
+        </ActionBtn>
+      </div>
     </UserDetails>
   );
   const nComps = duplicate(oneComp, n);
@@ -75,14 +77,16 @@ const Users = () => {
         </AddButton>
       </UsersSearch>
 
-      <TableInfo>
-        <NameTxt>Name</NameTxt>
-        <BuildingTxt>Building</BuildingTxt>
-        <OfficeTxt>Office</OfficeTxt>
-        <RemoteTxt>Remote</RemoteTxt>
-        <ActionsTxt>Actions</ActionsTxt>
-      </TableInfo>
-      <Table>{nComps}</Table>
+      <Table>
+        <TableInfo>
+          <NameTxt>Name</NameTxt>
+          <BuildingTxt>Building</BuildingTxt>
+          <OfficeTxt>Office</OfficeTxt>
+          <RemoteTxt>Remote</RemoteTxt>
+          <ActionsTxt>Actions</ActionsTxt>
+        </TableInfo>
+        {nComps}
+      </Table>
     </UsersContainer>
   );
 };

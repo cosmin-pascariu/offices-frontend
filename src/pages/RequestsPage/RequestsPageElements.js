@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 export const RequestsContainer = styled.div`
   width: 90%;
-  height: 90%;
   max-width: 1000px;
-  max-height: calc(100vh - 76px - 50px);
+  overflow: auto;
+  margin-bottom: 20px;
 `;
 
 export const RequestsTitle = styled.h1`
@@ -19,7 +19,6 @@ export const RequestsTable = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  overflow: auto;
   margin: 10px 0;
 `;
 
@@ -32,6 +31,20 @@ export const RequestContent = styled.div`
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
   margin-top: 10px;
   border-radius: 10px;
+
+  @media (max-width: 550px) {
+    flex-direction: column;
+    height: 200px;
+    justify-content: center;
+
+    button {
+      margin: 10px 0 0 0;
+    }
+
+    p {
+      text-align: center;
+    }
+  }
 `;
 
 export const RequestInfo = styled.div`
@@ -39,7 +52,7 @@ export const RequestInfo = styled.div`
   flex-direction: column;
   color: #666;
   justify-content: space-around;
-  margin: 25px;
+  margin: 0 0 10px 25px;
   font-weight: 400;
 `;
 
@@ -59,6 +72,11 @@ export const PendingContainer = styled.div`
   border-radius: 16px;
   align-items: center;
   margin-left: 10%;
+
+  @media (max-width: 1000px) {
+    margin-left: 5px;
+    transform: scale(0.8);
+  }
 `;
 
 export const Circle = styled.div`
@@ -73,7 +91,7 @@ export const PendingText = styled.p`
   color: #f6ad41;
   font-size: 16px;
   font-weight: 600;
-  margin-left: 22px;
+  margin-left: 20px;
 `;
 
 export const ViewButton = styled.button`
