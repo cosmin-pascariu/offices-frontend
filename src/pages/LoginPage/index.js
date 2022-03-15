@@ -21,34 +21,36 @@ import { useNavigate } from "react-router-dom";
 const Login = () => {
   const [passwordVisibility, setPasswordVisibility] = useState(true);
 
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+
   const toogleVisibility = () => {
     setPasswordVisibility(!passwordVisibility);
   };
   let navigate = useNavigate();
-  const handleLogin = () => {
-    let path = "/users";
-    navigate(path);
-  };
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
+    };
+    const response = await fetch(
+      "https://offices-backend.herokuapp.com/api/token",
+      requestOptions
+    );
+    const data = await response.json();
+    console.log(data);
 
-  useEffect(() => {
-    async function getToken() {
-      const requestOptions = {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: "admin@1234.com",
-          password: "admin1234",
-        }),
-      };
-      const response = await fetch(
-        "https://offices-backend.herokuapp.com/api/token",
-        requestOptions
-      );
-      const data = await response.json();
-      console.log(data);
+    if (data?.refresh) {
+      localStorage.setItem("refresh", data.refresh);
+      localStorage.setItem("access", data.access);
+      navigate("/users");
     }
-    getToken();
-  }, []);
+  };
 
   return (
     <Container>
@@ -64,6 +66,8 @@ const Login = () => {
             <FormTitle>Login to Offices</FormTitle>
             <FormInputs>
               <FormInput
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 type={"text"}
                 id="email"
                 placeholder="Email"
@@ -76,13 +80,15 @@ const Login = () => {
                 )}
               </IconPass>
               <FormInput
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 type={passwordVisibility ? "password" : "text"}
                 id="password"
                 placeholder="Password"
                 style={{ paddingRight: "50px" }}
               ></FormInput>
             </FormInputs>
-            <LoginButton onClick={handleLogin}>LOGIN</LoginButton>
+            <LoginButton onClick={(e) => handleLogin(e)}>LOGIN</LoginButton>
           </LoginForm>
         </LoginContent>
       </LoginContainer>

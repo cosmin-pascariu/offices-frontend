@@ -16,9 +16,11 @@ import { useLocation, useNavigate } from "react-router-dom";
 const Sidebar = () => {
   const location = useLocation();
   let navigate = useNavigate();
-  const handleLogout = () => {
-    let path = "/login";
-    navigate(path);
+  const handleLogout = (e) => {
+    e.preventDefault();
+    localStorage.removeItem("refresh");
+    localStorage.removeItem("access");
+    navigate("/login");
   };
 
   return (
@@ -81,7 +83,7 @@ const Sidebar = () => {
 
       <LogoutButton
         id="logout-button"
-        onClick={handleLogout}
+        onClick={(e) => handleLogout(e)}
         style={{ width: "70%" }}
       >
         <Button uColor={false} bColor={false}>
