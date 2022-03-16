@@ -66,7 +66,6 @@ export const InputContent = styled.div`
 
 export const ButtonContent = styled.div`
   width: 50%;
-  /* min-width: 258px; */
   height: 75px;
   display: flex;
   flex-direction: column;
@@ -76,6 +75,8 @@ export const ButtonContent = styled.div`
 
   @media screen and (max-width: 1000px) {
     width: 50%;
+    align-items: center;
+    padding: 0;
   }
 `;
 

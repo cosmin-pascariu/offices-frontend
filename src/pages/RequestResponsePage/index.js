@@ -18,6 +18,8 @@ import {
 } from "./RequestResponseElements";
 import {
   Button,
+  ButtonContent,
+  ButtonsContainer,
   InputContainer,
   InputContent,
 } from "../AddUserPage/AddUserPageElements";
@@ -109,14 +111,14 @@ const RequestResponse = () => {
         )}
       </Content>
 
-      <InputContainer>
-        <InputContent style={{ alignItems: "flex-end" }}>
+      <ButtonsContainer>
+        <ButtonContent style={{ alignItems: "flex-end" }}>
           <Button>SEND</Button>
-        </InputContent>
-        <InputContent>
+        </ButtonContent>
+        <ButtonContent>
           <Button onClick={routeChange}>CANCEL</Button>
-        </InputContent>
-      </InputContainer>
+        </ButtonContent>
+      </ButtonsContainer>
     </ResponseRequestContainer>
   );
 };

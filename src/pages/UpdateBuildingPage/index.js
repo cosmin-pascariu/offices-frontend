@@ -24,6 +24,10 @@ import { EditAddressInput, EditInput } from "./UpdateBuildingPageElements.js";
 import { SearchbarBtn } from "../UsersPage/UsersPageElements.js";
 
 const UpdateBuilding = () => {
+  const [buildingName, setBuildingName] = useState("");
+  const [floorCount, setFloorCount] = useState("");
+  const [buildingAddress, setBuildingAddress] = useState("");
+
   let navigate = useNavigate();
   const routeChange = () => {
     let path = "/buildings";
@@ -58,7 +62,13 @@ const UpdateBuilding = () => {
         <InputContent>
           <Label for="edit-building-name">Building Name</Label>
           <div style={{ display: "flex", alignItems: "center" }}>
-            <EditInput id="edit-building-name" type={"text"} disabled />
+            <EditInput
+              value={buildingName}
+              onChange={(e) => setBuildingName(e.target.value)}
+              id="edit-building-name"
+              type={"text"}
+              disabled
+            />
             <SearchbarBtn style={{ backgroundColor: "#f8f8f8" }}>
               {disableNameInput ? (
                 <FiCheck
@@ -89,7 +99,13 @@ const UpdateBuilding = () => {
         <InputContent>
           <Label for="edit-count">Floor Count</Label>
           <div style={{ display: "flex", alignItems: "center" }}>
-            <EditInput id="edit-count" type={"text"} disabled />
+            <EditInput
+              value={floorCount}
+              onChange={(e) => setFloorCount(e.target.value)}
+              id="edit-count"
+              type={"text"}
+              disabled
+            />
             <SearchbarBtn style={{ backgroundColor: "#f8f8f8" }}>
               {disableCountInput ? (
                 <FiCheck
@@ -126,6 +142,8 @@ const UpdateBuilding = () => {
           </AddressLabel>
           <div style={{ display: "flex", alignItems: "center" }}>
             <EditAddressInput
+              value={buildingAddress}
+              onChange={(e) => setBuildingAddress(e.target.value)}
               id="edit-building-address"
               type={"text"}
               disabled

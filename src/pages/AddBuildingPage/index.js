@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Helmet from "react-helmet";
 import { useNavigate } from "react-router-dom";
 import ImagePicker from "../../components/ImagePicker.js";
@@ -22,6 +22,10 @@ import {
 } from "./AddBuildingElements";
 
 const AddBuilding = () => {
+  const [buildingName, setBuildingName] = useState("");
+  const [floorCount, setFloorCount] = useState("");
+  const [buildingAddress, setBuildingAddress] = useState("");
+
   let navigate = useNavigate();
   const routeChange = () => {
     let path = "/buildings";
@@ -36,19 +40,34 @@ const AddBuilding = () => {
 
       <InputContainer>
         <InputContent>
-          <Label for="building-name">Building Name</Label>
-          <Input id="building-name" type={"text"} />
+          <Label for="buildingName">Building Name</Label>
+          <Input
+            value={buildingName}
+            onChange={(e) => setBuildingName(e.target.value)}
+            id="buildingName"
+            type={"text"}
+          />
         </InputContent>
         <InputContent>
-          <Label for="for-count">Floor Count</Label>
-          <Input id="for-count" type={"text"} />
+          <Label for="floorCount">Floor Count</Label>
+          <Input
+            value={floorCount}
+            onChange={(e) => setFloorCount(e.target.value)}
+            id="florCount"
+            type={"text"}
+          />
         </InputContent>
       </InputContainer>
 
       <InputContainer>
         <AddressInputContent>
-          <AddressLabel for="building-address">Building Address</AddressLabel>
-          <AddressInput id="building-address" type={"text"} />
+          <AddressLabel for="buildingAddress">Building Address</AddressLabel>
+          <AddressInput
+            value={buildingAddress}
+            onChange={(e) => setBuildingAddress(e.target.value)}
+            id="buildingAddress"
+            type={"text"}
+          />
           <AddressExample>
             <em>Example: New York, Sweet Bakery Street, 25</em>
           </AddressExample>

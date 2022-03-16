@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ImSearch } from "react-icons/im";
 import {
   BuildingsContainer,
@@ -25,6 +25,8 @@ import { useNavigate } from "react-router-dom";
 import Helmet from "react-helmet";
 
 const Buildings = () => {
+  const [searchedName, setSearchedName] = useState("");
+
   let navigate = useNavigate();
   const routeChangeAdd = () => {
     let path = "/buildings/add-building";
@@ -47,6 +49,8 @@ const Buildings = () => {
       <BuildingsSearch>
         <Searchbar>
           <InputText
+            value={searchedName}
+            onChange={(e) => setSearchedName(e.target.value)}
             id="searchbar"
             type={"text"}
             placeholder="Search user by name..."

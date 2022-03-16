@@ -6,19 +6,24 @@ import {
   ProfileInfo,
   ProfileName,
   ProfileRole,
+  Hamburger,
 } from "./NavbarElements";
 import { ImOffice as Logo } from "react-icons/im";
 import Profile from "../../assets/images/admin.png";
 import { useLocation } from "react-router-dom";
 import { capitalize } from "../../common/utils";
 import { SidebarLogo, SidebarTitle } from "../Sidebar/SidebarElements";
+import { CgMenu, CgClose } from "react-icons/cg";
 
-const Navbar = () => {
+const Navbar = ({ sidebarStatus, setSidebarStatus }) => {
   const location = useLocation();
   const pageName = capitalize(location.pathname.slice(1));
 
   return (
     <NavbarContiner>
+      <Hamburger onClick={() => setSidebarStatus(!sidebarStatus)}>
+        {!sidebarStatus ? <CgMenu size={"80%"} /> : <CgClose size={"80%"} />}
+      </Hamburger>
       <p>
         <SidebarLogo style={{ color: "#292929" }}>
           <Logo size={"40px"} />

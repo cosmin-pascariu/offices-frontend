@@ -83,6 +83,8 @@ const Dropdown = () => {
 };
 
 const Offices = () => {
+  const [filterValue, setFilterValue] = useState("");
+  const [searchedName, setSearchedName] = useState("");
   const [isVisible, setIsVisible] = useState(false);
 
   const toogleVisibility = () => {
@@ -139,6 +141,8 @@ const Offices = () => {
       <OfficesSearch>
         <Searchbar>
           <InputText
+            value={searchedName}
+            onChange={(e) => setSearchedName(e.target.value)}
             id="searchbar"
             type={"text"}
             placeholder="Search office by name..."
@@ -177,7 +181,14 @@ const Offices = () => {
             GREATER
           </Option>
           <p>than</p>
-          <InputValue id="filter-number" min={0} max={100} type={"number"} />
+          <InputValue
+            value={filterValue}
+            onChange={(e) => setFilterValue(e.targer.value)}
+            id="filter-number"
+            min={0}
+            max={100}
+            type={"number"}
+          />
         </FilterContent>
       )}
 

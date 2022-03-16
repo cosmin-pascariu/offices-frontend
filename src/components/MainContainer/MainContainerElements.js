@@ -10,9 +10,20 @@ export const Container = styled.div`
 export const RouterContainer = styled.div`
   width: 100%;
   display: flex;
-  margin-top: 30px;
+  padding-top: 30px;
   justify-content: center;
   align-items: flex-start;
+  transition: filter 0.5s;
+  background: #f8f8f8;
+  ${({ sidebarStatus }) => !sidebarStatus} {
+    filter: blur(2px) brightness(0.6);
+    user-select: none;
+    div,
+    svg,
+    button {
+      pointer-events: none;
+    }
+  }
 `;
 
 export const MainContent = styled.div`

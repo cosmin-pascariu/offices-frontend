@@ -75,6 +75,16 @@ const DropdownBuildings = () => {
 };
 
 const AddUser = () => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [workPercentage, setWorkPercentage] = useState("");
+  const [password, setPassword] = useState("");
+  const [role, setRole] = useState("");
+  const [gender, setGender] = useState("");
+  const [birthDate, setBirthDate] = useState("");
+  const [nationality, setNationality] = useState("");
+
   const location = useLocation();
   const [switchVisibility, setSwitchVisibility] = useState(false);
 
@@ -151,18 +161,33 @@ const AddUser = () => {
       <InputContainer>
         <InputContent>
           <Label for="first-name">First Name</Label>
-          <Input id="first-name" type={"text"} />
+          <Input
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            id="first-name"
+            type={"text"}
+          />
         </InputContent>
         <InputContent>
           <Label for="last-name">Last Name</Label>
-          <Input id="last-name" type={"text"} />
+          <Input
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+            id="last-name"
+            type={"text"}
+          />
         </InputContent>
       </InputContainer>
 
       <InputContainer>
         <InputContent>
           <Label for="email">E-mail Address</Label>
-          <Input id="email" type={"email"} />
+          <Input
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            id="email"
+            type={"email"}
+          />
         </InputContent>
         <InputContent>
           <Label>Work Model</Label>
@@ -188,7 +213,12 @@ const AddUser = () => {
             >
               Remote
             </WorkOption>
-            <Percentage type={"text"} id="percentage" />
+            <Percentage
+              value={workPercentage}
+              onChange={(e) => setWorkPercentage(e.target.value)}
+              type={"text"}
+              id="percentage"
+            />
           </WorkModel>
         </InputContent>
       </InputContainer>
@@ -196,38 +226,61 @@ const AddUser = () => {
       <InputContainer>
         <InputContent>
           <Label for="password">Password</Label>
-          <Input id="password" type={"text"} />
+          <Input
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            id="password"
+            type={"text"}
+          />
         </InputContent>
-        <InputContent id="buildings-dropdown">
-          <Label for="building">Building</Label>
+        <InputContent>
+          <Label for="buildings">Building</Label>
           <DropdownBuildings />
         </InputContent>
       </InputContainer>
 
       <InputContainer>
         <InputContent id="offices-dropdown">
-          <Label for="office">Office</Label>
+          <Label for="offices">Office</Label>
           <DropdownBuildings />
         </InputContent>
 
         <InputSmallContent>
           <Label for="role">Role</Label>
-          <SmallInput id="role" />
+          <SmallInput
+            value={role}
+            onChange={(e) => setRole(e.target.value)}
+            id="role"
+          />
         </InputSmallContent>
         <InputSmallContent>
           <Label for="gender">Gender (Optional)</Label>
-          <SmallInput id="gender" />
+          <SmallInput
+            value={gender}
+            onChange={(e) => setGender(e.target.value)}
+            id="gender"
+          />
         </InputSmallContent>
       </InputContainer>
 
       <InputContainer>
         <InputContent>
-          <Label for="birth-date">Birth Date</Label>
-          <Input id="birth-date" type={"date"} />
+          <Label for="birthDate">Birth Date</Label>
+          <Input
+            value={birthDate}
+            onChange={(e) => setBirthDate(e.target.value)}
+            id="birthDate"
+            type={"date"}
+          />
         </InputContent>
         <InputContent>
           <Label for="nationality">Nationality (Optional)</Label>
-          <Input id="nationality" type={"text"} />
+          <Input
+            value={nationality}
+            onChange={(e) => setNationality(e.target.value)}
+            id="nationality"
+            type={"text"}
+          />
         </InputContent>
       </InputContainer>
 

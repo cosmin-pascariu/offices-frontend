@@ -13,7 +13,7 @@ import { FaUsers } from "react-icons/fa";
 import { CgLogOut } from "react-icons/cg";
 import { useLocation, useNavigate } from "react-router-dom";
 
-const Sidebar = () => {
+const Sidebar = ({ sidebarStatus, setSidebarStatus }) => {
   const location = useLocation();
   let navigate = useNavigate();
   const handleLogout = (e) => {
@@ -24,7 +24,10 @@ const Sidebar = () => {
   };
 
   return (
-    <SidebarContainer>
+    <SidebarContainer
+      sidebarStatus={sidebarStatus}
+      setSidebarStatus={setSidebarStatus}
+    >
       <SidebarLogo to="/">
         <Logo size={"40px"} />
         <SidebarTitle>
@@ -33,7 +36,11 @@ const Sidebar = () => {
       </SidebarLogo>
 
       <SidebarMenu>
-        <SidebarButton id="users-button" to="/users">
+        <SidebarButton
+          id="users-button"
+          to="/users"
+          onClick={() => setSidebarStatus(false)}
+        >
           <Button
             uColor={location.pathname === "/users" ? true : false}
             bColor={location.pathname === "/users" ? true : false}
@@ -44,7 +51,11 @@ const Sidebar = () => {
             Users
           </ButtonText>
         </SidebarButton>
-        <SidebarButton id="buildings-button" to="/buildings">
+        <SidebarButton
+          id="buildings-button"
+          to="/buildings"
+          onClick={() => setSidebarStatus(false)}
+        >
           <Button
             uColor={location.pathname === "/buildings" ? true : false}
             bColor={location.pathname === "/buildings" ? true : false}
@@ -57,7 +68,11 @@ const Sidebar = () => {
             Buildings
           </ButtonText>
         </SidebarButton>
-        <SidebarButton id="offices-button" to="/offices">
+        <SidebarButton
+          id="offices-button"
+          to="/offices"
+          onClick={() => setSidebarStatus(false)}
+        >
           <Button
             uColor={location.pathname === "/offices" ? true : false}
             bColor={location.pathname === "/offices" ? true : false}
@@ -68,7 +83,11 @@ const Sidebar = () => {
             Offices
           </ButtonText>
         </SidebarButton>
-        <SidebarButton id="requests-button" to="/requests">
+        <SidebarButton
+          id="requests-button"
+          to="/requests"
+          onClick={() => setSidebarStatus(false)}
+        >
           <Button
             uColor={location.pathname === "/requests" ? true : false}
             bColor={location.pathname === "/requests" ? true : false}

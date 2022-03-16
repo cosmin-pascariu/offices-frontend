@@ -18,11 +18,15 @@ export const SidebarContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 10px 0 30px 0;
-  position: sticky;
   top: 0;
+  position: sticky;
 
   @media screen and (max-width: 768px) {
-    display: none;
+    position: fixed;
+    z-index: 10;
+    transition: margin 0.5s;
+    transform: translate(-250px, 0);
+    margin-left: ${({ sidebarStatus }) => (sidebarStatus ? "250px" : "0")};
   }
 `;
 
@@ -37,6 +41,7 @@ export const SidebarTitle = styled.div`
   height: 100%;
   display: flex;
   align-items: flex-end;
+  user-select: none;
 
   h2 {
     font-size: 36px;

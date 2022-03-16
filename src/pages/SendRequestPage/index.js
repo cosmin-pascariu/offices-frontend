@@ -2,6 +2,8 @@ import React from "react";
 import Helmet from "react-helmet";
 import {
   Button,
+  ButtonContent,
+  ButtonsContainer,
   InputContainer,
   InputContent,
   Title,
@@ -33,14 +35,14 @@ const SendRequest = () => {
         <Message id="request-reason"></Message>
       </MessageContainer>
 
-      <InputContainer>
-        <InputContent style={{ alignItems: "flex-end" }}>
+      <ButtonsContainer>
+        <ButtonContent style={{ alignItems: "flex-end" }}>
           <Button>SEND</Button>
-        </InputContent>
-        <InputContent>
+        </ButtonContent>
+        <ButtonContent>
           <Button>CANCEL</Button>
-        </InputContent>
-      </InputContainer>
+        </ButtonContent>
+      </ButtonsContainer>
     </SendRequestContainer>
   );
 };

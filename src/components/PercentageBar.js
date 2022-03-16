@@ -33,9 +33,13 @@ function Styling(props) {
           alignItems: "center",
         }}
       >
-        <p style={{ color: "#3c3c3c", fontSize: "20px" }}>Remote Percentage</p>
-        <div style={{ width: "100px" }}>{props.children}</div>
-        <div style={{}}>
+        <p style={{ color: "#3c3c3c", fontSize: "20px", paddingRight: "10px" }}>
+          Remote Percentage
+        </p>
+        <div style={{ minWidth: "80px", maxWidth: "100px" }}>
+          {props.children}
+        </div>
+        <div>
           <h3 className="h5" style={{ userSelect: "none" }}>
             {props.label}
           </h3>

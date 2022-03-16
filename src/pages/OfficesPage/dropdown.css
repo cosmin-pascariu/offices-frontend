@@ -5,8 +5,9 @@
   background-color: #efefef;
   font-size: 14px;
   position: relative;
-  color: #f8f8f8;
+  color: #292929;
   align-self: flex-start;
+  text-overflow: ellipsis;
 }
 
 .dropDown-header {

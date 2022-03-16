@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../Navbar";
 import Sidebar from "../Sidebar";
 import { Route, Routes } from "react-router-dom";
@@ -24,12 +24,28 @@ import RequestResponse from "../../pages/RequestResponsePage";
 import UpdateOffice from "../../pages/UpdateOfficePage";
 
 const MainContainer = () => {
+  const [sidebarStatus, setSidebarStatus] = useState(false);
+
+  const handleClickOutside = (e) => {
+    e.target.id !== "sidebar" && setSidebarStatus(false);
+  };
+
   return (
     <Container>
-      <Sidebar />
+      <Sidebar
+        sidebarStatus={sidebarStatus}
+        setSidebarStatus={setSidebarStatus}
+        id="sidebar"
+      />
       <MainContent>
-        <Navbar />
-        <RouterContainer>
+        <Navbar
+          sidebarStatus={sidebarStatus}
+          setSidebarStatus={setSidebarStatus}
+        />
+        <RouterContainer
+          sidebarStatus={sidebarStatus}
+          onClick={(e) => handleClickOutside(e)}
+        >
           <Routes>
             <Route path="/users" element={<Users />}></Route>
             <Route path="/buildings" element={<Buildings />}></Route>

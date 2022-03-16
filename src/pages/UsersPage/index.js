@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   UsersContainer,
   UsersSearch,
@@ -23,6 +23,8 @@ import { useNavigate } from "react-router-dom";
 import Helmet from "react-helmet";
 
 const Users = () => {
+  const [searchedName, setSearchedName] = useState("");
+
   let navigate = useNavigate();
 
   const duplicate = (x, n) => Array.from(new Array(n), () => x);
@@ -52,6 +54,7 @@ const Users = () => {
     </UserDetails>
   );
   const nComps = duplicate(oneComp, n);
+
   return (
     <UsersContainer>
       <Helmet>
@@ -63,6 +66,8 @@ const Users = () => {
             id="searchbar"
             type={"text"}
             placeholder="Search user by name..."
+            value={searchedName}
+            onChange={(e) => setSearchedName(e.target.value)}
           />
           <SearchbarBtn>
             <ImSearch

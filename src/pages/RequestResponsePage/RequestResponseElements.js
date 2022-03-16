@@ -2,15 +2,13 @@ import styled from "styled-components";
 
 export const ResponseRequestContainer = styled.div`
   width: 90%;
-  height: 90%;
-  max-width: 1200px;
-  max-height: 800px;
+  max-width: 1000px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  padding: 50px 150px 50px 150px;
+  padding: 50px;
   color: #292929;
 
   @media screen and (max-width: 768px) {
@@ -22,12 +20,19 @@ export const TopContent = styled.div`
   width: 100%;
   height: auto;
   display: flex;
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+  }
 `;
 
 export const LeftContainer = styled.div`
   width: 50%;
   display: flex;
   flex-direction: column;
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
 `;
 
 export const RequestMessage = styled.section`
@@ -43,6 +48,11 @@ export const RequestProfile = styled.div`
   width: 50%;
   display: flex;
   align-items: center;
+
+  @media (max-width: 1000px) {
+    width: 100%;
+    justify-content: center;
+  }
 `;
 
 export const ImageRequest = styled.img`
@@ -58,7 +68,7 @@ export const InfoRequest = styled.div`
   flex-direction: column;
   justify-content: center;
   padding-left: 10px;
-  margin-left: 25px;
+  margin-left: 15px;
 `;
 
 export const NameRequest = styled.h3`
@@ -81,6 +91,10 @@ export const Content = styled.div`
   width: 100%;
   min-height: 80px;
   margin-bottom: 30px;
+
+  @media (max-width: 1000px) {
+    align-items: center;
+  }
 `;
 
 export const Label = styled.label`
