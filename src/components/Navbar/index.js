@@ -15,7 +15,12 @@ import { capitalize } from "../../common/utils";
 import { SidebarLogo, SidebarTitle } from "../Sidebar/SidebarElements";
 import { CgMenu, CgClose } from "react-icons/cg";
 
-const Navbar = ({ sidebarStatus, setSidebarStatus }) => {
+const Navbar = ({
+  sidebarStatus,
+  setSidebarStatus,
+  loggedInUser,
+  setLoggedInUser,
+}) => {
   const location = useLocation();
   const pageName = capitalize(location.pathname.slice(1));
 
@@ -36,8 +41,18 @@ const Navbar = ({ sidebarStatus, setSidebarStatus }) => {
       <NavbarProfile>
         <ImageProfile src={Profile} alt="Profile picture" />
         <ProfileInfo>
-          <ProfileName>Pascariu Cosmin</ProfileName>
-          <ProfileRole>Administrator</ProfileRole>
+          <ProfileName>
+            {(loggedInUser?.first_name || "first") +
+              " " +
+              (loggedInUser?.last_name || "last")}
+          </ProfileName>
+          <ProfileRole>
+            {loggedInUser?.role === "Admin"
+              ? "Administrator"
+              : !loggedInUser?.role
+              ? "unknown"
+              : loggedInUser?.role}
+          </ProfileRole>
         </ProfileInfo>
       </NavbarProfile>
     </NavbarContiner>

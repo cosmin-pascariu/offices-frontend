@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../Navbar";
 import Sidebar from "../Sidebar";
 import { Route, Routes } from "react-router-dom";
@@ -23,7 +23,7 @@ import UpdateUser from "../../pages/UpdateUserPage";
 import RequestResponse from "../../pages/RequestResponsePage";
 import UpdateOffice from "../../pages/UpdateOfficePage";
 
-const MainContainer = () => {
+const MainContainer = ({ loggedInUser, setLoggedInUser }) => {
   const [sidebarStatus, setSidebarStatus] = useState(false);
 
   const handleClickOutside = (e) => {
@@ -33,12 +33,16 @@ const MainContainer = () => {
   return (
     <Container>
       <Sidebar
+        loggedInUser={loggedInUser}
+        setLoggedInUser={setLoggedInUser}
         sidebarStatus={sidebarStatus}
         setSidebarStatus={setSidebarStatus}
         id="sidebar"
       />
       <MainContent>
         <Navbar
+          loggedInUser={loggedInUser}
+          setLoggedInUser={setLoggedInUser}
           sidebarStatus={sidebarStatus}
           setSidebarStatus={setSidebarStatus}
         />
@@ -47,7 +51,9 @@ const MainContainer = () => {
           onClick={(e) => handleClickOutside(e)}
         >
           <Routes>
-            <Route path="/users" element={<Users />}></Route>
+            {loggedInUser?.role === "Admin" && (
+              <Route path="/users" element={<Users />}></Route>
+            )}
             <Route path="/buildings" element={<Buildings />}></Route>
             <Route path="/offices" element={<Offices />}></Route>
             <Route path="/requests" element={<Requests />}></Route>

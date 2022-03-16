@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   UsersContainer,
   UsersSearch,
@@ -24,6 +24,32 @@ import Helmet from "react-helmet";
 
 const Users = () => {
   const [searchedName, setSearchedName] = useState("");
+  const [users, setUsers] = useState([]);
+
+  const getUsersFromDB = async () => {
+    const requestOptions = {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("access")}`,
+      },
+    };
+    const response = await fetch(
+      "https://offices-backend.herokuapp.com/api/users",
+      requestOptions
+    );
+    const data = await response.json();
+    if (data?.length) {
+      setUsers(data);
+      console.log(data);
+      return;
+    }
+    setUsers([]);
+    console.log(data);
+  };
+
+  useEffect(() => {
+    getUsersFromDB();
+  }, []);
 
   let navigate = useNavigate();
 
@@ -90,7 +116,38 @@ const Users = () => {
           <RemoteTxt>Remote</RemoteTxt>
           <ActionsTxt>Actions</ActionsTxt>
         </TableInfo>
-        {nComps}
+        {users.map((user, index) => (
+          <UserDetails key={index}>
+            <NameTxt>
+              {user.first_name} {user.last_name}
+            </NameTxt>
+            <BuildingTxt>{user.building_id || "not set"}</BuildingTxt>
+            <OfficeTxt>{user.office_id || "not set"}</OfficeTxt>
+            <RemoteTxt>
+              {user.remote_percentage === 0
+                ? "no"
+                : user.remote_percentage === 100
+                ? "fully"
+                : user.remote_percentage + "%"}
+            </RemoteTxt>
+            <div style={{ display: "flex", padding: "15px" }}>
+              <ActionBtn>
+                <BsPencil
+                  id="edit-button"
+                  onClick={() => navigate("/users/update-user")}
+                  size={"100%"}
+                />
+              </ActionBtn>
+              <ActionBtn>
+                <CgMoreO
+                  id="info-button"
+                  onClick={() => navigate("/users/user-info")}
+                  size={"100%"}
+                />
+              </ActionBtn>
+            </div>
+          </UserDetails>
+        ))}
       </Table>
     </UsersContainer>
   );

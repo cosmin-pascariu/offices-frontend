@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import { createGlobalStyle } from "styled-components";
 import {
   BrowserRouter as Router,
@@ -68,13 +68,67 @@ svg text{
 `;
 
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState(null);
+  useLayoutEffect(() => {
+    const getUserInfo = async () => {
+      const requestOptions = {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("access")}`,
+        },
+      };
+      const response = await fetch(
+        "https://offices-backend.herokuapp.com/api/me",
+        requestOptions
+      );
+      const data = await response.json();
+      if (data?.email) {
+        setLoggedInUser(data);
+        console.log(data);
+        return;
+      }
+      setLoggedInUser(null);
+      console.log(data);
+    };
+
+    getUserInfo();
+  }, []);
   return (
     <Router>
       <GlobalStyle />
       <Routes>
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/" element={<Navigate to="/login" />}></Route>
-        <Route path="*" element={<MainContainer />}></Route>
+        {!loggedInUser && (
+          <Route
+            path="/login"
+            element={
+              <Login
+                loggedInUser={loggedInUser}
+                setLoggedInUser={setLoggedInUser}
+              />
+            }
+          ></Route>
+        )}
+        <Route
+          path="/"
+          element={
+            !loggedInUser ? (
+              <Navigate to="/login" replace />
+            ) : loggedInUser?.role === "Admin" ? (
+              <Navigate to="/users" replace />
+            ) : (
+              <Navigate to="/my-requests" replace />
+            )
+          }
+        ></Route>
+        <Route
+          path="*"
+          element={
+            <MainContainer
+              loggedInUser={loggedInUser}
+              setLoggedInUser={setLoggedInUser}
+            />
+          }
+        ></Route>
       </Routes>
     </Router>
   );

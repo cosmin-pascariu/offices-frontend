@@ -18,7 +18,7 @@ import {
 import Helmet from "react-helmet";
 import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Login = ({ loggedInUser, setLoggedInUser }) => {
   const [passwordVisibility, setPasswordVisibility] = useState(true);
 
   const [password, setPassword] = useState("");
@@ -28,8 +28,8 @@ const Login = () => {
     setPasswordVisibility(!passwordVisibility);
   };
   let navigate = useNavigate();
-  const handleLogin = async (e) => {
-    e.preventDefault();
+
+  const getTokens = async () => {
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -48,7 +48,34 @@ const Login = () => {
     if (data?.refresh) {
       localStorage.setItem("refresh", data.refresh);
       localStorage.setItem("access", data.access);
-      navigate("/users");
+      return true;
+    }
+    return false;
+  };
+
+  const getUserInfo = async () => {
+    const requestOptions = {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("access")}`,
+      },
+    };
+    const response = await fetch(
+      "https://offices-backend.herokuapp.com/api/me",
+      requestOptions
+    );
+    const data = await response.json();
+    if (data?.email) {
+      setLoggedInUser(data);
+      navigate(data.role === "Admin" ? "/users" : "/my-requests");
+    }
+  };
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    if (await getTokens()) {
+      await getUserInfo();
     }
   };
 

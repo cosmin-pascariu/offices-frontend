@@ -13,13 +13,19 @@ import { FaUsers } from "react-icons/fa";
 import { CgLogOut } from "react-icons/cg";
 import { useLocation, useNavigate } from "react-router-dom";
 
-const Sidebar = ({ sidebarStatus, setSidebarStatus }) => {
+const Sidebar = ({
+  sidebarStatus,
+  setSidebarStatus,
+  loggedInUser,
+  setLoggedInUser,
+}) => {
   const location = useLocation();
   let navigate = useNavigate();
   const handleLogout = (e) => {
     e.preventDefault();
     localStorage.removeItem("refresh");
     localStorage.removeItem("access");
+    setLoggedInUser(null);
     navigate("/login");
   };
 
