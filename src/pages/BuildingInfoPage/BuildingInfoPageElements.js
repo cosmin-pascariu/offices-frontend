@@ -18,11 +18,11 @@ export const BuildingInfoContainer = styled.div`
     padding: 50px;
     border-radius: 0;
 
-    section {
+    /* section {
       display: flex;
       width: 100%;
       flex-direction: column;
-    }
+    } */
   }
 `;
 

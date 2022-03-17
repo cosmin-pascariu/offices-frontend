@@ -127,7 +127,9 @@ const UpdateUser = () => {
       ? "translate(40px,0)"
       : "";
 
-    document.getElementById("body").style.userSelect = "none";
+    !isSwitchActive
+      ? alert("Are you sure you want to disable the user?")
+      : alert("The user is now activated!");
   };
 
   return (
