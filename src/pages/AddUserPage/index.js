@@ -29,9 +29,8 @@ const data = [
   { id: 2, label: "Primary Building" },
   { id: 3, label: "Building Building" },
 ];
-const DropdownBuildings = () => {
+const DropdownBuildings = ({ items }) => {
   const [isOpen, setOpen] = useState(false);
-  const [items, setItem] = useState(data);
   const [selectedItem, setSelectedItem] = useState(null);
 
   const toggleDropdown = () => setOpen(!isOpen);
@@ -55,6 +54,7 @@ const DropdownBuildings = () => {
       <div className={`dropdown-body ${isOpen && "open"}`}>
         {items.map((item) => (
           <div
+            key={item.id}
             className="dropdown-item"
             onClick={(e) => handleItemClick(e.target.id)}
             id={item.id}
@@ -66,7 +66,7 @@ const DropdownBuildings = () => {
             >
               •{" "}
             </span>
-            {item.label}
+            {item.name}
           </div>
         ))}
       </div>
@@ -78,7 +78,7 @@ const AddUser = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [workPercentage, setWorkPercentage] = useState("");
+  const [workPercentage, setWorkPercentage] = useState("0");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
   const [gender, setGender] = useState("");
@@ -87,11 +87,62 @@ const AddUser = () => {
 
   const location = useLocation();
   const [switchVisibility, setSwitchVisibility] = useState(false);
+  const [buildings, setBuildings] = useState([]);
+  const [offices, setOffices] = useState([]);
 
   function vis() {
     if (location.pathname === "/users/add-user") setSwitchVisibility(false);
     if (location.pathname === "/users/update-user") setSwitchVisibility(true);
   }
+
+  const getBuildingsFromDB = async () => {
+    const requestOptions = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("access")}`,
+      },
+    };
+    const response = await fetch(
+      "https://offices-backend.herokuapp.com/api/buildings",
+      requestOptions
+    );
+    const data = await response.json();
+    if (data?.length) {
+      setBuildings(data);
+      console.log(data);
+      return;
+    }
+    setBuildings([]);
+    console.log(data);
+  };
+
+  const getOfficesFromDB = async () => {
+    const requestOptions = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("access")}`,
+      },
+    };
+    const response = await fetch(
+      "https://offices-backend.herokuapp.com/api/offices",
+      requestOptions
+    );
+    const data = await response.json();
+    if (data?.length) {
+      setOffices(data);
+      console.log(data);
+      return;
+    }
+    setOffices([]);
+    console.log(data);
+  };
+
+  useEffect(() => {
+    getBuildingsFromDB();
+    getOfficesFromDB();
+  }, []);
 
   useEffect(() => {
     vis();
@@ -127,7 +178,7 @@ const AddUser = () => {
     setIsHybrid(false);
     setIsRemote(true);
     document.getElementById("percentage").disabled = true;
-    document.getElementById("percentage").value = "100%";
+    document.getElementById("percentage").value = "100";
     document.getElementById("percentage").style.backgroundColor = "#fff";
   };
 
@@ -139,6 +190,37 @@ const AddUser = () => {
       : "";
   };
 
+  const [user, setUser] = useState([]);
+  const sendUserToBD = async (e) => {
+    e.preventDefault();
+    const requestOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("access")}`,
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password,
+        role: role,
+        first_name: firstName,
+        last_name: lastName,
+        office_id: null,
+        building_id: null,
+        gender: "M",
+        birth_date: birthDate,
+        nationality: nationality,
+        remote_percentage: parseFloat(workPercentage),
+      }),
+    };
+    console.log(requestOptions);
+    const response = await fetch(
+      "https://offices-backend.herokuapp.com/api/users/",
+      requestOptions
+    );
+    const data = await response.json();
+    console.log(data);
+  };
   return (
     <AddUserContainer>
       <Helmet>
@@ -191,7 +273,11 @@ const AddUser = () => {
         </InputContent>
         <InputContent>
           <Label for="buildings">Building</Label>
-          <DropdownBuildings id="dropdownBuildings" style={{ zIndex: "10" }} />
+          <DropdownBuildings
+            items={buildings}
+            id="dropdownBuildings"
+            style={{ zIndex: "10" }}
+          />
         </InputContent>
       </InputContainer>
 
@@ -242,7 +328,7 @@ const AddUser = () => {
       <InputContainer>
         <InputContent id="offices-dropdown">
           <Label for="offices">Office</Label>
-          <DropdownBuildings />
+          <DropdownBuildings items={offices} />
         </InputContent>
 
         <InputSmallContent>
@@ -286,7 +372,9 @@ const AddUser = () => {
 
       <ButtonsContainer>
         <ButtonContent style={{ alignItems: "flex-end" }}>
-          <Button id="save-button">SAVE</Button>
+          <Button id="save-button" onClick={(e) => sendUserToBD(e)}>
+            SAVE
+          </Button>
         </ButtonContent>
         <ButtonContent>
           <Button id="cancel-button" onClick={routeChange}>

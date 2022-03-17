@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ImSearch } from "react-icons/im";
 import {
   BuildingsContainer,
@@ -25,6 +25,34 @@ import { useNavigate } from "react-router-dom";
 import Helmet from "react-helmet";
 
 const Buildings = () => {
+  const [buildings, setBuildings] = useState([]);
+
+  const getBuildingsFromDB = async () => {
+    const requestOptions = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("access")}`,
+      },
+    };
+    const response = await fetch(
+      "https://offices-backend.herokuapp.com/api/buildings",
+      requestOptions
+    );
+    const data = await response.json();
+    if (data?.length) {
+      setBuildings(data);
+      console.log(data);
+      return;
+    }
+    setBuildings([]);
+    console.log(data);
+  };
+
+  useEffect(() => {
+    getBuildingsFromDB();
+  }, []);
+
   const [searchedName, setSearchedName] = useState("");
 
   let navigate = useNavigate();
@@ -69,121 +97,34 @@ const Buildings = () => {
       </BuildingsSearch>
 
       <BuildingsContent>
-        <BuildingCard>
-          <BuildingImage src={MainBImg} alt="Main Building" />
-          <CardInfo>
-            <BuildingName>Main Building</BuildingName>
-            <FloorNumber>
-              <p>5</p>
-              <FaBuffer size={"14px"} />
-            </FloorNumber>
-          </CardInfo>
+        {buildings.map((building) => (
+          <BuildingCard key={building.id}>
+            <BuildingImage src={MainBImg} alt="Main Building" />
+            <CardInfo>
+              <BuildingName>{building.name}</BuildingName>
+              <FloorNumber>
+                <p>{building.floors_count}</p>
+                <FaBuffer size={"14px"} />
+              </FloorNumber>
+            </CardInfo>
 
-          <CardInfo>
-            <BuildingAddress>
-              Chicago, George Whashington Street, 13
-            </BuildingAddress>
-            <BsPencil
-              id="update-button"
-              onClick={routeChangeEdit}
-              size={"14px"}
-              style={{ color: "#75ce55", cursor: "pointer" }}
-            />
-            <CgMoreO
-              id="info-button"
-              onClick={routeChangeInfo}
-              size={"15px"}
-              style={{ color: "#75ce55", cursor: "pointer" }}
-            />
-          </CardInfo>
-        </BuildingCard>
-
-        <BuildingCard>
-          <BuildingImage src={MainBImg} alt="Main Building" />
-          <CardInfo>
-            <BuildingName>Main Building</BuildingName>
-            <FloorNumber>
-              <p>5</p>
-              <FaBuffer size={"14px"} />
-            </FloorNumber>
-          </CardInfo>
-
-          <CardInfo>
-            <BuildingAddress>
-              Chicago, George Whashington Street, 13
-            </BuildingAddress>
-            <BsPencil
-              id="update-button"
-              onClick={routeChangeEdit}
-              size={"14px"}
-              style={{ color: "#75ce55", cursor: "pointer" }}
-            />
-            <CgMoreO
-              id="info-button"
-              onClick={routeChangeInfo}
-              size={"15px"}
-              style={{ color: "#75ce55", cursor: "pointer" }}
-            />
-          </CardInfo>
-        </BuildingCard>
-
-        <BuildingCard>
-          <BuildingImage src={MainBImg} alt="Main Building" />
-          <CardInfo>
-            <BuildingName>Main Building</BuildingName>
-            <FloorNumber>
-              <p>5</p>
-              <FaBuffer size={"14px"} />
-            </FloorNumber>
-          </CardInfo>
-
-          <CardInfo>
-            <BuildingAddress>
-              Chicago, George Whashington Street, 13
-            </BuildingAddress>
-            <BsPencil
-              id="update-button"
-              onClick={routeChangeEdit}
-              size={"14px"}
-              style={{ color: "#75ce55", cursor: "pointer" }}
-            />
-            <CgMoreO
-              id="info-button"
-              onClick={routeChangeInfo}
-              size={"15px"}
-              style={{ color: "#75ce55", cursor: "pointer" }}
-            />
-          </CardInfo>
-        </BuildingCard>
-
-        <BuildingCard>
-          <BuildingImage src={MainBImg} alt="Main Building" />
-          <CardInfo>
-            <BuildingName>Main Building</BuildingName>
-            <FloorNumber>
-              <p>5</p>
-              <FaBuffer size={"14px"} />
-            </FloorNumber>
-          </CardInfo>
-
-          <CardInfo>
-            <BuildingAddress>
-              Chicago, George Whashington Street, 13
-            </BuildingAddress>
-            <BsPencil
-              id="update-button"
-              onClick={routeChangeEdit}
-              size={"14px"}
-              style={{ color: "#75ce55", cursor: "pointer" }}
-            />
-            <CgMoreO
-              id="info-button"
-              onClick={routeChangeInfo}
-              size={"15px"}
-              style={{ color: "#75ce55", cursor: "pointer" }}
-            />
-          </CardInfo>
-        </BuildingCard>
+            <CardInfo>
+              <BuildingAddress>{building.address}</BuildingAddress>
+              <BsPencil
+                id="update-button"
+                onClick={routeChangeEdit}
+                size={"14px"}
+                style={{ color: "#75ce55", cursor: "pointer" }}
+              />
+              <CgMoreO
+                id="info-button"
+                onClick={routeChangeInfo}
+                size={"15px"}
+                style={{ color: "#75ce55", cursor: "pointer" }}
+              />
+            </CardInfo>
+          </BuildingCard>
+        ))}
       </BuildingsContent>
     </BuildingsContainer>
   );

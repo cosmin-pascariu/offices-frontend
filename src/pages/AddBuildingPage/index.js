@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Helmet from "react-helmet";
 import { useNavigate } from "react-router-dom";
 import ImagePicker from "../../components/ImagePicker.js";
@@ -26,6 +26,32 @@ const AddBuilding = () => {
   const [floorCount, setFloorCount] = useState("");
   const [buildingAddress, setBuildingAddress] = useState("");
 
+  const [building, setBuilding] = useState([]);
+  const sendBuildingToBD = async (e) => {
+    e.preventDefault();
+    console.log(buildingName, floorCount, buildingAddress);
+    const requestOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("access")}`,
+      },
+      body: JSON.stringify({
+        name: buildingName,
+        floors_count: floorCount,
+        address: buildingAddress,
+        img_url: "https://www.damianul.com",
+      }),
+    };
+    console.log(requestOptions);
+    const response = await fetch(
+      "https://offices-backend.herokuapp.com/api/buildings/",
+      requestOptions
+    );
+    const data = await response.json();
+    console.log(data);
+  };
+
   let navigate = useNavigate();
   const routeChange = () => {
     let path = "/buildings";
@@ -52,7 +78,7 @@ const AddBuilding = () => {
           <Label for="floorCount">Floor Count</Label>
           <Input
             value={floorCount}
-            onChange={(e) => setFloorCount(e.target.value)}
+            onChange={(e) => setFloorCount(e.currentTarget.value)}
             id="florCount"
             type={"text"}
           />
@@ -79,7 +105,9 @@ const AddBuilding = () => {
       </BuildingImage>
       <ButtonsContainer style={{ transform: "scale(0.75)" }}>
         <ButtonContent style={{ alignItems: "flex-end" }}>
-          <Button id="save-button">SAVE</Button>
+          <Button id="save-button" onClick={(e) => sendBuildingToBD(e)}>
+            SAVE
+          </Button>
         </ButtonContent>
         <ButtonContent>
           <Button id="cancel-button" onClick={routeChange}>

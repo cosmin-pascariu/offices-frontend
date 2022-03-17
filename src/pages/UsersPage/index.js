@@ -41,6 +41,7 @@ const Users = () => {
     if (data?.length) {
       setUsers(data);
       console.log(data);
+      console.log(data[1].id);
       return;
     }
     setUsers([]);
@@ -116,8 +117,8 @@ const Users = () => {
           <RemoteTxt>Remote</RemoteTxt>
           <ActionsTxt>Actions</ActionsTxt>
         </TableInfo>
-        {users.map((user, index) => (
-          <UserDetails key={index}>
+        {users.map((user) => (
+          <UserDetails key={user.id}>
             <NameTxt>
               {user.first_name} {user.last_name}
             </NameTxt>
@@ -141,7 +142,7 @@ const Users = () => {
               <ActionBtn>
                 <CgMoreO
                   id="info-button"
-                  onClick={() => navigate("/users/user-info")}
+                  onClick={() => navigate("/users/user-info/")}
                   size={"100%"}
                 />
               </ActionBtn>
