@@ -36,7 +36,7 @@ const SendRequest = () => {
       </MessageContainer>
 
       <ButtonsContainer>
-        <ButtonContent style={{ alignItems: "flex-end" }}>
+        <ButtonContent style={{ alignItems: "flex-end", marginLeft: "8%" }}>
           <Button>SEND</Button>
         </ButtonContent>
         <ButtonContent>

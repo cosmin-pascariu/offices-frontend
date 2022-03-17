@@ -177,6 +177,22 @@ const UpdateUser = () => {
 
       <InputContainer>
         <InputContent>
+          <Label for="password">Password</Label>
+          <Input
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            id="password"
+            type={"text"}
+          />
+        </InputContent>
+        <InputContent>
+          <Label for="building">Building</Label>
+          <DropdownBuildings />
+        </InputContent>
+      </InputContainer>
+
+      <InputContainer>
+        <InputContent>
           <Label for="email">E-mail Address</Label>
           <Input
             value={email}
@@ -216,22 +232,6 @@ const UpdateUser = () => {
               id="percentage"
             />
           </WorkModel>
-        </InputContent>
-      </InputContainer>
-
-      <InputContainer>
-        <InputContent>
-          <Label for="password">Password</Label>
-          <Input
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            id="password"
-            type={"text"}
-          />
-        </InputContent>
-        <InputContent>
-          <Label for="building">Building</Label>
-          <DropdownBuildings />
         </InputContent>
       </InputContainer>
 

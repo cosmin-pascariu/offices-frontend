@@ -10,6 +10,7 @@
   align-self: flex-start;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
   color: #292929;
+  z-index: 4;
 }
 
 .dropdown-header {
@@ -26,13 +27,13 @@
   padding: 5px;
   border-top: 1px solid #e5e8ec;
   display: none;
-  z-index: 10;
+  /* z-index: 10; */
 }
 
 .dropdown-body.open {
   display: block;
   position: relative;
-  z-index: 3;
+  /* z-index: 3; */
 }
 
 .dropdown-item {

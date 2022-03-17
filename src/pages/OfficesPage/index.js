@@ -168,7 +168,7 @@ const Offices = () => {
       </OfficesSearch>
       {isVisible && (
         <FilterContent>
-          <Dropdown />
+          <Dropdown style={{ background: "white" }} />
           <p>is</p>
           <Option id="less-button" onClick={handleLess} uColor={isLess}>
             LESS

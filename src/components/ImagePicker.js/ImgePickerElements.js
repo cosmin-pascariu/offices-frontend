@@ -14,7 +14,7 @@ export const ImgContainer = styled.div`
   }
 
   label {
-    width: 350px;
+    width: 80%;
     height: 238px;
     cursor: pointer;
     position: absolute;
@@ -26,9 +26,11 @@ export const ImgContainer = styled.div`
 `;
 
 export const ImgHolder = styled.div`
-  width: 350px;
+  width: 90%;
+  max-width: 350px;
   height: 238px;
   border-radius: 10px;
+  margin-right: 30px;
 
   img {
     width: 100%;

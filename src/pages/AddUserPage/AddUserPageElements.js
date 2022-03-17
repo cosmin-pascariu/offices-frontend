@@ -76,7 +76,12 @@ export const ButtonContent = styled.div`
   @media screen and (max-width: 1000px) {
     width: 50%;
     align-items: center;
-    padding: 0;
+    padding-right: 10%;
+
+    button {
+      width: 120px;
+      height: 50px;
+    }
   }
 `;
 

@@ -47,6 +47,8 @@ const MainContainer = ({ loggedInUser, setLoggedInUser }) => {
           setSidebarStatus={setSidebarStatus}
         />
         <RouterContainer
+          loggedInUser={loggedInUser}
+          setLoggedInUser={setLoggedInUser}
           sidebarStatus={sidebarStatus}
           onClick={(e) => handleClickOutside(e)}
         >
@@ -65,8 +67,14 @@ const MainContainer = ({ loggedInUser, setLoggedInUser }) => {
             ></Route>
             <Route path="/offices/add-office" element={<AddOffice />}></Route>
             <Route
+              loggedInUser={loggedInUser}
               path="/requests/response-request"
-              element={<RequestResponse />}
+              element={
+                <RequestResponse
+                  loggedInUser={loggedInUser}
+                  setLoggedInUser={setLoggedInUser}
+                />
+              }
             ></Route>
             <Route path="/users/user-info" element={<UserInfo />}></Route>
             <Route

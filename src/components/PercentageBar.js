@@ -33,7 +33,7 @@ function Styling(props) {
           alignItems: "center",
         }}
       >
-        <p style={{ color: "#3c3c3c", fontSize: "20px", paddingRight: "10px" }}>
+        <p style={{ color: "#3c3c3c", fontSize: "20px", paddingRight: "50px" }}>
           Remote Percentage
         </p>
         <div style={{ minWidth: "80px", maxWidth: "100px" }}>

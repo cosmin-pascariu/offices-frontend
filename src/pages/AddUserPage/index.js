@@ -181,6 +181,22 @@ const AddUser = () => {
 
       <InputContainer>
         <InputContent>
+          <Label for="password">Password</Label>
+          <Input
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            id="password"
+            type={"text"}
+          />
+        </InputContent>
+        <InputContent>
+          <Label for="buildings">Building</Label>
+          <DropdownBuildings id="dropdownBuildings" style={{ zIndex: "10" }} />
+        </InputContent>
+      </InputContainer>
+
+      <InputContainer>
+        <InputContent>
           <Label for="email">E-mail Address</Label>
           <Input
             value={email}
@@ -220,22 +236,6 @@ const AddUser = () => {
               id="percentage"
             />
           </WorkModel>
-        </InputContent>
-      </InputContainer>
-
-      <InputContainer>
-        <InputContent>
-          <Label for="password">Password</Label>
-          <Input
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            id="password"
-            type={"text"}
-          />
-        </InputContent>
-        <InputContent>
-          <Label for="buildings">Building</Label>
-          <DropdownBuildings />
         </InputContent>
       </InputContainer>
 
@@ -286,9 +286,7 @@ const AddUser = () => {
 
       <ButtonsContainer>
         <ButtonContent style={{ alignItems: "flex-end" }}>
-          <Button id="save-button" to="/users">
-            SAVE
-          </Button>
+          <Button id="save-button">SAVE</Button>
         </ButtonContent>
         <ButtonContent>
           <Button id="cancel-button" onClick={routeChange}>

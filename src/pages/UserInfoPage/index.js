@@ -44,7 +44,7 @@ const UserInfo = () => {
           <p>Gender: Male</p>
           <p>Nationality: Romanian</p>
         </InfoContent>
-        <InfoContent style={{ paddingLeft: "100px" }}>
+        <InfoContent>
           <p>Building: C2</p>
           <p>Office: 01</p>
           <p>Desk: 03</p>

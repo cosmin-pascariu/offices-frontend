@@ -20,16 +20,22 @@ import {
   Button,
   ButtonContent,
   ButtonsContainer,
-  InputContainer,
-  InputContent,
 } from "../AddUserPage/AddUserPageElements";
 import { useNavigate } from "react-router-dom";
 import Img from "../../assets/images/employee.jpeg";
 import Helmet from "react-helmet";
 import Percentagebar from "../../components/PercentageBar";
 
-const RequestResponse = () => {
+const RequestResponse = ({ loggedInUser, setLoggedInUser }) => {
+  console.log(loggedInUser);
   const [isApproveBtnActive, setIsApproveBtnActive] = useState(true);
+  const [textArea, setTextArea] = useState(
+    "Hi [name],\n\nYour request for remote work has been approved. I hope you continue to show the same involvement that you have had so" +
+      " far.\n\nRegards,\n" +
+      (loggedInUser?.first_name || "first") +
+      " " +
+      (loggedInUser?.last_name || "last")
+  );
 
   const handleAproveBtn = () => {
     setIsApproveBtnActive(true);
@@ -37,6 +43,7 @@ const RequestResponse = () => {
 
   const handleRejectBtn = () => {
     setIsApproveBtnActive(false);
+    document.getElementById("approve-message").value = "";
   };
 
   let navigate = useNavigate();
@@ -97,11 +104,12 @@ const RequestResponse = () => {
         {isApproveBtnActive ? (
           <>
             <Label>Message approval</Label>
-            <Textarea style={{ resize: "none" }} id="approve-message">
-              Hi [name], &#13;&#10; Your request for remote work has been
-              approved. I hope you continue to show the same involvement that
-              you have had so far. Regards, [admin name]
-            </Textarea>
+            <Textarea
+              value={textArea}
+              onChange={(e) => setTextArea(e.target.value)}
+              style={{ resize: "none" }}
+              id="approve-message"
+            ></Textarea>
           </>
         ) : (
           <>
@@ -111,7 +119,7 @@ const RequestResponse = () => {
         )}
       </Content>
 
-      <ButtonsContainer>
+      <ButtonsContainer style={{ marginLeft: "5%" }}>
         <ButtonContent style={{ alignItems: "flex-end" }}>
           <Button>SEND</Button>
         </ButtonContent>

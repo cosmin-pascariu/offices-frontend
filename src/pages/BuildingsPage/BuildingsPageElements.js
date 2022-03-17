@@ -9,6 +9,17 @@ export const BuildingsSearch = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+
+    div {
+      width: 100%;
+    }
+  }
 `;
 
 export const BuildingsContent = styled.div`

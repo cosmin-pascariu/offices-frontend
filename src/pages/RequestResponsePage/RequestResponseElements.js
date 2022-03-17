@@ -12,7 +12,9 @@ export const ResponseRequestContainer = styled.div`
   color: #292929;
 
   @media screen and (max-width: 768px) {
-    padding: 50px 15px 5px 15px;
+    padding: 50px 35px 5px 35px;
+    width: 100%;
+    box-shadow: 0;
   }
 `;
 
@@ -125,6 +127,7 @@ export const Textarea = styled.textarea`
   border-radius: 10px;
   font-size: 14px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+  white-space: pre-line;
 `;
 
 export const RadioButtons = styled.div`

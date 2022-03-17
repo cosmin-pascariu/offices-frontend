@@ -53,7 +53,6 @@ export const FilterButton = styled.button`
 `;
 
 export const FilterContent = styled.div`
-  width: 75.5%;
   height: 50px;
   background-color: #fff;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
