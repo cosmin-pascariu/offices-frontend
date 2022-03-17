@@ -7,4 +7,9 @@ export const AddOfficeContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 20px;
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    /* max-width: 100%; */
+  }
 `;

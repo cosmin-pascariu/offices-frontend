@@ -2,9 +2,8 @@ import styled from "styled-components";
 
 export const BuildingInfoContainer = styled.div`
   width: 90%;
-  height: 90%;
-  max-width: 1200px;
-  max-height: 800px;
+  max-width: 1000px;
+
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
@@ -12,12 +11,33 @@ export const BuildingInfoContainer = styled.div`
   flex-direction: column;
   padding: 50px 75px 50px 75px;
   color: #292929;
+
+  @media (max-width: 1000px) {
+    width: 100%;
+    box-shadow: 0;
+    padding: 50px;
+    border-radius: 0;
+
+    section {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+    }
+  }
 `;
 
 export const PieChartContainer = styled.div`
   width: 100%;
   display: flex;
   height: 400px;
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+
+    div {
+      width: 100%;
+    }
+  }
 `;
 
 export const PieChartDiagramContainer = styled.div`
@@ -40,10 +60,11 @@ export const PieChartInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
 `;
 
-export const PieChartInfo = styled.div`
-  width: 40%;
+export const PieChartInfo = styled.p`
+  width: 50%;
   display: flex;
 
   p {
@@ -51,9 +72,10 @@ export const PieChartInfo = styled.div`
   }
 `;
 
-export const Box = styled.div`
-  height: 10px;
-  width: 10px;
+export const Box = styled.span`
+  height: 20px;
+  width: 30px;
+  margin-right: 8px;
   border: 1px solid #292929;
   background: #75ce55;
 `;

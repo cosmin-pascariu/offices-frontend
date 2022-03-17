@@ -210,7 +210,12 @@ const RoomContainer = styled.div`
   box-sizing: content-box;
   padding: 10px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
-  margin-left: 20px;
+  margin: 0 20px;
+  max-width: calc(100vw - 300px);
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const Button = styled.button`
@@ -248,6 +253,26 @@ const Controllers = styled.div`
   user-select: none;
   border-radius: 8px;
   padding: 20px;
+
+  /* @media (max-width: 1000px) {
+    flex-direction: row;
+    width: 100%;
+    align-items: flex-start;
+    padding: 20px 0;
+
+    input,
+    button {
+      height: 40px;
+      margin: 0 1px;
+    }
+
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: auto;
+    }
+  } */
 `;
 
 const NumberInput = styled.input`
@@ -262,7 +287,6 @@ const NumberInput = styled.input`
 
   &:focus {
     outline: #292929 solid 1px;
-    /* border: 1px solid #292929; */
   }
 `;
 

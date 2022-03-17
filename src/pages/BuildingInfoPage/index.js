@@ -24,16 +24,18 @@ const BuildingInfo = () => {
       <Title>Building Info</Title>
 
       <InfoContainer style={{ height: "20%" }}>
-        <InfoContent style={{ fontSize: "20px" }}>
-          <p>Total Offices: 20</p>
-          <p>Desks: 240</p>
-          <p>Usable Desks: 180</p>
-        </InfoContent>
-        <InfoContent style={{ fontSize: "20px" }}>
-          <p>Occupied Desks: 155</p>
-          <p>Free Desks: 25</p>
-          <p>Occupation Percentage: 86%</p>
-        </InfoContent>
+        <section>
+          <InfoContent style={{ fontSize: "20px" }}>
+            <p>Total Offices: 20</p>
+            <p>Desks: 240</p>
+            <p>Usable Desks: 180</p>
+          </InfoContent>
+          <InfoContent style={{ fontSize: "20px" }}>
+            <p>Occupied Desks: 155</p>
+            <p>Free Desks: 25</p>
+            <p>Occupation Percentage: 86%</p>
+          </InfoContent>
+        </section>
       </InfoContainer>
 
       <PieChartContainer>

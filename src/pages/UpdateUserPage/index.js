@@ -120,15 +120,18 @@ const UpdateUser = () => {
   };
 
   const [isSwitchActive, setIsSwitchActive] = useState(false);
+
   const handleIsSwitchActive = () => {
     setIsSwitchActive(!isSwitchActive);
     document.getElementById("ball").style.transform = isSwitchActive
       ? "translate(40px,0)"
       : "";
+
+    document.getElementById("body").style.userSelect = "none";
   };
 
   return (
-    <AddUserContainer>
+    <AddUserContainer id="body">
       <Helmet>
         <title>Offices | Update User</title>
       </Helmet>
@@ -154,6 +157,7 @@ const UpdateUser = () => {
           </SwitchBtn>
         </SwitchContainer>
       </Title>
+
       <InputContainer>
         <InputContent>
           <Label for="first-name">First Name</Label>
