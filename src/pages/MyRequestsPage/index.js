@@ -26,22 +26,37 @@ const MyRequests = () => {
 
   const duplicate = (x, n) => Array.from(new Array(n), () => x);
 
-  const n = 20;
-  const oneComp = (
+  const n = 10;
+  const rejectComp = (
     <RequestContent>
       <RequestInfo>
         <RequestTitle>Desk Request</RequestTitle>
       </RequestInfo>
       <StatusContainer bgColor={false}>
         <StatusCircle bgColor={false} />
-        <StatusText txtColor={false}>Approval</StatusText>
+        <StatusText txtColor={false}>Rejected</StatusText>
       </StatusContainer>
       <ViewButton id="view-buton" onClick={routeChange}>
         VIEW
       </ViewButton>
     </RequestContent>
   );
-  const nComps = duplicate(oneComp, n);
+  const approveComp = (
+    <RequestContent>
+      <RequestInfo>
+        <RequestTitle>Desk Request</RequestTitle>
+      </RequestInfo>
+      <StatusContainer bgColor={true}>
+        <StatusCircle bgColor={true} />
+        <StatusText txtColor={true}>Approved</StatusText>
+      </StatusContainer>
+      <ViewButton id="view-buton" onClick={routeChange}>
+        VIEW
+      </ViewButton>
+    </RequestContent>
+  );
+  const approveComps = duplicate(approveComp, n);
+  const rejectComps = duplicate(rejectComp, n);
 
   return (
     <RequestsContainer>
@@ -50,7 +65,10 @@ const MyRequests = () => {
       </Helmet>
       <RequestsTitle>My Requests</RequestsTitle>
 
-      <RequestsTable>{nComps}</RequestsTable>
+      <RequestsTable>
+        {approveComps}
+        {rejectComps}
+      </RequestsTable>
     </RequestsContainer>
   );
 };

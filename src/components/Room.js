@@ -128,6 +128,22 @@ export default function Room() {
     <>
       <Controllers>
         <SizeWrapper>
+          <label>Office Name</label>
+        </SizeWrapper>
+        <SizeWrapper>
+          <TextInput type="text" />
+        </SizeWrapper>
+        <SizeWrapper>
+          <label>Floors Count</label>
+        </SizeWrapper>
+        <SizeWrapper>
+          <TextInput type="text" />
+        </SizeWrapper>
+
+        <SizeWrapper>
+          <label>Room dimensions</label>
+        </SizeWrapper>
+        <SizeWrapper>
           <NumberInput type="number" ref={roomWidthInput} />
           <NumberInput type="number" ref={roomHeightInput} />
         </SizeWrapper>
@@ -138,6 +154,9 @@ export default function Room() {
         >
           Set Room Size
         </Button>
+        <SizeWrapper>
+          <label>Desk dimensions</label>
+        </SizeWrapper>
         <SizeWrapper>
           <NumberInput type="number" ref={deskWidthInput} />
           <NumberInput type="number" ref={deskHeightInput} />
@@ -284,6 +303,22 @@ const NumberInput = styled.input`
   margin-bottom: 10px;
   background: white;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+
+  &:focus {
+    outline: #292929 solid 1px;
+  }
+`;
+
+const TextInput = styled.input`
+  width: 130px;
+  border-radius: 8px;
+  border: none;
+  height: 30px;
+  margin-bottom: 10px;
+  background: white;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+  padding: 5px 10px;
+  text-align: center;
 
   &:focus {
     outline: #292929 solid 1px;

@@ -99,7 +99,7 @@ const UpdateUser = () => {
     setIsRemote(false);
     document.getElementById("percentage").disabled = true;
     document.getElementById("percentage").style.backgroundColor = "#f8f8f8";
-    document.getElementById("percentage").value = "";
+    document.getElementById("percentage").value = "0";
   };
   const handleHybrid = () => {
     setIsPhysical(false);
@@ -114,7 +114,7 @@ const UpdateUser = () => {
     setIsHybrid(false);
     setIsRemote(true);
     document.getElementById("percentage").disabled = true;
-    document.getElementById("percentage").value = "100%";
+    document.getElementById("percentage").value = "100";
     document.getElementById("percentage").style.backgroundColor = "#fff";
   };
 

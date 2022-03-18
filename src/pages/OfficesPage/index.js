@@ -182,12 +182,12 @@ const Offices = () => {
           </Option>
           <p>than</p>
           <InputValue
-            value={filterValue}
+            // value={filterValue}
             onChange={(e) => setFilterValue(e.targer.value)}
             id="filter-number"
             min={0}
             max={100}
-            type={"text"}
+            type={"number"}
           />
         </FilterContent>
       )}

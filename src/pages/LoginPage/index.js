@@ -93,8 +93,8 @@ const Login = ({ loggedInUser, setLoggedInUser }) => {
             <FormTitle>Login to Offices</FormTitle>
             <FormInputs>
               <FormInput
-                value={email} // value = state
-                onChange={(e) => setEmail(e.target.value)} //apeleaza set din useState cu valoarea din e.target.value (ce am in input)
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 type={"text"}
                 id="email"
                 placeholder="Email"
