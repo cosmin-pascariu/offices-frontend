@@ -1,7 +1,12 @@
 import React from "react";
 import Helmet from "react-helmet";
-import { Title } from "../AddUserPage/AddUserPageElements";
 import {
+  Button,
+  InputContent,
+  Title,
+} from "../AddUserPage/AddUserPageElements";
+import {
+  ButtonContainer,
   InfoContainer,
   InfoContent,
 } from "../UserInfoPage/UserInfoPageElements";
@@ -14,8 +19,21 @@ import {
   PieChartInfo,
   PieChartInfoContainer,
 } from "./BuildingInfoPageElements";
+import { VictoryPie } from "victory-pie";
+import { useNavigate } from "react-router-dom";
 
+const myData = [
+  { x: "Occupied Desks", y: 900 },
+  { x: "Free Desks", y: 400 },
+  { x: "Unusable Desks", y: 300 },
+];
 const BuildingInfo = () => {
+  let navigate = useNavigate();
+  const routeChange = () => {
+    let path = "/buildings";
+    navigate(path);
+  };
+
   return (
     <BuildingInfoContainer>
       <Helmet>
@@ -38,7 +56,13 @@ const BuildingInfo = () => {
 
       <PieChartContainer>
         <PieChartDiagramContainer>
-          <PieChartDiagram />
+          <div>
+            <VictoryPie
+              data={myData}
+              colorScale={["#75ce55", "#e4e8e8", "#ff6464"]}
+              radius={50}
+            />
+          </div>
         </PieChartDiagramContainer>
         <PieChartInfoContainer>
           <PieChartInfo>
@@ -46,15 +70,25 @@ const BuildingInfo = () => {
             <p>Total number of occupied desks from the building</p>
           </PieChartInfo>
           <PieChartInfo>
-            <Box />
+            <Box style={{ backgroundColor: "#e4e8e8" }} />
             <p>Total number of free desks from the building</p>
           </PieChartInfo>
           <PieChartInfo>
-            <Box />
+            <Box style={{ backgroundColor: "#ff6464" }} />
             <p>Total number of unusable desks from the building</p>
           </PieChartInfo>
         </PieChartInfoContainer>
       </PieChartContainer>
+
+      <ButtonContainer>
+        <InputContent
+          style={{ height: "65px", alignItems: "flex-end", padding: "0" }}
+        >
+          <Button id="cancel-button" onClick={routeChange}>
+            CANCEL
+          </Button>
+        </InputContent>
+      </ButtonContainer>
     </BuildingInfoContainer>
   );
 };

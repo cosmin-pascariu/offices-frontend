@@ -97,34 +97,45 @@ const Buildings = () => {
       </BuildingsSearch>
 
       <BuildingsContent>
-        {buildings.map((building) => (
-          <BuildingCard key={building.id}>
-            <BuildingImage src={MainBImg} alt="Main Building" />
-            <CardInfo>
-              <BuildingName>{building.name}</BuildingName>
-              <FloorNumber>
-                <p>{building.floors_count}</p>
-                <FaBuffer size={"14px"} />
-              </FloorNumber>
-            </CardInfo>
+        {buildings
+          .filter((el) => {
+            //if no input the return the original
+            if (searchedName === "") {
+              return el;
+            }
+            //return the item which contains the user input
+            else {
+              return el.name.toLowerCase().includes(searchedName);
+            }
+          })
+          .map((building) => (
+            <BuildingCard key={building.id}>
+              <BuildingImage src={MainBImg} alt="Main Building" />
+              <CardInfo>
+                <BuildingName>{building.name}</BuildingName>
+                <FloorNumber>
+                  <p>{building.floors_count}</p>
+                  <FaBuffer size={"14px"} />
+                </FloorNumber>
+              </CardInfo>
 
-            <CardInfo>
-              <BuildingAddress>{building.address}</BuildingAddress>
-              <BsPencil
-                id="update-button"
-                onClick={routeChangeEdit}
-                size={"14px"}
-                style={{ color: "#75ce55", cursor: "pointer" }}
-              />
-              <CgMoreO
-                id="info-button"
-                onClick={routeChangeInfo}
-                size={"15px"}
-                style={{ color: "#75ce55", cursor: "pointer" }}
-              />
-            </CardInfo>
-          </BuildingCard>
-        ))}
+              <CardInfo>
+                <BuildingAddress>{building.address}</BuildingAddress>
+                <BsPencil
+                  id="update-button"
+                  onClick={routeChangeEdit}
+                  size={"14px"}
+                  style={{ color: "#75ce55", cursor: "pointer" }}
+                />
+                <CgMoreO
+                  id="info-button"
+                  onClick={routeChangeInfo}
+                  size={"15px"}
+                  style={{ color: "#75ce55", cursor: "pointer" }}
+                />
+              </CardInfo>
+            </BuildingCard>
+          ))}
       </BuildingsContent>
     </BuildingsContainer>
   );

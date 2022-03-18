@@ -16,6 +16,11 @@ import {
 } from "./SendRequestElements";
 
 const SendRequest = () => {
+  const resetInputs = () => {
+    document.getElementById("remote-percentage").value = "";
+    document.getElementById("request-reason").value = "";
+    alert("Your request has been sent!");
+  };
   return (
     <SendRequestContainer>
       <Helmet>
@@ -37,7 +42,7 @@ const SendRequest = () => {
 
       <ButtonsContainer>
         <ButtonContent style={{ alignItems: "flex-end", marginLeft: "8%" }}>
-          <Button>SEND</Button>
+          <Button onClick={(e) => resetInputs(e)}>SEND</Button>
         </ButtonContent>
         <ButtonContent>
           <Button>CANCEL</Button>

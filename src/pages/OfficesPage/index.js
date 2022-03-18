@@ -187,7 +187,7 @@ const Offices = () => {
             id="filter-number"
             min={0}
             max={100}
-            type={"number"}
+            type={"text"}
           />
         </FilterContent>
       )}

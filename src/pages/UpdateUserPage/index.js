@@ -25,9 +25,8 @@ import "./dropDown.css";
 
 const data = [
   { id: 0, label: "Main Builing" },
-  { id: 1, label: "Seccondary Building" },
-  { id: 2, label: "Primary Building" },
-  { id: 3, label: "Building Building" },
+  { id: 1, label: "Office 2" },
+  { id: 2, label: "Central Building" },
 ];
 const DropdownBuildings = () => {
   const [isOpen, setOpen] = useState(false);

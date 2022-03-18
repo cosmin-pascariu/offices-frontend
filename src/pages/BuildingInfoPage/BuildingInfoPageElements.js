@@ -17,19 +17,14 @@ export const BuildingInfoContainer = styled.div`
     box-shadow: 0;
     padding: 50px;
     border-radius: 0;
-
-    /* section {
-      display: flex;
-      width: 100%;
-      flex-direction: column;
-    } */
+    box-shadow: none;
   }
 `;
 
 export const PieChartContainer = styled.div`
   width: 100%;
   display: flex;
-  height: 400px;
+  height: 250px;
 
   @media (max-width: 1000px) {
     flex-direction: column;

@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import ImagePicker from "../../components/ImagePicker.js";
 import {
   Button,
+  ButtonContent,
+  ButtonsContainer,
   Input,
   InputContainer,
   InputContent,
@@ -64,16 +66,16 @@ const UpdateOffice = () => {
         <ImagePicker />
       </InputContainer>
 
-      <InputContainer style={{ marginTop: "25px", height: "65px" }}>
-        <InputContent style={{ alignItems: "flex-end", height: "65px" }}>
+      <ButtonsContainer>
+        <ButtonContent style={{ alignItems: "flex-end" }}>
           <Button id="save-button">SAVE</Button>
-        </InputContent>
-        <InputContent style={{ height: "65px" }}>
+        </ButtonContent>
+        <ButtonContent>
           <Button id="cancel-button" onClick={routeChange}>
             CANCEL
           </Button>
-        </InputContent>
-      </InputContainer>
+        </ButtonContent>
+      </ButtonsContainer>
     </UpdateOfficeContainer>
   );
 };

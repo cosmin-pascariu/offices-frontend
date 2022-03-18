@@ -158,20 +158,20 @@ const AddUser = () => {
   const [isRemote, setIsRemote] = useState(false);
 
   const handlePhysical = () => {
+    document.getElementById("percentage").value = "0";
+    document.getElementById("percentage").disabled = true;
+    document.getElementById("percentage").style.backgroundColor = "#f8f8f8";
     setIsPhysical(true);
     setIsHybrid(false);
     setIsRemote(false);
-    document.getElementById("percentage").disabled = true;
-    document.getElementById("percentage").style.backgroundColor = "#f8f8f8";
-    document.getElementById("percentage").value = "";
   };
   const handleHybrid = () => {
     setIsPhysical(false);
     setIsHybrid(true);
     setIsRemote(false);
+    document.getElementById("percentage").value = "";
     document.getElementById("percentage").disabled = false;
     document.getElementById("percentage").style.backgroundColor = "#fff";
-    document.getElementById("percentage").value = "";
   };
   const handleRemote = () => {
     setIsPhysical(false);

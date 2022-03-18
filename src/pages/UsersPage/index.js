@@ -52,6 +52,8 @@ const Users = () => {
     getUsersFromDB();
   }, []);
 
+  const searchName = () => {};
+
   let navigate = useNavigate();
 
   const duplicate = (x, n) => Array.from(new Array(n), () => x);
@@ -117,38 +119,51 @@ const Users = () => {
           <RemoteTxt>Remote</RemoteTxt>
           <ActionsTxt>Actions</ActionsTxt>
         </TableInfo>
-        {users.map((user) => (
-          <UserDetails key={user.id}>
-            <NameTxt>
-              {user.first_name} {user.last_name}
-            </NameTxt>
-            <BuildingTxt>{user.building_id || "not set"}</BuildingTxt>
-            <OfficeTxt>{user.office_id || "not set"}</OfficeTxt>
-            <RemoteTxt>
-              {user.remote_percentage === 0
-                ? "no"
-                : user.remote_percentage === 100
-                ? "fully"
-                : user.remote_percentage + "%"}
-            </RemoteTxt>
-            <div style={{ display: "flex", padding: "15px" }}>
-              <ActionBtn>
-                <BsPencil
-                  id="edit-button"
-                  onClick={() => navigate("/users/update-user")}
-                  size={"100%"}
-                />
-              </ActionBtn>
-              <ActionBtn>
-                <CgMoreO
-                  id="info-button"
-                  onClick={() => navigate("/users/user-info/")}
-                  size={"100%"}
-                />
-              </ActionBtn>
-            </div>
-          </UserDetails>
-        ))}
+        {users
+          .filter((el) => {
+            //if no input the return the original
+            if (searchedName === "") {
+              return el;
+            }
+            //return the item which contains the user input
+            else {
+              return (el.first_name + el.last_name)
+                .toLowerCase()
+                .includes(searchedName);
+            }
+          })
+          .map((user) => (
+            <UserDetails key={user.id}>
+              <NameTxt>
+                {user.first_name} {user.last_name}
+              </NameTxt>
+              <BuildingTxt>{user.building_id || "not set"}</BuildingTxt>
+              <OfficeTxt>{user.office_id || "not set"}</OfficeTxt>
+              <RemoteTxt>
+                {user.remote_percentage === 0
+                  ? "no"
+                  : user.remote_percentage === 100
+                  ? "fully"
+                  : user.remote_percentage + "%"}
+              </RemoteTxt>
+              <div style={{ display: "flex", padding: "15px" }}>
+                <ActionBtn>
+                  <BsPencil
+                    id="edit-button"
+                    onClick={() => navigate("/users/update-user")}
+                    size={"100%"}
+                  />
+                </ActionBtn>
+                <ActionBtn>
+                  <CgMoreO
+                    id="info-button"
+                    onClick={() => navigate("/users/user-info/")}
+                    size={"100%"}
+                  />
+                </ActionBtn>
+              </div>
+            </UserDetails>
+          ))}
       </Table>
     </UsersContainer>
   );
